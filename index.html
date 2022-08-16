@@ -99,6 +99,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 
+  
     <style>
       ::-webkit-scrollbar {
         width: 10px;
@@ -133,15 +134,50 @@
 
       .op_fc_cat_wrap {
         overflow-x: hidden;
+      } 
+      .mc_v2_wrap{
+        background-color: #8a4242 !important;
+        background-image: none;
+        border-color: #ebd332;
       }
+      .mc_gw{
+        border: none !important;
+        background-color: #8a4242;
+        background-image: url("bgtest.jpg") !important;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        padding: 5em !important;
+      }
+      .less{
+        background-image: url("papel.png") !important;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+      .rel{
+        border:none !important;
+        background-image: url("ouija.png") !important;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        padding: 5em !important;
+        padding-top: 10em !important;
+      }
+      .body {
+        background-color: #8a4242 !important;
+      }
+
+      .mc_v2_grid {
+          grid-template-columns: 1fr 1.5fr;
+      }
+     
     </style>
-        <style>
+    <style>
         @font-face {
           font-family: gloria;
           src: url("./Gloria_Hallelujah/GloriaHallelujah-Regular.ttf") format('truetype');
           }
         * {
           font-family: "gloria" !important;
+          color: #273e45 !important;
           }
       </style>
   </head>
@@ -284,42 +320,113 @@
         </div>
         <div class="w-layout-grid mc_v2_grid">
           <div
-            id="w-node-_0eb98bd2-28dd-5eef-f0c1-869942ceaedb-f7f590f9"
-            class="mc_gw less"
-          >
-            <div class="op_h less">
-              <span class="decor">//</span>Mission Stats
+          id="w-node-_0eb98bd2-28dd-5eef-f0c1-869942ceaedb-f7f590f9"
+          class="mc_gw less"
+        >
+          <div class="op_h less">
+            <span class="decor">//</span>Statistics
+          </div>
+          <div class="mc_v2_statwrap">
+            <div id="totalEnlisted" class="op_fc_h stats">0000</div>
+            <div class="op_fc_sub">Underworld Holders</div>
+          </div>
+          <div class="mc_tce_wrap">
+            <div class="mc_v2_statwrap">
+              <div id="c1Entries" class="op_fc_h stats">0000</div>
+              <div class="op_fc_sub">Weirdos without bonus</div>
             </div>
             <div class="mc_v2_statwrap">
-              <div id="totalEnlisted" class="op_fc_h stats">0000</div>
-              <div class="op_fc_sub">crews enlisted</div>
+              <div id="c2Entries" class="op_fc_h stats">0000</div>
+              <div class="op_fc_sub">Weirdos with X1.5 bonus</div>
             </div>
-            <div class="mc_tce_wrap">
-              <div class="mc_v2_statwrap">
-                <div id="c1Entries" class="op_fc_h stats">0000</div>
-                <div class="op_fc_sub">level 1</div>
-              </div>
-              <div class="mc_v2_statwrap">
-                <div id="c2Entries" class="op_fc_h stats">0000</div>
-                <div class="op_fc_sub">level 2</div>
-              </div>
-              <div class="mc_v2_statwrap nobot">
-                <div id="c3Entries" class="op_fc_h stats">0000</div>
-                <div class="op_fc_sub">level 3</div>
-              </div>
-              <div class="mc_v2_statwrap nobot">
-                <div id="c4Entries" class="op_fc_h stats">0000</div>
-                <div class="op_fc_sub">level 4</div>
-              </div>
+            <div class="mc_v2_statwrap nobot">
+              <div id="c3Entries" class="op_fc_h stats">0000</div>
+              <div class="op_fc_sub">Weirdos with X2 bonus</div>
             </div>
-            <a href="/history" class="mc_lt">view mission history</a>
+            <div class="mc_v2_statwrap nobot">
+              <div id="c4Entries" class="op_fc_h stats">0000</div>
+              <div class="op_fc_sub">Weirdos with X3 bonus</div>
+            </div>
           </div>
+          <!-- <a href="/history" class="mc_lt">view mission history</a> -->
+          <div class="tm_wrap">
+            <div
+              id="w-node-_691e89d7-4c66-1dbd-14c0-fa0ee5461baa-f7f590f9"
+              class="tm_gw"
+            >
+              <img
+                src="https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN.png"
+                loading="lazy"
+                sizes="(max-width: 479px) 100px, (max-width: 767px) 15vw, (max-width: 991px) 11vw, 100px"
+                srcset="
+                  https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN-p-500.png   500w,
+                  https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN-p-800.png   800w,
+                  https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN-p-1080.png 1080w,
+                  https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN-p-1600.png 1600w,
+                  https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN.png        2000w
+                "
+                id="TM_IMG_1"
+                alt=""
+                class="tm_img"
+              />
+              <div class="tm_h_wrap">
+                <div id="TM_1" class="tm_h">tuna</div>
+              </div>
+            </div>
+            <div
+              id="w-node-_78d9e5d3-e85a-f7c9-e838-c6f136516651-f7f590f9"
+              class="tm_gw"
+            >
+              <img
+                src="https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN.png"
+                loading="lazy"
+                sizes="(max-width: 479px) 100px, (max-width: 767px) 15vw, (max-width: 991px) 11vw, 100px"
+                srcset="
+                  https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN-p-500.png   500w,
+                  https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN-p-800.png   800w,
+                  https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN-p-1080.png 1080w,
+                  https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN-p-1600.png 1600w,
+                  https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN.png        2000w
+                "
+                id="TM_IMG_2"
+                alt=""
+                class="tm_img"
+              />
+              <div class="tm_h_wrap">
+                <div id="TM_2" class="tm_h">Aura</div>
+              </div>
+            </div>
+            <div
+              id="w-node-ada35754-1680-90ab-5c67-711e3f904173-f7f590f9"
+              class="tm_gw"
+            >
+              <img
+                src="https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN.png"
+                loading="lazy"
+                sizes="(max-width: 479px) 100px, (max-width: 767px) 16vw, (max-width: 991px) 11vw, 100px"
+                srcset="
+                  https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN-p-500.png   500w,
+                  https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN-p-800.png   800w,
+                  https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN-p-1080.png 1080w,
+                  https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN-p-1600.png 1600w,
+                  https://assets.website-files.com/61faf0f1c6ddf71c0a898f82/624a6e867c124cc9f2a1edd5_CatOutline_GREEN.png        2000w
+                "
+                id="TM_IMG_3"
+                alt=""
+                class="tm_img"
+              />
+              <div class="tm_h_wrap">
+                <div id="TM_3" class="tm_h">wink</div>
+              </div>
+            </div>
+          </div>
+        </div>
           <div
             id="w-node-_02179981-bea0-accf-9215-251eee5ce2d8-f7f590f9"
             class="mc_gw rel"
           >
             <div id="FC_MODAL" class="op_fc_modal fc_mc">
-              <div class="mc_v2_crew_btn_wrap">
+              <!-- <div class="mc_v2_crew_btn_wrap">
                 <div class="fc_header_wrap">
                   <div class="op_h nobot">
                     <span class="decor">//</span>Your flight crew
@@ -350,7 +457,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <div class="w-layout-grid op_3x1 less">
                 <div
                   id="w-node-_77134403-1ee7-06f5-b75b-821e4d61d85c-f7f590f9"

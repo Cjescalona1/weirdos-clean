@@ -177,11 +177,25 @@ body{
         max-height: 800px;
     }
     .statisticList{
+        padding: 0px;
+        font-size: 20px;
+        margin-top: -30px;
+    }
+    .statistics{
         padding: 0;
-        font-size: 25px;
+        font-size: 58px;   
+        font-weight: 900;
+        font-stretch: condensed;
+    }
+    .quant{
+        padding: 0;
+        font-size: 40px;
+
     }
     .weirdTrio > img{
-        width:18em;
+        width:20em;
+        margin-top: -25px;
+        margin-left: -12px;
     }
 
 }

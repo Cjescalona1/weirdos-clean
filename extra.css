@@ -34,8 +34,8 @@
         overflow-x: hidden;
       } 
       .mc_v2_wrap{
-        background-color: #8a4242 !important;
-        background-image: none;
+        background-image: url("mesa.jpg") !important;
+        background-position: center;
         border-color: #ebd332;
       }
       .mc_gw{

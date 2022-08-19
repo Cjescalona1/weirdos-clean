@@ -28,7 +28,7 @@ body{
     background-image: url('res/papel.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    opacity: 0.8;
+    opacity: 1;
  
 }
 .rightBox{
@@ -333,7 +333,7 @@ li > a > img{
         overflow-x: hidden;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-gap:0.5em;
+        grid-gap: 0em;
     }
     .emptyWeirdo{
         height: 14.5em;
@@ -341,8 +341,9 @@ li > a > img{
         position: relative; 
         background-color: white;
         border-radius: 3px;
-        border-color: #273e45;
-        border-width: 3px;
+       border-style: solid;
+        border-color: #1d5507;
+       border-width: 1.5px;
     }
     .weirdMessage{
         font-size: 9px;
@@ -383,8 +384,8 @@ li > a > img{
         text-align: center;
         background-color: rgb(255, 208, 0);
         border-radius: 8px;
-        width: 90%;
-        margin: 0% 3% -2% 5%;
+        width: 94%;
+        margin: 0% 3% -2% 3%;
     }
 }
 

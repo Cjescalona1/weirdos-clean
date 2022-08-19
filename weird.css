@@ -86,7 +86,7 @@ body{
     margin-bottom: -10px;
 }
 
-@media  screen and (min-width: 768px) and (max-width: 1440px) {
+@media  screen and (min-width: 1024px) and (max-width: 1440px) {
     .container{
         height: 450px;
     }
@@ -100,18 +100,32 @@ body{
         max-width: 680px;
         max-height: 450px; 
     }
-    .statistics {
-        font-size: 1.5em;
-    }
-    
-    .weirdTrio > img{
-        width:12em;
-    }
-     
-.weirdTrio{
-    margin-top: 0em;
+    .statisticList{
+     padding: 0px;
+     font-size: 12px;
+ }
+     .statistics{
+     padding: 0;
+     font-size: 34px;   
+     font-weight: 900;
+     font-stretch: condensed;
+ }
+     .quant{
+     padding: 0;
+     font-size: 28px;
+     font-weight: 300;
+     margin-bottom: -5px;
+     margin-top: -12px;
+
+ }
+     .weirdTrio > img{
+     width:12em;
+     margin-top: -25px;
+     margin-left: -15px;
+ }
 }
-}
+
+
 @media  screen and (min-width: 1440px) and (max-width: 1920px)  {
     .container{
         height: 560px;
@@ -127,12 +141,30 @@ body{
         width: 60%;
         max-width: 840px;
         max-height: 560px;
+    }
+       .statisticList{
+        padding: 0px;
+        font-size: 14px;
+    }
+        .statistics{
+        padding: 0;
+        font-size: 40px;   
+        font-weight: 900;
+        font-stretch: condensed;
+    }
+        .quant{
+        padding: 0;
+        font-size: 32px;
+        font-weight: 300;
+        margin-bottom: -5px;
+        margin-top: -12px;
 
     }
-    .weirdTrio > img{
-        width:14em;
+        .weirdTrio > img{
+        width:15em;
+        margin-top: -15px;
+        margin-left: -15px;
     }
-     
 }
  
 
@@ -154,11 +186,27 @@ body{
         max-height: 800px;
     }
     .statisticList{
+        padding: 0px;
+        font-size: 20px;
+    }
+    .statistics{
         padding: 0;
-        font-size: 25px;
+        font-size: 58px;   
+        font-weight: 900;
+        font-stretch: condensed;
+    }
+    .quant{
+        padding: 0;
+        font-size: 42px;
+        font-weight: 300;
+        margin-bottom: -5px;
+        margin-top: -10px;
+
     }
     .weirdTrio > img{
-        width:19em;
+        width:20em;
+        margin-top: -15px;
+        margin-left: -15px;
     }
 }
 
@@ -182,7 +230,6 @@ body{
     .statisticList{
         padding: 0px;
         font-size: 20px;
-        margin-top: -30px;
     }
     .statistics{
         padding: 0;
@@ -192,14 +239,16 @@ body{
     }
     .quant{
         padding: 0;
-        font-size: 40px;
+        font-size: 42px;
+        font-weight: 300;
+        margin-bottom: -5px;
+        margin-top: -10px;
 
     }
     .weirdTrio > img{
-        width:20em;
+        width:21em;
         margin-top: -25px;
-        margin-left: -12px;
+        margin-left: -18px;
     }
-
 }
  

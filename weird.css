@@ -109,7 +109,7 @@ body{
     grid-gap: 0.5em;
 }
 .emptyWeirdo{
-    height: 13.5em;
+    height: 14.5em;
     width: 10.5em;
     position: relative; 
     background-color:aliceblue;
@@ -118,9 +118,8 @@ body{
     font-size: 12px;
     justify-content: center;
     text-align: justify;
-    padding: 0.5em 1.5em;
-    line-height: 12px;
-    
+    padding: 0.5em;
+    line-height: 12px;    
 }
 
 .emptyWeirdo>img{

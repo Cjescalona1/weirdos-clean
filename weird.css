@@ -80,22 +80,25 @@ body{
 } 
 
 @media  screen and (min-width: 768px) and (max-width: 1440px) {
-    .leftBox{
-         
+    .container{
+        height: 450px;
+    }
+    .leftBox{ 
         width: 30%;
         max-width: 250px;
         max-height: 450px;
     }
-    .rightBox{
-         
+    .rightBox{ 
         width: 60%;
         max-width: 680px;
-        max-height: 450px;
-
+        max-height: 450px; 
     }
      
 }
-@media  screen and (min-width: 1440px)  {
+@media  screen and (min-width: 1440px) and (max-width: 1920px)  {
+    .container{
+        height: 560px;
+    }
     .leftBox{
          
         width: 30%;
@@ -113,7 +116,11 @@ body{
 }
  
 
-@media  screen and (min-width: 1920px)  {
+@media  screen and (min-width: 1920px)and (max-width: 2400px)   {
+    .container{
+        height: 800px;
+
+    }
     .leftBox{
          
         width: 30%;
@@ -129,7 +136,10 @@ body{
 }
 
 
-@media  screen and (min-width: 2520px)  {
+@media  screen and (min-width: 2400px)  {
+    .container{
+        height: 800px;
+    }
     .leftBox{
          
         width: 30%;

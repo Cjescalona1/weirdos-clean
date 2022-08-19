@@ -150,10 +150,39 @@ body{
     font-size: 10px;
     line-height: 1.3;
     text-align: center;
-    background-color: yellow;
+    background-color: #fecd19;
     border-radius: 10px;
     width: 70%;
     margin: 1% 15% -2px;
+}
+.headerBar{
+ 
+    background-color: #250a3d;
+    margin: 0;
+    padding: 2em;
+    border-bottom: #fecd19 2px solid;
+    height: 2em;
+}
+.navItems{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.navItems > li{
+    justify-items: end;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 2em;
+}
+.navItems > li > a{
+    color: antiquewhite !important;
+    text-decoration: none;
+}
+li > a > img{
+    width: 2em;
+    height: 2em;
 }
 
 @media  screen and (min-width: 1024px) and (max-width: 1440px) {

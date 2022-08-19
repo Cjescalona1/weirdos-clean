@@ -1,0 +1,147 @@
+@font-face {
+    font-family: gloria;
+    src: url("./Gloria_Hallelujah/GloriaHallelujah-Regular.ttf") format('truetype');
+    }
+  * {
+    font-family: "gloria" !important;
+    color: #273e45 !important;
+    }
+body{ 
+    background-image: url('res/01.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.container{
+    margin: 5em 0;
+    padding: 0 2em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    
+}  
+.leftBox{
+    width: 30%;
+    background-image: url('res/papel.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 0.8;
+ 
+}
+.rightBox{
+    width: 60%;
+    background-image: url('res/ouija.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 0.8;
+ 
+
+}
+.separator{
+    width: 2em;
+}
+.leftBoxContent{
+    padding-top: 2em;
+    padding-left: 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+
+.rightBoxContent{
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.statistics{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    
+}
+
+.statisticList{
+    padding: 0;
+    font-size: 18px;
+}
+.quant{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    height: 1.4em;
+} 
+
+@media  screen and (min-width: 768px) and (max-width: 1440px) {
+    .leftBox{
+         
+        width: 30%;
+        min-width: 250px;
+        min-height: 450px;
+    }
+    .rightBox{
+         
+        width: 60%;
+        min-width: 680px;
+        min-height: 450px;
+
+    }
+     
+}
+@media  screen and (min-width: 1440px)  {
+    .leftBox{
+         
+        width: 30%;
+        min-width: 300px;
+        min-height: 560px;
+    }
+    .rightBox{
+         
+        width: 60%;
+        min-width: 840px;
+        min-height: 560px;
+
+    }
+     
+}
+ 
+
+@media  screen and (min-width: 1920px)  {
+    .leftBox{
+         
+        width: 30%;
+        min-width: 420px;
+        min-height: 800px;
+    }
+    .rightBox{
+         
+        width: 60%;
+        min-width: 1000px;
+        min-height: 800px;
+    }
+}
+
+
+@media  screen and (min-width: 2520px)  {
+    .leftBox{
+         
+        width: 30%;
+        min-width: 420px;
+        min-height: 800px;
+    }
+    .rightBox{
+         
+        width: 60%;
+        min-width: 1200px;
+        min-height: 800px;
+    }
+}
+ 

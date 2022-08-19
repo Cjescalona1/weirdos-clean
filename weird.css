@@ -16,7 +16,7 @@ body{
     border: none;
 }
 .container{
-    margin: 5em 0;
+    margin: 7em;
     padding: 0 2em;
     display: flex;
     align-content: center;
@@ -36,7 +36,7 @@ body{
     background-image: url('res/ouija.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    opacity: 0.8;
+    opacity: 1;
  
 
 }
@@ -111,7 +111,8 @@ body{
     height: 14.5em;
     width: 10.5em;
     position: relative; 
-    background-color:aliceblue;
+    background-color: white;
+    
 }
 .weirdMessage{
     font-size: 9px;
@@ -277,7 +278,7 @@ li > a > img{
 }
  
 
-@media  screen and (min-width: 1920px)and (max-width: 2400px)   {
+@media  screen and (min-width: 1920px) and (max-width: 2560px)   {
     .container{
         height: 800px;
 
@@ -317,10 +318,78 @@ li > a > img{
         margin-top: -15px;
         margin-left: -15px;
     }
+    .weirdMessage{
+        font-size: 9px;
+        justify-content: center;
+        text-align: left;
+        padding: 0.5em;
+        line-height: 12px;    
+    }
+    .weirdos{
+        margin-top: -1.5em;
+        width: 95%;
+        height: 31em;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap:0.5em;
+    }
+    .emptyWeirdo{
+        height: 14.5em;
+        width: 10.5em;
+        position: relative; 
+        background-color: white;
+        border-radius: 3px;
+        border-color: #273e45;
+        border-width: 3px;
+    }
+    .weirdMessage{
+        font-size: 9px;
+        justify-content: center;
+        text-align: left;
+        padding: 1em 1em 0em 1em;
+        line-height: 12px;  
+          
+    }
+    .emptyWeirdo>img{
+        position: relative;
+        top: 2%;
+        left: 3%;
+        width: 94.5%;
+        height: 68%;
+    }
+    .st1{
+        top: -6em;
+        position: relative;
+        text-align: right;
+    }
+    .st2{
+        top: -4em;
+        position: relative;
+        text-align: center;
+    }
+    .st3{
+        top: -6em;
+        position: relative;
+        text-align: left;
+    
+    }
+    .yellowBand{
+        padding: 0px;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 1.5;
+        text-align: center;
+        background-color: rgb(255, 208, 0);
+        border-radius: 8px;
+        width: 90%;
+        margin: 0% 3% -2% 5%;
+    }
 }
 
 
-@media  screen and (min-width: 2400px)  {
+@media  screen and (min-width: 2560px)  {
     .container{
         height: 800px;
     }
@@ -365,6 +434,63 @@ li > a > img{
         text-align: left;
         padding: 0.5em;
         line-height: 12px;    
+    }
+    .weirdos{
+        margin-top: 0em;
+        width: 70%;
+        height: 25em;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 0.5em;
+    }
+    .emptyWeirdo{
+        height: 14.5em;
+        width: 10.5em;
+        position: relative; 
+        background-color:aliceblue;
+    }
+    .weirdMessage{
+        font-size: 9px;
+        justify-content: center;
+        text-align: left;
+        padding: 0.5em;
+        line-height: 12px;    
+    }
+    
+    .emptyWeirdo>img{
+        position: relative;
+        top: 4%;
+        left: 5%;
+        width: 90%;
+        height: 70%;
+    }
+    .st1{
+        top: -6em;
+        position: relative;
+        text-align: right;
+    }
+    .st2{
+        top: -4em;
+        position: relative;
+        text-align: center;
+    }
+    .st3{
+        top: -6em;
+        position: relative;
+        text-align: left;
+    
+    }
+    .yellowBand{
+        padding: 0px;
+        font-size: 10px;
+        line-height: 1.3;
+        text-align: center;
+        background-color: yellow;
+        border-radius: 10px;
+        width: 80%;
+        margin: 3% 15% -2px;
     }
 }
  

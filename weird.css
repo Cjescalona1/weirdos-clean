@@ -64,16 +64,16 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 3em;
+    font-size: 2em;
     
 }
 
 .statisticList{
     padding: 0;
-    font-size: 18px;
+    font-size: 15px;
 }
 .quant{
-    font-size: 2em;
+    font-size: 1em;
     font-weight: bold;
     margin: 0;
     height: 1.4em;
@@ -92,6 +92,9 @@ body{
         width: 60%;
         max-width: 680px;
         max-height: 450px; 
+    }
+    .statistics {
+        font-size: 1.5em;
     }
      
 }
@@ -112,6 +115,7 @@ body{
         max-height: 560px;
 
     }
+    
      
 }
  
@@ -133,6 +137,10 @@ body{
         max-width: 1000px;
         max-height: 800px;
     }
+    .statisticList{
+        padding: 0;
+        font-size: 25px;
+    }
 }
 
 
@@ -151,6 +159,10 @@ body{
         width: 60%;
         max-width: 1200px;
         max-height: 800px;
+    }
+    .statisticList{
+        padding: 0;
+        font-size: 25px;
     }
 }
  

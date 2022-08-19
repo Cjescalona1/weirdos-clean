@@ -115,9 +115,9 @@ body{
     background-color:aliceblue;
 }
 .weirdMessage{
-    font-size: 12px;
+    font-size: 9px;
     justify-content: center;
-    text-align: justify;
+    text-align: left;
     padding: 0.5em;
     line-height: 12px;    
 }
@@ -293,6 +293,13 @@ body{
         width:21em;
         margin-top: -25px;
         margin-left: -18px;
+    }
+    .weirdMessage{
+        font-size: 9px;
+        justify-content: center;
+        text-align: left;
+        padding: 0.5em;
+        line-height: 12px;    
     }
 }
  

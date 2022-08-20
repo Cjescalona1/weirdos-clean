@@ -216,7 +216,23 @@ li > a > img{
     text-align: center;
     padding: 0.5em 1.5em;
 } 
+.cummulative::before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -25px;
+    width: 3em;
+    height: 3.5em;
+    background-image: url(res/GOLD.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    opacity: 1;
+
+}
+
 .claimButton{
+    position: relative;
     background-color: #35f049;
     height: 2.4em;
     vertical-align: middle;
@@ -225,7 +241,7 @@ li > a > img{
     padding: 0.5em 1em 0;
     margin-right: 10px;
     border-radius: 10px;
-
+    right: 15px;
 }
 .uwuClaim{
     display: flex;

@@ -117,10 +117,10 @@ body{
 .emptyWeirdo::after{
     content: "";
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 2.5em;
-    height: 2.5em;
+    top: 1px;
+    right: 0px;
+    width: 2em;
+    height: 2em;
     background-image: url('res/Iconos-08.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;

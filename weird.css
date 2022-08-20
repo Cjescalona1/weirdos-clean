@@ -186,7 +186,7 @@ body{
 .navItems > li{
     justify-items: end;
     list-style-type: none;
-    padding: 0;
+    padding: 0em 0em;
     margin: 0em 1em;
 }
 .navItems > li > a{
@@ -203,7 +203,7 @@ li > a > img{
 }
 ::-webkit-scrollbar-thumb{
     width: 0.5em;
-    background-color: rgb(40, 224, 55);
+    background-color: rgb(57, 243, 73);
     border-radius: 3px;
 }
 ::-webkit-scrollbar-track{
@@ -211,24 +211,24 @@ li > a > img{
     }
 .cummulative{
     background-color: #493362;
-    color: #35f049 !important;
+    color: #a2faab !important;
     vertical-align: middle;
     text-align: center;
     padding: 0.5em 1.5em;
-} 
+    } 
 .cummulative::before{
     content: "";
     position: absolute;
-    top: -10px;
-    left: -25px;
-    width: 3em;
-    height: 3.5em;
+    top: -16px;
+    left: -32px;
+    width: 3.8em;
+    height: 4em;
     background-image: url(res/GOLD.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
     opacity: 1;
-
+    
 }
 
 .claimButton{

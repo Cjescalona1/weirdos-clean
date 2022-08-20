@@ -114,6 +114,19 @@ body{
     position: relative; 
     background-color: white;
 }
+.emptyWeirdo::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3em;
+    height: 3em;
+    background-image: url('res/Iconos-08.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    opacity: 1;
+}
 
 .weirdMessage{
     font-size: 9px;

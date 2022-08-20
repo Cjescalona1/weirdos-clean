@@ -174,7 +174,7 @@ body{
     background-color: #250a3d;
     padding: 2em 0em;
     border-bottom: #fecd19 2px solid;
-    height: 2em;
+    height: 2.4em;
 }
 .navItems{
     display: flex;
@@ -214,13 +214,13 @@ li > a > img{
     color: #a2faab !important;
     vertical-align: middle;
     text-align: center;
-    padding: 0.5em 1.5em;
+    padding: 0.5em 2.3em;
     } 
 .cummulative::before{
     content: "";
     position: absolute;
     top: -16px;
-    left: -32px;
+    left: -25px;
     width: 3.8em;
     height: 4em;
     background-image: url(res/GOLD.png);
@@ -236,10 +236,11 @@ li > a > img{
     background-color: #35f049;
     height: 2.4em;
     vertical-align: middle;
-    font-weight: 500;
+    font-weight: 600;
+    color: #251b2e !important;
     text-align: center;
     padding: 0.5em 1em 0;
-    margin-right: 10px;
+    margin-right: 0px;
     border-radius: 10px;
     right: 15px;
 }
@@ -249,7 +250,7 @@ li > a > img{
     position: relative;
 }
 .socialButtons{
-    margin: 0 0.4em !important;
+    margin: 0 0.8em !important;
 }
 
 @media  screen and (min-width: 1000px) and (max-width: 1350px) {

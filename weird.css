@@ -370,7 +370,7 @@ li > a > img{
     .weirdos{
         margin-top: calc(5em + 5%);
         width: 97%;
-        height: 22em;
+        height: 24em;
         overflow-y: scroll;
         overflow-x: hidden;
         display: grid;
@@ -485,7 +485,7 @@ li > a > img{
         line-height: 12px;    
     }
     .weirdos{
-        margin-top: calc(7em + 5%);
+        margin-top: calc(9em + 5%);
         width: 96%;
         height: 31em;
         overflow-y: scroll;
@@ -517,7 +517,7 @@ li > a > img{
         position: relative;
         top: 2%;
         left: 3%;
-        width: 94.5%;
+        width: 94%;
         height: 68%;
     }
     .st1{

@@ -209,6 +209,30 @@ li > a > img{
 ::-webkit-scrollbar-track{
     background-color: #273e45;
     }
+.cummulative{
+    background-color: #493362;
+    color: #35f049 !important;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0.5em 1.5em;
+} 
+.claimButton{
+    background-color: #35f049;
+    height: 2.5em;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0.5em 1em 0;
+    border-radius: 10px;
+
+}
+.uwuClaim{
+    display: flex;
+    bottom: 10px;
+    position: relative;
+}
+.socialButtons{
+    margin: 0 0.4em !important;
+}
 
 @media  screen and (min-width: 1000px) and (max-width: 1350px) {
     .container{

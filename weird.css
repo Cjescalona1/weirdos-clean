@@ -328,7 +328,7 @@ li > a > img{
         height: 14.5em;
         width: 10.5em;
         position: relative; 
-        background-color: white;
+        background-color: rgb(46, 7, 71);
         border-radius: 3px;
        border-style: solid;
         border-color: #1d5507;
@@ -340,6 +340,7 @@ li > a > img{
         text-align: left;
         padding: 1em 1em 0em 1em;
         line-height: 12px;  
+        color: aliceblue !important; 
           
     }
     .emptyWeirdo>img{
@@ -371,7 +372,7 @@ li > a > img{
         font-weight: 600;
         line-height: 1.5;
         text-align: center;
-        background-color: rgb(255, 208, 0);
+        background-color: rgb(89, 252, 56);
         border-radius: 8px;
         width: 94%;
         margin: 0% 3% -2% 3%;

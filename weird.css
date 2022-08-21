@@ -215,12 +215,13 @@ li > a > img{
     vertical-align: middle;
     text-align: center;
     padding: 0.5em 2.3em;
+    margin-left: 10px;
     } 
 .cummulative::before{
     content: "";
     position: absolute;
     top: -16px;
-    left: -25px;
+    left: -15px;
     width: 3.8em;
     height: 4em;
     background-image: url(res/GOLD.png);
@@ -228,7 +229,7 @@ li > a > img{
     background-size: 100% 100%;
     background-position: center;
     opacity: 1;
-    
+        
 }
 
 .claimButton{
@@ -241,13 +242,15 @@ li > a > img{
     text-align: center;
     padding: 0.5em 1em 0;
     margin-right: 0px;
-    border-radius: 10px;
+    border-radius: 12px;
     right: 15px;
+
 }
 .uwuClaim{
     display: flex;
     bottom: 7px;
     position: relative;
+   
 }
 .socialButtons{
     margin: 0 0.8em !important;

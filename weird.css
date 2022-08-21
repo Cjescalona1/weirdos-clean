@@ -200,6 +200,7 @@ li > a > img{
 
 ::-webkit-scrollbar{
     width: 0.5em;
+    height: 0.5em !important;
 }
 ::-webkit-scrollbar-thumb{
     width: 0.5em;
@@ -253,6 +254,115 @@ li > a > img{
     margin: 0 0.8em !important;
 }
 
+.mobileUwuClaim{
+    display :none;
+ }
+
+@media screen and (max-width:768px) {
+    .mobileUwuClaim{
+        display :flex;
+    }
+    .uwuClaim{
+    vertical-align: middle;
+    margin-left: 2.5em;
+    margin-bottom: 1em;
+    }
+    .cummulative{
+        padding: 0.4em 2.3em !important;
+    }
+
+    body{ 
+            background-image: none !important;
+            background-color: #a2faab;
+    }
+    .desktopClaim{
+        display: none;
+    }
+    .headerBar{
+        height: 2.4em;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        margin: 1em 0em;
+    }
+    .weirdTrio{
+        display: none;
+    }
+    .leftBox{
+        width: 85%;
+        background-image: none;
+        text-align: center;
+        margin-left: 7%;
+        background-color: antiquewhite;
+
+    }
+    .separator{
+        display: none;
+    }
+    .rightBox{
+        width: 80%;
+        background-image: none;
+        margin: auto;
+    }
+    .rightBoxContent {
+        padding: 0em;
+        flex-direction: row;
+        align-items: start;
+        overflow-x: scroll;
+        display: flex;
+        align-content: center;
+        justify-content: flex-start;
+    }
+.weirdos {
+    margin-top: calc(0em + 5%); 
+    height: 100%;
+    display: grid;
+    grid-gap: 0.5em;
+    justify-content: start;
+    grid-auto-flow: column;
+    overflow: initial;
+  
+}
+      .weirdMessage {
+    font-size: 12px;
+    padding: 1.5em;
+    line-height: 12px;
+    color: antiquewhite !important;
+
+}
+.emptyWeirdo {
+    height: 20em;
+    width: 16em;
+    position: relative;
+    background-color: #2e0746;
+    margin-bottom: 1em !important;    
+}
+.leftBoxContent{
+    padding-top: 1em;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.statBox{
+    width: 45%;
+    padding: 5px;
+    margin: 0;
+}
+.SBLast{
+    width: 100%;
+}
+.statisticList {
+    padding: 0;
+    width: 95vw;
+    font-size: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+}
 @media  screen and (min-width: 1000px) and (max-width: 1350px) {
     .container{
         height: 450px;
@@ -313,7 +423,7 @@ li > a > img{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1em 0em;
-}
+} 
 .emptyWeirdo{
     height: 14.5em;
     width: 10.5em;

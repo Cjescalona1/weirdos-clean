@@ -118,7 +118,7 @@ body{
     content: "";
     position: absolute;
     top: 1px;
-    right: 0px;
+    right: 1px;
     width: 2em;
     height: 2em;
     background-image: url('res/Iconos-08.png');
@@ -262,6 +262,17 @@ li > a > img{
  }
 
 @media screen and (max-width:768px) {
+
+    body{ 
+        background-image: url(res/fondo-mobile-05.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        height: 100%;
+        margin: 0em 0em;
+        padding: 0;
+        border: none; 
+    }
     .mobileUwuClaim{
         display :flex;
     }
@@ -272,11 +283,6 @@ li > a > img{
     }
     .cummulative{
         padding: 0.4em 1.5em !important;
-    }
-
-    body{ 
-            background-image: none !important;
-            background-color: #a2faab;
     }
     .desktopClaim{
         display: none;
@@ -293,18 +299,18 @@ li > a > img{
         display: none;
     }
     .leftBox{
-        width: 85%;
-        background-image: none;
+        background-image: url(res/papel.png);
+        background-repeat: no-repeat;
+        background-size: cover;    
+        width: 100%;
         text-align: center;
-        margin-left: 7%;
-        background-color: antiquewhite;
-
+        margin-left: 2%;
     }
     .separator{
         display: none;
     }
     .rightBox{
-        width: 80%;
+        width: 90%;
         background-image: none;
         margin: auto;
     }
@@ -317,29 +323,47 @@ li > a > img{
         align-content: center;
         justify-content: flex-start;
     }
-.weirdos {
-    margin-top: calc(0em + 5%); 
-    height: 100%;
-    display: grid;
-    grid-gap: 0.5em;
-    justify-content: start;
-    grid-auto-flow: column;
-    overflow: initial;
-  
+    .weirdos {
+        margin-top: calc(0em + 5%); 
+        height: 100%;
+        display: grid;
+        grid-gap: 1.5em;
+        justify-content: start;
+        grid-auto-flow: column;
+        overflow: initial;
+    }
+    .emptyWeirdo>img{
+        position: relative;
+        top: 4%;
+        left: 5%;
+        width: 90%;
+        height: 65%;
+    }
+    .weirdMessage {
+        font-size: 12px;
+        padding: 1.2em;
+        line-height: 16px;
+        color: antiquewhite !important;
+    }
+    .emptyWeirdo {
+        height: 21em;
+        width: 16em;
+        position: relative;
+        background-color: #2e0746;
+        margin-bottom: 1em !important;  
+        border-radius: 4px;  
+    
 }
-      .weirdMessage {
+.yellowBand{
+    padding: 0px;
     font-size: 12px;
-    padding: 1.5em;
-    line-height: 12px;
-    color: antiquewhite !important;
-
-}
-.emptyWeirdo {
-    height: 20em;
-    width: 16em;
-    position: relative;
-    background-color: #2e0746;
-    margin-bottom: 1em !important;    
+    font-weight: 600;
+    line-height: 2em;
+    text-align: center;
+    background-color: #3eff68;
+    border-radius: 10px;
+    width: 90%;
+    margin: 6% 5% -3% 5%;
 }
 .leftBoxContent{
     padding-top: 1em;
@@ -364,9 +388,15 @@ li > a > img{
     font-size: 15px;
     display: flex;
     flex-wrap: wrap;
+    }
+    .quant{
+        padding: 0;
+        font-size: 36px;
+        font-weight: 600;
+        margin-top: -20px;   
+    }
 }
-}
-@media  screen and (min-width: 1000px) and (max-width: 1350px) {
+@media  screen and (min-width: 768px) and (max-width: 1350px) {
     .container{
         height: 450px;
         margin: 2em 0em;
@@ -380,6 +410,7 @@ li > a > img{
         max-width: 250px;
         min-width: 250px;
         max-height: 550px;
+        
     }
     .rightBox{ 
         width: 60%;
@@ -612,6 +643,7 @@ li > a > img{
         width: 35%;
         width: 400px;
         max-height: 900px; 
+        
     }
     .rightBox{
          

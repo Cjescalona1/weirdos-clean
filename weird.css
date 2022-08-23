@@ -186,7 +186,7 @@ body{
     margin: 0em 3em;
     flex-direction: row;
     justify-content: flex-end;
-    font-weight: bold;
+
 }
 .navItems > li{
     justify-items: end;
@@ -226,7 +226,7 @@ li > a > img{
 .cummulative::before{
     content: "";
     position: absolute;
-    top: -16px;
+    top: -17px;
     left: -15px;
     width: 4em;
     height: 4em;
@@ -274,22 +274,32 @@ li > a > img{
     display: block;
 }
 .foot2{
-    margin: 1em;
+    margin: 4em 0em 0em 0em;
     display: -webkit-inline-box;
 }
 
 .whitespace{
-    width: 40vw;
-    height: 100%;
-}
-.whitespace>img{
-    width: 100%;
+    width: 30%;
+    width: 340px;
+    text-align: left;
+    margin-top: -1.3em;
+    color: #eee;
+    margin-right: 2em;
+    margin-left: -2em;
+    
 }
 
 .foot2>.colla>*, .collapsible{
     color: antiquewhite !important;
     font-family: gloria !important;
     text-align: left;
+    background-color: #1d0c2b;
+    border-style: inset;
+    border-color: #3eff68;
+    margin-top: -3px;
+    width: 60%; 
+    width: 1000px;
+    
 }
 .devil{
     background-color: #212121; 
@@ -303,11 +313,17 @@ li > a > img{
 }
 .content>p{
     color: antiquewhite !important;
+    background-color: #212121;
+    margin: 1em 0em 1em 0em;
+    padding-left: 0px;
 }
  
 .colla{
-    margin:  2em;
-    width: 36vw;
+    margin: 0em 0em 0em 0em;
+    width: 60%; 
+    width: 1000px;
+    background-color: #011b05;
+    
 }
 
 
@@ -538,13 +554,6 @@ li > a > img{
 
 }
 }
-
-@media screen and (min-width:768px) and (max-width:1100px){
-    .navItems{
-        font-size: 0.66em !important;
-        margin-top: 1em !important;
-    }
-}
 @media  screen and (min-width: 768px) and (max-width: 1350px) {
     
     .container{
@@ -678,7 +687,23 @@ li > a > img{
     font-size: 0.85em;
     margin-top: 0.65em;
 }
+.cummulative::before{
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: -15px;
+    width: 4.2em;
+    height: 4.2em;
+    background-image: url(res/GOLD.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    opacity: 1;
+        
 }
+
+}
+
 
 
 @media  screen and (min-width: 1350px) and (max-width: 1850px)  {
@@ -804,6 +829,20 @@ li > a > img{
     .navItems{
     font-size: 0.9em;
     margin-top: 0.5em;
+    }
+    .cummulative::before{
+        content: "";
+        position: absolute;
+        top: -17px;
+        left: -15px;
+        width: 4.1em;
+        height: 4.1em;
+        background-image: url(res/GOLD.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+        opacity: 1;
+            
     }
 }
  

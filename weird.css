@@ -175,7 +175,7 @@ body{
 }
 .headerBar{
  
-    background-color: #300753;
+    background-color: #24063f;
     padding: 2em 0em;
     border-bottom: #fecd19 2px solid;
     height: 2.4em;
@@ -228,7 +228,7 @@ li > a > img{
     position: absolute;
     top: -16px;
     left: -15px;
-    width: 3.8em;
+    width: 4em;
     height: 4em;
     background-image: url(res/GOLD.png);
     background-repeat: no-repeat;

@@ -24,6 +24,11 @@ body{
     justify-content: center;
     
 }  
+
+.paragraph{
+    text-align: justify;
+    color: antiquewhite !important;
+}
 /* toggle mute/unmute button class  */
 .mute{  }
 .unmute{   }
@@ -290,17 +295,18 @@ li > a > img{
 }
 
 .foot2>.colla>*, .collapsible{
-    color: antiquewhite !important;
+
+    color: #473558 !important;
     font-family: gloria !important;
     text-align: left;
-    background-color: #1d0c2b;
+    background-color: #fefddf;
     border-style: inset;
     border-color: #3eff68;
     margin-top: -3px;
-    width: 60%; 
-    width: 1000px;
-    
+    width: 100%; 
 }
+ 
+
 .devil{
     background-color: #212121; 
     width: 100vw;
@@ -313,16 +319,15 @@ li > a > img{
 }
 .content>p{
     color: antiquewhite !important;
-    background-color: #212121;
-    margin: 1em 0em 1em 0em;
-    padding-left: 0px;
+    background-color: #447778;
+    margin: 0em 0em 0em 0em;
+    padding: 1.5em;
 }
  
 .colla{
     margin: 0em 0em 0em 0em;
-    width: 60%; 
-    width: 1000px;
-    background-color: #011b05;
+    
+    width: 1000px; 
     
 }
 
@@ -330,7 +335,7 @@ li > a > img{
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-  background-color: #eee;
+  background-color: #fefddf;
   color: #444;
   cursor: pointer;
   padding: 18px;
@@ -348,10 +353,11 @@ li > a > img{
 
 /* Style the collapsible content. Note: hidden by default */
 .content {
-  padding: 0 18px;
+  padding: 0px;
   display: none;
   overflow: hidden;
   font-weight: lighter;
+  width: 99.4% !important;
 }
 .collapseButt{ 
   width: 100%;
@@ -553,6 +559,10 @@ li > a > img{
     margin-top: 3em;
 
 }
+.content{
+    width: 99% !important;
+}
+
 }
 @media  screen and (min-width: 768px) and (max-width: 1350px) {
     
@@ -701,6 +711,14 @@ li > a > img{
     opacity: 1;
         
 }
+
+.colla{
+    width: 680px;
+}
+.content{
+    width: 99.1% !important;
+}
+
 
 }
 

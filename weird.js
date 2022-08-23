@@ -17,7 +17,7 @@ for (i = 0; i < coll.length; i++) {
 }
 
 function toggleMuted() {
-  var sound = document.getElementById('sound');
+  var sound = document.getElementById('sound'); 
   var button = document.getElementById('toggleAudio');
   sound.muted = !sound.muted;
   if(sound.muted){
@@ -30,5 +30,6 @@ function toggleMuted() {
     button.classList.remove("unmute")
     button.innerHTML="mute"
   }
+  changes
 }
 

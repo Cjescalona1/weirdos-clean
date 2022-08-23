@@ -568,12 +568,14 @@ li > a > img{
     .statisticList{
      padding: 0px;
      font-size: 12px;
+     text-align: left;
  }
      .statistics{
      padding: 0;
      font-size: 34px;   
      font-weight: 900;
      font-stretch: condensed;
+     text-align: left;
  }
      .quant{
      padding: 0;
@@ -581,6 +583,7 @@ li > a > img{
      font-weight: 300;
      margin-bottom: -5px;
      margin-top: -12px;
+     text-align: left;
 
  }
  .weirdTrio > img{
@@ -685,6 +688,7 @@ li > a > img{
     .statisticList{
         padding: 0px;
         font-size: 14px;
+        text-align: left;
     }
     .statistics{
         padding: -0px;
@@ -693,6 +697,7 @@ li > a > img{
         margin-top: -10px;
         margin-bottom: 0px;
         font-stretch: condensed;
+        text-align: left;
     }
     .quant{
         padding: 0;
@@ -700,6 +705,7 @@ li > a > img{
         font-weight: 300;
         margin-bottom: px;
         margin-top: -15px;
+        text-align: left;
 
     }
     .weirdTrio > img{
@@ -804,6 +810,7 @@ li > a > img{
     .statisticList{
         padding: 0px;
         font-size: 14px;
+        text-align: left;
     }
     .statistics{
         padding: -0px;
@@ -812,6 +819,7 @@ li > a > img{
         margin-top: 10px;
         margin-bottom: 0px;
         font-stretch: condensed;
+        text-align: left;
     }
     .quant{
         padding: 0;
@@ -819,6 +827,7 @@ li > a > img{
         font-weight: 300;
         margin-bottom: px;
         margin-top: -15px;
+        text-align: left;
 
     }
     .weirdTrio > img{

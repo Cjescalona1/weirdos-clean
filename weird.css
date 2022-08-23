@@ -297,9 +297,7 @@ li > a > img{
 .content>p{
     color: antiquewhite !important;
 }
-
-/*
-*/
+ 
 .colla{
     margin:  2em;
     width: 36vw;
@@ -339,8 +337,8 @@ li > a > img{
   margin-top: 0;  
   font-family:  galBold !important;
 } 
-/*
-*/
+
+
 
 @media screen and (min-width:768px) {
         nav{
@@ -534,6 +532,7 @@ li > a > img{
 }
 }
 @media  screen and (min-width: 768px) and (max-width: 1350px) {
+    
     .container{
         height: 450px;
         margin: 2em 0em;
@@ -661,6 +660,10 @@ li > a > img{
     width: 94%;
     margin: 2% 3% -2% 3%;
 }
+.navItems{
+    font-size: 0.85em;
+    margin-top: 0.65em;
+}
 }
 
 
@@ -783,6 +786,10 @@ li > a > img{
         border-radius: 8px;
         width: 94%;
         margin: 3% 3% -2% 3%;
+    }
+    .navItems{
+    font-size: 0.9em;
+    margin-top: 0.5em;
     }
 }
  

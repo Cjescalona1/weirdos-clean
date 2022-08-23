@@ -24,6 +24,10 @@ body{
     justify-content: center;
     
 }  
+/* toggle mute/unmute button class  */
+.mute{  }
+.unmute{   }
+
 .leftBox{
     width: 30%;
     background-image: url('res/papel.png');

@@ -284,6 +284,7 @@ li > a > img{
 .foot2>.colla>*, .collapsible{
     color: antiquewhite !important;
     font-family: gloria !important;
+    text-align: left;
 }
 .devil{
     background-color: #212121; 
@@ -407,12 +408,6 @@ li > a > img{
     .cummulative{
         padding: 0.4em 1.5em !important;
     } 
-
-    body{ 
-            background-image: none !important;
-            background-color: #a2faab;
-            
-    } 
     .desktopClaim{
         display: none;
     }
@@ -465,7 +460,7 @@ li > a > img{
     .emptyWeirdo>img{
         position: relative;
         top: 4%;
-        left: 5%;
+        left: 0%;
         width: 90%;
         height: 65%;
     }
@@ -745,6 +740,7 @@ li > a > img{
         text-align: left;
         padding: 1em 1em 0em 1em;
         line-height: 12px;  
+        margin-left: -3px;
         color: aliceblue !important; 
           
     }
@@ -835,7 +831,8 @@ li > a > img{
         justify-content: center;
         text-align: left;
         padding: 0.5em;
-        line-height: 12px;    
+        line-height: 12px;   
+        margin-left: -3px; 
     }
     .weirdos{
         margin-top: calc(9em + 5%);
@@ -848,7 +845,7 @@ li > a > img{
         grid-gap: 1em 0em;
     }
     .emptyWeirdo{
-        height: 14-7em;
+        height: 14.7em;
         width: 10.5em;
         position: relative; 
         background-color: rgb(61, 25, 83);

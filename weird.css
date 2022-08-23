@@ -277,6 +277,10 @@ li > a > img{
     width: 40vw;
     height: 100%;
 }
+.whitespace>img{
+    width: 100%;
+}
+
 .foot2>.colla>*, .collapsible{
     color: antiquewhite !important;
     font-family: gloria !important;
@@ -284,7 +288,7 @@ li > a > img{
 .devil{
     background-color: #212121; 
     width: 100vw;
-    height: 3em;
+    height: 4em;
     position: relative;
     
 }

@@ -175,7 +175,7 @@ body{
 }
 .headerBar{
  
-    background-color: #250a3d;
+    background-color: #300753;
     padding: 2em 0em;
     border-bottom: #fecd19 2px solid;
     height: 2.4em;
@@ -267,7 +267,7 @@ li > a > img{
 
  .foot {
     position: absolute;
-    background-color: #250a3d;
+    background-color: #10011f;
     width: 100vw;
     padding: 0em;
     display: block;

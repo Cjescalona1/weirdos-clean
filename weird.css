@@ -725,7 +725,7 @@ li > a > img{
         grid-gap: 1em 0em;
     }
     .emptyWeirdo{
-        height: 14.6em;
+        height: 14.5em;
         width: 10.5em;
         position: relative; 
         background-color: rgb(61, 25, 83);
@@ -746,10 +746,10 @@ li > a > img{
     }
     .emptyWeirdo>img{
         position: relative;
-        top: 2%;
+        top: 2.5%;
         left: 0%;
         width: 93.5%;
-        height: 68%;
+        height: 66%;
     }
     .st1{
         top: -6em;

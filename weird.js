@@ -1,9 +1,6 @@
-
-
-
+function collapse(){
 var coll = document.getElementsByClassName("collapsible");
 var i;
-
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
@@ -14,6 +11,7 @@ for (i = 0; i < coll.length; i++) {
       content.style.display = "block";
     }
   });
+}
 }
 
 function toggleMuted() {
@@ -29,7 +27,6 @@ function toggleMuted() {
     button.classList.add("mute")
     button.classList.remove("unmute")
    
-  }
-  changes
+  } 
 }
 

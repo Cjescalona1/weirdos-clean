@@ -136,7 +136,7 @@ body{
     position: relative; 
     background-color: white;
 }
-.emptyWeirdo::after{
+.checkW::after{
     content: "";
     position: absolute;
     top: 1px;
@@ -149,6 +149,21 @@ body{
     background-position: center;
     opacity: 1;
 }
+
+.crossW::after{
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 2em;
+    height: 2em;
+    background-image: url('res/Iconos-09.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    opacity: 1;
+}
+ 
 
 .weirdMessage{
     font-size: 9px;

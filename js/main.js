@@ -29,6 +29,7 @@ var contract2;
 let UserStake;
 let pointUSer;
 var totalstaked;
+let HoldersattheUnderworld
 const NftsAddress = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
 const NftsAddress2 = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
 const stakeAddress = "0x11C8894F7827fF669f0Bc5d990962BBB0Df768Ff";
@@ -1532,7 +1533,8 @@ async function loadAccount() {
     .stakedNFTSByUser(accounts[0], NftsAddress)
     .call();
   UserStake = await stake.methods.tokensStakedByUser(accounts[0]).call();
-
+  HoldersattheUnderworld = await stake.methods.amountOfStakers().call();
+  console.log(HoldersattheUnderworld)
   balanceStake2 = await stake.methods
     .stakedNFTSByUser(accounts[0], NftsAddress2)
     .call();
@@ -1999,18 +2001,20 @@ async function loadAccount() {
     currentAddr[currentAddr.length - 1];
 
   console.log(connectedAddr);
-  document.getElementById("Your_Weirdos").textContent =
-    parseFloat(balance) + parseFloat(balance2);
-  document.getElementById("Staked").textContent = UserStake;
-  document.getElementById("Total_Stake").textContent = parseFloat(totalstaked);
-  document.getElementById("connected").textContent = connectedAddr;
-  document.getElementById("connected2").textContent = connectedAddr;
+  console.log(HoldersattheUnderworld);
+  // document.getElementById("Your_Weirdos").textContent =
+  //   parseFloat(balance) + parseFloat(balance2);
+  // document.getElementById("Staked").textContent = UserStake;
+  // document.getElementById("Total_Stake").textContent = parseFloat(totalstaked);
+  // document.getElementById("connected").textContent = connectedAddr;
+  // document.getElementById("connected2").textContent = connectedAddr;
+  document.getElementById("holders").textContent = HoldersattheUnderworld;
 
-  document.getElementById("Your_Weirdos_M").textContent =
-    parseFloat(balance) + parseFloat(balance2);
-  document.getElementById("Staked_M").textContent = UserStake;
-  document.getElementById("Total_Stake_M").textContent =
-    parseFloat(totalstaked);
+  // document.getElementById("Your_Weirdos_M").textContent =
+  //   parseFloat(balance) + parseFloat(balance2);
+  // document.getElementById("Staked_M").textContent = UserStake;
+  // document.getElementById("Total_Stake_M").textContent =
+  //   parseFloat(totalstaked);
 }
 
 async function loadDapp() {

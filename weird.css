@@ -30,8 +30,21 @@ body{
     color: antiquewhite !important;
 }
 /* toggle mute/unmute button class  */
-.mute{  }
-.unmute{   }
+.mute{ 
+    background-image: url("res/1.png");
+    background-size: cover;
+    height: 2em;
+    width: 2em;
+ }
+.unmute{ 
+    background-image: url("res/8.png");
+    background-size: cover;
+    height: 2em;
+    width: 2em;
+  }
+  .mute:hover,.unmute:hover{
+    cursor:pointer; 
+  }
 
 .leftBox{
     width: 30%;

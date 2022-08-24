@@ -19,7 +19,7 @@
                 <li><a href="#">FAQ</a></li>
                 <li><a href="#">Approve Stake</a></li>
                 <li><a href="#">Aprove Weirdos</a></li>
-                <li class="uwuClaim " ><div class="cummulative"> 0235.46 $UWU</div> <a href="#"><div class="claimButton">Claim Rewards</div></a></li>
+                <li class="uwuClaim " ><div class="cummulative" id="Your_Reward"> </div> <a href="#"><div class="claimButton">Claim Rewards</div></a></li>
                 <li class="socialButtons"><a href="#">
                     <img src="res/62fca40cea0f2647f8c1e172_af-discord-logo.png" alt="">
                 </a>
@@ -159,91 +159,12 @@
         </div>
         <div class="separator"> </div>
         <div class="rightBox">
-            <div class="rightBoxContent">
+            <div class="rightBoxContent" id="rightBoxContent">
                  
          
-                <div class="weirdos">
-                    <div class="emptyWeirdo">
-                        <img src="res/179.png" alt="">
-                        <div class="yellowBand">Weirdo #183</div>
-                        <div class="weirdMessage">
-                            How do you make a weirdo cry? - Drain his wallet.                        </div>            
-                    </div> 
-                    <div class="emptyWeirdo">
-                        <img src="res/413.png" alt="">
-                        <div class="yellowBand">Weirdo #183</div>
-                        <div class="weirdMessage">
-                           One advantage of talking to yourself is that you know at least somebody's listening, weirdo.
-                        </div>            
-                    </div> 
-                    <div class="emptyWeirdo">
-                        <img src="res/10.png" alt="">
-                        <div class="yellowBand">Weirdo #183</div>
-                        <div class="weirdMessage">
-                            I was the weird kid next door's imaginary friend.                        </div>            
-                    </div> 
-                    <div class="emptyWeirdo">
-                        <img src="res/11.png" alt="">
-                        <div class="yellowBand">Weirdo #183</div>
-                        <div class="weirdMessage">
-                            I like Ouija boards - It's the only game I can still play with grandma.                        </div>            
-                    </div> 
-                    <div class="emptyWeirdo">
-                        <img src="res/13.png" alt="">
-                        <div class="yellowBand">Weirdo #183</div>
-                        <div class="weirdMessage">
-                            With great power comes great need to take a nap. Wake me up later.                        </div>            
-                    </div> 
-                    <div class="emptyWeirdo">
-                        <img src="res/30.png" alt="">
-                        <div class="yellowBand">Weirdo #183</div>
-                        <div class="weirdMessage">
-                            So apparently the 'bad vibes' I've been feeling are actually severe psychological distress.                        </div>            
-                    </div> 
-                    <div class="emptyWeirdo">
-                        <img src="res/41.png" alt="">
-                        <div class="yellowBand">Weirdo #183</div>
-                        <div class="weirdMessage">
-                            Died and came back as a cowboy, I call that reintarnation.                        </div>            
-                    </div> 
-                    <div class="emptyWeirdo">
-                        <img src="res/44.png" alt="">
-                        <div class="yellowBand">banda amarilla</div>
-                        <div class="weirdMessage">
-                            I’m not superstitious, but I am a little stitious.                        </div>            
-                    </div> 
-                    <div class="emptyWeirdo">
-                        <img src="res/45.png" alt="">
-                        <div class="yellowBand">banda amarilla</div>
-                        <div class="weirdMessage">
-                            Truth hurts. Maybe not as much as jumping on a bicycle with a seat missing, but it hurts.                        </div>            
-                    </div> 
-                    <div class="emptyWeirdo">
-                        <img src="res/179.png" alt="">
-                        <div class="yellowBand">banda amarilla</div>
-                        <div class="weirdMessage">
-                            I’m not insane. My mother had me tested.                        </div>            
-                    </div> 
-                    <div class="emptyWeirdo">
-                        <img src="res/179.png" alt="">
-                        <div class="yellowBand">banda amarilla</div>
-                        <div class="weirdMessage">
-                            I’m not good at the advice. Can I interest you in a sarcastic comment?                        </div>            
-                    </div> 
-                    <div class="emptyWeirdo">
-                        <img src="res/179.png" alt="">
-                        <div class="yellowBand">banda amarilla</div>
-                        <div class="weirdMessage">
-                            Never under any circumstances take a sleeping pill and a laxative on the same night                        </div>            
-                    </div> 
-                    <div class="emptyWeirdo">
-                        <img src="res/179.png" alt="">
-                        <div class="yellowBand">banda amarilla</div>
-                        <div class="weirdMessage">
-                           One advantage of talking to yourself is that you know at least somebody's listening, weirdo.
-                        </div>            
-                    </div> 
-                     
+                <div class="weirdos" id="weirdosAll">
+                    
+  
                 </div>
             </div>
         </div>
@@ -288,4 +209,11 @@
 </body>
 
 <script src="weird.js"></script>
+<script type="text/javascript" src="js/trait.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="js/web3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/app.js"></script>
 </html>

@@ -136,7 +136,7 @@ body{
     position: relative; 
     background-color: white;
 }
-.emptyWeirdo::after{
+.checkW::after{
     content: "";
     position: absolute;
     top: 1px;
@@ -149,6 +149,21 @@ body{
     background-position: center;
     opacity: 1;
 }
+
+.crossW::after{
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 2em;
+    height: 2em;
+    background-image: url('res/Iconos-09.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    opacity: 1;
+}
+ 
 
 .weirdMessage{
     font-size: 9px;
@@ -725,70 +740,14 @@ li > a > img{
         
 }
 
-.foot {
-    position: absolute;
-    background-color: #10011f;
-    width: 100vw;
-    padding: 0em;
-    display: block;
-}
-.foot2{
-    margin: 4em 0em 0em 0em;
-    display: -webkit-inline-box;
-}
-
-.whitespace{
-    width: 35%;
-    width: 240px;
-    text-align: left;
-    margin-top: -1.5em;
-    color: #eee;
-    margin-right: 3.2em;
-    margin-left: 0em;
-    font-size: 12px;
-    
-    
-}
-
-.foot2>.colla>*, .collapsible{
-
-    color: #473558 !important;
-    font-family: gloria !important;
-    text-align: left;
-    background-color: #f3fcd1;
-    border-style: inset;
-    border-color: #3eff68;
-    margin-top: -3px;
-    width: 100%; 
-    font-size: 12px;
-}
- 
-
-.devil{
-    background-color: #212121; 
-    width: 100vw;
-    height: 4em;
-    position: relative;
-    padding-top: 1em;
-    margin-top: 3em;
-
-    
-}
-.content>p{
-    color: antiquewhite !important;
-    background-color: #92c972;
-    margin: 0em 0em 0em 0em;
-    padding: 1.5em;
-    width: 99.1%; 
-    
-    
-}
- 
 .colla{
-    margin: 0em 0em 0em 0em;
-    width: 680px; 
-    
+    width: 680px;
 }
+.content{
+    width: 99.1% !important;
+}
+
+
 }
 
 
@@ -929,72 +888,8 @@ li > a > img{
         background-size: 100% 100%;
         background-position: center;
         opacity: 1;
-          
+            
     }
-    .foot {
-        position: absolute;
-        background-color: #10011f;
-        width: 100vw;
-        padding: 0em;
-        display: block;
-    }
-    .foot2{
-        margin: 4em 0em 0em 0em;
-        display: -webkit-inline-box;
-    }
-    
-    .whitespace{
-        width: 35%;
-        width: 300px;
-        text-align: left;
-        margin-top: -1.3em;
-        color: #eee;
-        margin-right: 3em;
-        margin-left: 0em;
-        font-size: 14px;
-        
-        
-    }
-    
-    .foot2>.colla>*, .collapsible{
-    
-        color: #473558 !important;
-        font-family: gloria !important;
-        text-align: left;
-        background-color: #f3fcd1;
-        border-style: inset;
-        border-color: #3eff68;
-        margin-top: -3px;
-        width: 100%; 
-    }
-     
-    
-    .devil{
-        background-color: #212121; 
-        width: 100vw;
-        height: 4em;
-        position: relative;
-        padding-top: 1em;
-        margin-top: 3em;
-    
-        
-    }
-    .content>p{
-        color: antiquewhite !important;
-        background-color: #92c972;
-        margin: 0em 0em 0em 0em;
-        padding: 1.5em;
-        width: 100%; 
-        
-        
-    }
-     
-    .colla{
-        margin: 0em 0em 0em 0em;
-        width: 800px; 
-        
-    }
-    
 }
  
 
@@ -1116,68 +1011,6 @@ li > a > img{
         border-radius: 8px;
         width: 94%;
         margin: 3% 3% -2% 3%;
-    }
-    .foot {
-        position: absolute;
-        background-color: #10011f;
-        width: 100vw;
-        padding: 0em;
-        display: block;
-    }
-    .foot2{
-        margin: 4em 0em 0em 0em;
-        display: -webkit-inline-box;
-    }
-    
-    .whitespace{
-        width: 35%;
-        width: 350px;
-        text-align: left;
-        margin-top: -1.3em;
-        color: #eee;
-        margin-right: 4em;
-        margin-left: 1em;
-        
-        
-    }
-    
-    .foot2>.colla>*, .collapsible{
-    
-        color: #473558 !important;
-        font-family: gloria !important;
-        text-align: left;
-        background-color: #f3fcd1;
-        border-style: inset;
-        border-color: #3eff68;
-        margin-top: -3px;
-        width: 100%; 
-    }
-     
-    
-    .devil{
-        background-color: #212121; 
-        width: 100vw;
-        height: 4em;
-        position: relative;
-        padding-top: 1em;
-        margin-top: 3em;
-    
-        
-    }
-    .content>p{
-        color: antiquewhite !important;
-        background-color: #92c972;
-        margin: 0em 0em 0em 0em;
-        padding: 1.5em;
-        width: 100%; 
-        
-        
-    }
-     
-    .colla{
-        margin: 0em 0em 0em 0em;
-        width: 1000px; 
-        
     }
 }
 

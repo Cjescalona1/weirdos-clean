@@ -1781,7 +1781,7 @@ const NftApro = async () => {
 
 
 const Stake = async (_idnfts) => {
-  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
+  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
   let traitID = await Idtraits(_idnfts);
   console.log(add);
   stake.methods
@@ -1796,7 +1796,7 @@ const Stake = async (_idnfts) => {
 
 
 const Claim = async () => {
-  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
+  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
 
   stake.methods
     .harvestBatch(accounts[0], add)
@@ -1822,7 +1822,7 @@ const UnStake = async (_idnfts) => {
 
 
 
-  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
+  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
   await stake.methods
     .unstake(_idnfts, add)
     .send({ from: accounts[0] })

@@ -17,9 +17,12 @@
                 <li><a href="#">Collections</a></li>
                 <li><a href="#">Tokens</a></li>
                 <li><a href="#">FAQ</a></li>
-                <li><a href="#">Approve Stake</a></li>
-                <li><a href="#">Aprove Weirdos</a></li>
-                <li class="uwuClaim " ><div class="cummulative" id="Your_Reward"> </div> <a href="#"><div class="claimButton">Claim Rewards</div></a></li>
+                <li><a href="#" id="aprobar" onclick="NftApro()">Approve Stake</a></li>
+
+                <li class="uwuClaim " ><div class="cummulative" id="Your_Reward"> </div> <a href="#">
+                    <div class="claimButton" onclick="Claim()" style="display: none;" id="Claim">Claim Rewards</div>
+                    <div class="claimButton" onclick="connectWallet()" id="connectWallet">Connect</div>
+                </a></li>
                 <li class="socialButtons"><a href="#">
                     <img src="res/62fca40cea0f2647f8c1e172_af-discord-logo.png" alt="">
                 </a>
@@ -73,7 +76,7 @@
                 <a href="#">FAQ</a>
             </li>
             <li ><a class=" approve" href="#">Approve Stake</a></li>
-            <li ><a class=" approve" style="margin-top: 3.5em;" href="#">Approve Weirdos</a></li>
+
             
 
              <div class="contMobSocialButtons">
@@ -103,7 +106,10 @@
         </div>
     </header> 
     <div class="container">
-        <div class="uwuClaim mobileUwuClaim" ><div class="cummulative">  0235.46 $UWU</div> <a href="#"><div class="claimButton">Claim Rewards</div></a></div>
+        <div class="uwuClaim mobileUwuClaim" ><div class="cummulative" id="Your_RewardM"> 0</div> <a href="#">
+            <div class="claimButton" onclick="connectWallet()" id="connectWalletM" >Connect</div>    
+            <div class="claimButton" onclick="Claim()" style="display: none;" id="ClaimM" >Claim Rewards</div>    
+        </a></div>
         <div class="leftBox">
             <div class="leftBoxContent">
                 <div class="statistics">Statistics:</div>
@@ -118,8 +124,8 @@
                     </div>
 
                     <div class="statBox">
-                        <div class="quant" >
-                            2693
+                        <div class="quant" id="trait1Total">
+                            0
                         </div>
                         <div>
                         Weirdos without Bonus
@@ -161,9 +167,10 @@
         <div class="rightBox">
             <div class="rightBoxContent" id="rightBoxContent">
                  
-         
+                <div id="Wallet"></div>
+                <div id="Your_Weirdos"></div>
                 <div class="weirdos" id="weirdosAll">
-                    
+                  
   
                 </div>
             </div>

@@ -33,10 +33,11 @@ let HoldersattheUnderworld
 let Trait1
 let Trait2
 let Trait3
+let TokenCambio
 const NftsAddress = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
 const NftsAddress2 = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
-const stakeAddress = "0x37C21EC334f1059c9301E26BB985EFA0b2983eFE";
-const tokenAddress = "0xC586a4A0dB0bC1169d490b8FBF0633cC06d0f0d3"; // mainnet busd
+const stakeAddress = "0xCC2C613c69bA90977AA4c15B9bA81077f602CA29";
+const tokenAddress = "0x410ce9E4B6B15Ec2d86443461ad372B4A381bA09"; // mainnet busd
 
 const NftsABI = [
   {
@@ -1531,7 +1532,7 @@ async function loadAccount() {
   accounts = await web3.eth.getAccounts();
   //pointUSer = await stake.methods.pointUSer().call();
   balance = await contract.methods.balanceOf(accounts[0]).call();
-  var balance2 = await contract2.methods.balanceOf(accounts[0]).call();
+ 
   balanceStake = await stake.methods
     .stakedNFTSByUser(accounts[0], NftsAddress)
     .call();
@@ -1544,18 +1545,27 @@ async function loadAccount() {
   balanceStake2 = await stake.methods
     .stakedNFTSByUser(accounts[0], NftsAddress2)
     .call();
-  console.log(balanceStake2)
+
   // balanceStake2 = await stake.methods.myNfts2(accounts[0]).call()
   totalstaked = await stake.methods.tokensStaked().call();
-  console.log(totalstaked);
+
   // var totalstaked2 = await stake.methods.getStakeNftBalance2().call()
 
-
+  await tokenContract.methods
+  .balanceOf(accounts[0])
+  .call()
+  .then((userBalance) => {
+     TokenCambio = web3.utils.fromWei(userBalance);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
   
   document.getElementById("trait1").textContent = Trait1;
   document.getElementById("trait2").textContent = Trait2;
   document.getElementById("trait3").textContent = Trait3;
+  document.getElementById("trait1Total").textContent = parseFloat(Trait1)+parseFloat(Trait2)+parseFloat(Trait3);
 
 
   for (var i = 0; i < balance; i++) {
@@ -1563,25 +1573,9 @@ async function loadAccount() {
       .tokenOfOwnerByIndex(accounts[0], i)
       .call();
   }
-  for (var i = 0; i < balance2; i++) {
-    misNftsID2[i] = await contract2.methods
-      .tokenOfOwnerByIndex(accounts[0], i)
-      .call();
-  }
+
   //console.log(misNftsID)
 
- // es aprovado
-  if (balance2 <= 0 && balanceStake2.length <= 0) {
-    $("#aprobar2").hide();
-    $(".StakeSpecial").hide();
-
-  }
-
-  if (balance2 <= 0 && balanceStake2.length <= 0) {
-    $("#aprobarMN").hide();
-    $(".StakeSpecialM").hide();
-
-  }
 
   IsAproba = await contract.methods
     .isApprovedForAll(accounts[0], stakeAddress)
@@ -1607,85 +1601,7 @@ async function loadAccount() {
   if (IsAproba2) {
     $("#aprobarMN").hide();
   }
-  //console.log(IsAproba)
 
-  // for (let e = 0; e < misNftsID2.length; e++) {
-  //   imgURL =
-  //     "https://safe-nft-metadata-provider-3nbhr.ondigitalocean.app/metadata/" +
-  //     misNftsID2[e] +
-  //     ".json";
-  //   axios
-  //     .get(imgURL)
-  //     .then((response) => {
-  //       // función que se ejecutará al recibir una respuesta
-  //       var nftsMis = response.data.image;
-  //       console.log(nftsMis);
-  //       const nftdiv = document.getElementById("carousel-img1");
-  //       const insertarnft = document.createElement("div");
-  //       insertarnft.classList.add("column");
-  //       insertarnft.classList.add("is-one-quarter-desktop");
-  //       insertarnft.classList.add("is-half-tablet");
-
-  //       insertarnft.innerHTML = ` 
-        
-  //       <div class="card is-loaded">
-  //       <div class="card-image is-loaded"  style="background-image: url(${nftsMis})" data-image-full="${nftsMis}">
-  //         <img src=${nftsMis}" alt="Psychopomp" />
-  //       </div>
-  //       <div class="card-description">
-  //         <h2>Weirdo Special #${misNftsID2[e]}</h2>
-  //         <a onclick="Stake2(${misNftsID2[e]}, 0)" class="boton azul">Stake</a >
-          
-  //       </div>
-  //     </div>
-  //       `;
-
-  //       nftdiv.appendChild(insertarnft);
-  //     })
-  //     .catch(function (error) {
-  //       // función para capturar el error
-  //       console.log(error);
-  //     });
-  // }
-
-  // for (let e = 0; e < misNftsID2.length; e++) {
-  //   imgURL =
-  //     "https://safe-nft-metadata-provider-3nbhr.ondigitalocean.app/metadata/" +
-  //     misNftsID2[e] +
-  //     ".json";
-  //   axios
-  //     .get(imgURL)
-  //     .then((response) => {
-  //       // función que se ejecutará al recibir una respuesta
-  //       var nftsMis = response.data.image;
-
-  //       const nftdiv = document.getElementById("carousel-img1-M");
-  //       const insertarnft = document.createElement("div");
-  //       insertarnft.classList.add("column");
-  //       insertarnft.classList.add("is-one-quarter-desktop");
-  //       insertarnft.classList.add("is-half-tablet");
-
-  //       insertarnft.innerHTML = ` 
-        
-  //       <div class="card is-loaded">
-  //       <div class="card-image is-loaded"  style="background-image: url(${nftsMis})" data-image-full="${nftsMis}">
-  //         <img src=${nftsMis}" alt="Psychopomp" />
-  //       </div>
-  //       <div class="card-description">
-  //         <h2>Weirdo Special #${misNftsID2[e]}</h2>
-  //         <a onclick="Stake2(${misNftsID2[e]}, 0)" class="boton azul">Stake</a >
-          
-  //       </div>
-  //     </div>
-  //       `;
-
-  //       nftdiv.appendChild(insertarnft);
-  //     })
-  //     .catch(function (error) {
-  //       // función para capturar el error
-  //       console.log(error);
-  //     });
-  // }
 
   for (let e = 0; e < misNftsID.length; e++) {
     imgURL = "https://weirdometada.com/" + misNftsID[e];
@@ -1703,11 +1619,7 @@ async function loadAccount() {
 
 
         insertarnft.innerHTML = ` 
-        
-
-
-
-                        <img src=${nftsMis} alt="">
+                        <img src=${nftsMis} alt="" onclick="Stake(${misNftsID[e]})" >
                         <div class="yellowBand">Weirdo #${misNftsID[e]}</div>
                         <div class="weirdMessage">
                             How do you make a weirdo cry? - Drain his wallet.
@@ -1723,42 +1635,6 @@ async function loadAccount() {
       });
   }
 
-  // for (let e = 0; e < misNftsID.length; e++) {
-  //   imgURL = "https://weirdometada.com/" + misNftsID[e];
-
-  //   axios
-  //     .get(imgURL)
-  //     .then((response) => {
-  //       // función que se ejecutará al recibir una respuesta
-  //       var nftsMis = response.data.image;
-  //       //console.log(nftsMis)
-  //       const nftdiv = document.getElementById("carousel-img1-M");
-  //       const insertarnft = document.createElement("div");
-  //       insertarnft.classList.add("column");
-  //       insertarnft.classList.add("is-one-quarter-desktop");
-  //       insertarnft.classList.add("is-half-tablet");
-
-  //       insertarnft.innerHTML = ` 
-        
-  //       <div class="card is-loaded">
-  //       <div class="card-image is-loaded"  style="background-image: url(${nftsMis})" data-image-full="${nftsMis}">
-  //         <img src=${nftsMis}" alt="Psychopomp" />
-  //       </div>
-  //       <div class="card-description">
-  //         <h2>Weirdo #${misNftsID[e]}</h2>
-  //         <a onclick="Stake(${misNftsID[e]})" class="boton azul">Stake</a >
-          
-  //       </div>
-  //     </div>
-  //       `;
-
-  //       nftdiv.appendChild(insertarnft);
-  //     })
-  //     .catch(function (error) {
-  //       // función para capturar el error
-  //       console.log(error);
-  //     });
-  // }
 
   for (let e = 0; e < balanceStake.length; e++) {
     imgURL = "https://weirdometada.com/" + balanceStake[e];
@@ -1782,6 +1658,8 @@ async function loadAccount() {
                   
             document.getElementById("Your_Reward").textContent =
               `${TokenUser.toFixed(2)} $UWU`
+              document.getElementById("Your_RewardM").textContent =
+              `${TokenUser.toFixed(2)} $UWU`
 
             const nftdiv = document.getElementById("weirdosAll");
             const insertarnft = document.createElement("div");
@@ -1790,7 +1668,7 @@ async function loadAccount() {
 
             insertarnft.innerHTML = `
 
-         <img src=${nftsMis} alt="">
+         <img src=${nftsMis} alt="" onclick="UnStake(${misNftsID[e]})">
          <div class="yellowBand">Weirdo #${balanceStake[e]}</div>
          <div class="weirdMessage">
              How do you make a weirdo cry? - Drain his wallet.
@@ -1811,194 +1689,6 @@ async function loadAccount() {
       });
   }
 
-  // for (let e = 0; e < balanceStake.length; e++) {
-  //   imgURL = "https://weirdometada.com/" + balanceStake[e];
-  //   axios
-  //     .get(imgURL)
-  //     .then((response) => {
-  //       //console.log(imgURL)
-
-  //       // función que se ejecutará al recibir una respuesta
-  //       var nftsMis = response.data.image;
-
-  //       stake.methods
-  //         .pendingRewards(accounts[0], balanceStake[e], NftsAddress)
-  //         .call()
-  //         .then((userBalance) => {
-  //           TotalMinado = web3.utils.fromWei(userBalance);
-  //           /*  TokenUser  = parseFloat(TokenUser) + parseFloat(TotalMinado) ;*/
-
-  //           TotalMinado = parseFloat(TotalMinado).toFixed(3);
-  //           document.getElementById("Your_Reward").textContent =
-  //             `${TokenUser.toFixed(2)} $UWU`
-  //           document.getElementById("Your_Reward_M").textContent =
-  //             `${TokenUser.toFixed(2)} $UWU`
-
-  //           const nftdiv = document.getElementById("carousel-img2");
-  //           const insertarnft = document.createElement("div");
-  //           insertarnft.classList.add("column");
-  //           insertarnft.classList.add("is-one-quarter-desktop");
-  //           insertarnft.classList.add("is-half-tablet");
-
-  //           insertarnft.innerHTML = `
-  //          <div class="card is-loaded">
-  //          <div class="card-image is-loaded"  style="background-image: url(${nftsMis})" data-image-full="${nftsMis}">
-  //            <img src=${nftsMis}" alt="Psychopomp" />
-  //          </div>
-  //          <div class="card-description">
-  //            <h2>Weirdo #${balanceStake[e]}</h2>
-  //            <p>Total Mined ${TotalMinado}</p>
-  //            <a onclick="UnStake(${balanceStake[e]})" class="boton azul">UnStake</a >
-
-  //          </div>
-  //        </div>
-  //      `;
-  //           nftdiv.appendChild(insertarnft);
-  //         })
-  //         .catch(function (error) {
-  //           // función para capturar el error
-  //           console.log(error);
-  //         });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
-
-  // for (let e = 0; e < balanceStake2.length; e++) {
-  //   imgURL =
-  //     "https://safe-nft-metadata-provider-3nbhr.ondigitalocean.app/metadata/" +
-  //     balanceStake2[e] +
-  //     ".json";
-  //   axios
-  //     .get(imgURL)
-  //     .then((response) => {
-  //       //console.log(imgURL)
-
-  //       // función que se ejecutará al recibir una respuesta
-  //       var nftsMis = response.data.image;
-
-  //       stake.methods
-  //         .pendingRewards(accounts[0], balanceStake2[e], NftsAddress2)
-  //         .call()
-  //         .then((userBalance2) => {
-  //           var TotalMinado2 = web3.utils.fromWei(userBalance2) ;
-
-  //           TokenUser = parseFloat(TokenUser) + parseFloat(TotalMinado2) * 10;
-  //           TotalMinado2 = parseFloat(TotalMinado2 * 10).toFixed(3);
-
-  //           document.getElementById("Your_Reward").textContent =
-  //             `${TokenUser.toFixed(2)} $UWU`
-  //           document.getElementById("Your_Reward_M").textContent =
-  //             `${TokenUser.toFixed(2)} $UWU`
-  //           const nftdiv = document.getElementById("carousel-img3");
-  //           const insertarnft = document.createElement("div");
-  //           insertarnft.classList.add("column");
-  //           insertarnft.classList.add("is-one-quarter-desktop");
-  //           insertarnft.classList.add("is-half-tablet");
-
-  //           insertarnft.innerHTML = `
-  //          <div class="card is-loaded">
-  //          <div class="card-image is-loaded"  style="background-image: url(${nftsMis})" data-image-full="${nftsMis}">
-  //            <img src=${nftsMis}" alt="Psychopomp" />
-  //          </div>
-  //          <div class="card-description">
-  //            <h2>Special Weirdo #${balanceStake2[e]}</h2>
-  //            <p>Total Mined ${TotalMinado2}</p>
-  //            <a onclick="UnStake2(${balanceStake2[e]})" class="boton azul">UnStake</a >
-
-  //          </div>
-  //        </div>
-  //      `;
-  //           nftdiv.appendChild(insertarnft);
-  //         })
-  //         .catch(function (error) {
-  //           // función para capturar el error
-  //           console.log(error);
-  //         });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
-  // for (let e = 0; e < balanceStake2.length; e++) {
-  //   imgURL =
-  //     "https://safe-nft-metadata-provider-3nbhr.ondigitalocean.app/metadata/" +
-  //     balanceStake2[e] +
-  //     ".json";
-  //   axios
-  //     .get(imgURL)
-  //     .then((response) => {
-  //       //console.log(imgURL)
-
-  //       // función que se ejecutará al recibir una respuesta
-  //       var nftsMis = response.data.image;
-
-  //       stake.methods
-  //         .pendingRewards(accounts[0], balanceStake2[e], NftsAddress2)
-  //         .call()
-  //         .then((userBalance2) => {
-  //           var TotalMinado2 = web3.utils.fromWei(userBalance2);
-
-  //           TotalMinado2 = parseFloat(TotalMinado2 * 10).toFixed(3);
-
-  //           document.getElementById("Your_Reward").textContent =`${TokenUser.toFixed(2)} $UWU`
-            
-  //           document.getElementById("Your_Reward_M").textContent =
-  //             `${TokenUser.toFixed(2)} $UWU`
-  //           const nftdiv = document.getElementById("carousel-img3-M");
-  //           const insertarnft = document.createElement("div");
-  //           insertarnft.classList.add("column");
-  //           insertarnft.classList.add("is-one-quarter-desktop");
-  //           insertarnft.classList.add("is-half-tablet");
-
-  //           insertarnft.innerHTML = `
-  //          <div class="card is-loaded">
-  //          <div class="card-image is-loaded"  style="background-image: url(${nftsMis})" data-image-full="${nftsMis}">
-  //            <img src=${nftsMis}" alt="Psychopomp" />
-  //          </div>
-  //          <div class="card-description">
-  //            <h2>Special Weirdo #${balanceStake2[e]}</h2>
-  //            <p>Total Mined ${TotalMinado2}</p>
-  //            <a onclick="UnStake2(${balanceStake2[e]})" class="boton azul">UnStake</a >
-
-  //          </div>
-  //        </div>
-  //      `;
-  //           nftdiv.appendChild(insertarnft);
-  //         })
-  //         .catch(function (error) {
-  //           // función para capturar el error
-  //           console.log(error);
-  //         });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
-
-  tokenContract.methods
-    .balanceOf(accounts[0])
-    .call()
-    .then((userBalance) => {
-      let amt = web3.utils.fromWei(userBalance);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  tokenContract.methods
-    .allowance(accounts[0], NftsAddress)
-    .call()
-    .then((result) => {
-      spend = web3.utils.fromWei(result);
-      if (spend > 0) {
-        // alert(spend)
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
 
   currentAddr = accounts[0];
   var connectedAddr =
@@ -2020,7 +1710,8 @@ async function loadAccount() {
   //   parseFloat(balance) + parseFloat(balance2);
   // document.getElementById("Staked").textContent = UserStake;
   // document.getElementById("Total_Stake").textContent = parseFloat(totalstaked);
-  // document.getElementById("connected").textContent = connectedAddr;
+  document.getElementById("Wallet").textContent = connectedAddr;
+  document.getElementById("Your_Weirdos").textContent =  parseFloat(totalstaked) + "/" +  (parseFloat(balance) + parseFloat(TokenCambio)) ; 
   // document.getElementById("connected2").textContent = connectedAddr;
   document.getElementById("holders").textContent = HoldersattheUnderworld;
 
@@ -2038,14 +1729,7 @@ async function loadDapp() {
     web3 = await getWeb3();
     web3.eth.net.getId((err, netId) => {
       if (netId == NETWORK_ID) {
-        $("#nft-en-stake").hide();
-        $("#nftspecials").hide();
-        $("#nftspecialsM").hide();
-        $("#StakeAllSpecial").hide();
-        $("#StakeAllSpecialM").hide();
-        $("#nft-en-stake-M").hide();
-        $("#ClaimSpecials").hide();
-        $("#ClaimSpecialsM").hide();
+
 
         var awaitContract = async function () {
           contract = await getContract(web3);
@@ -2056,7 +1740,13 @@ async function loadDapp() {
             if (err != null) console.error("An error occurred: " + err);
             else if (accounts.length == 0)
               console.log("User is not logged in to MetaMask");
+
+              
             else {
+             $("#Claim").show();
+             $("#connectWallet").hide();
+             $("#ClaimM").show();
+             $("#connectWalletM").hide();
               loadAccount();
             }
           });
@@ -2080,12 +1770,6 @@ const NftApro = async () => {
     .catch((revertReason) => {});
 };
 
-const NftApro2 = async () => {
-  const result = await contract2.methods
-    .setApprovalForAll(stakeAddress, true)
-    .send({ from: accounts[0], gas: 0, value: 0 })
-    .catch((revertReason) => {});
-};
 
 
 
@@ -2104,18 +1788,6 @@ const Stake = async (_idnfts) => {
 };
 
 
-const Stake2 = async (_idnfts) => {
-  let add = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
-  let traitID = 0
-  console.log(add);
-  stake.methods
-    .stake(_idnfts, add, [traitID])
-    .send({ from: accounts[0] })
-    .then((result) => {})
-    .catch((err) => {
-      console.log(err);
-    });
-};
 
 const Claim = async () => {
   let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
@@ -2124,42 +1796,28 @@ const Claim = async () => {
     .harvestBatch(accounts[0], add)
     .send({ from: accounts[0] })
     .then((result) => {
-      loadDapp();
+ 
     })
     .catch((err) => {
       console.log(err);
     });
 };
 
-const Claim2 = async () => {
-  let add = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
-
-  stake.methods
-    .harvestBatch(accounts[0], add)
-    .send({ from: accounts[0] })
-    .then((result) => {
-      loadDapp();
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
 //Unstaker
 const UnStake = async (_idnfts) => {
+
+  let amt = 1
+  let _spend = web3.utils.toWei(amt.toString())
+ await tokenContract.methods.approve(NftsAddress, _spend).send({ from: accounts[0] }).then(result => {
+
+  }).catch((err) => {
+    console.log(err)
+  });
+
+
+
   let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
-  stake.methods
-    .unstake(_idnfts, add)
-    .send({ from: accounts[0] })
-    .then((result) => {})
-    .catch((err) => {
-      console.log(err);
-    });
-};
-
-//Unstaker
-const UnStake2 = async (_idnfts) => {
-  let add = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
-  stake.methods
+  await stake.methods
     .unstake(_idnfts, add)
     .send({ from: accounts[0] })
     .then((result) => {})
@@ -2169,84 +1827,7 @@ const UnStake2 = async (_idnfts) => {
 };
 
 
-function NoStake() {
-  $("#InStake").removeClass("is-active");
-  $("#nft-en-stake-specials").removeClass("is-active");
-  $("#NoStake").addClass("is-active");
-  $("#nft-en-stake").hide();
-  $("#nft-no-stake").show();
-  $("#nftspecials").hide();
-  $("#StakeAllSpecial").hide();
-  $("#StakeAllnormal").show();
-  $("#ClaimSpecials").hide();
-  $("#ClaimNormal").show();
-}
-function InStake() {
-  $("#NoStake").removeClass("is-active");
-  $("#nft-en-stake-specials").removeClass("is-active");
 
-  $("#InStake").addClass("is-active");
-  $("#nft-no-stake").hide();
-  $("#nft-en-stake ").show();
-  $("#nftspecials").hide();
-  $("#StakeAllSpecial").hide();
-  $("#StakeAllnormal").show();
-  $("#ClaimSpecials").hide();
-  $("#ClaimNormal").show();
-}
-function InStakeSpecials() {
-  $("#NoStake").removeClass("is-active");
-  $("#InStake").removeClass("is-active");
-  $("#nft-en-stake-specials").addClass("is-active");
-  $("#nft-no-stake").hide();
-  $("#nft-en-stake").hide();
-  $("#nftspecials").show();
-  $("#StakeAllSpecial").show();
-  $("#StakeAllnormal").hide();
-  $("#ClaimNormal").hide();
-  $("#ClaimSpecials").show();
-}
-
-function NoStakeM() {
-  $("#InStakeM").removeClass("is-active");
-  $("#nft-en-stake-specialsM").removeClass("is-active");
-  $("#NoStakeM").addClass("is-active");
-  $("#nft-en-stake-M").hide();
-  $("#nftspecialsM").hide();
-  $("#nft-no-stake-M").show();
-  $("#ClaimSpecialsM").hide();
-  $("#ClaimNormalM").show();
-
-  $("#StakeAllSpecialM").hide();
-  $("#StakeAllnormalM").show();
-}
-function InStakeM() {
-  $("#NoStakeM").removeClass("is-active");
-  $("#nft-en-stake-specialsM").removeClass("is-active");
-  $("#InStakeM").addClass("is-active");
-  $("#nft-no-stake-M").hide();
-  $("#nftspecialsM").hide();
-  $("#nft-en-stake-M").show();
-  $("#ClaimSpecialsM").hide();
-  $("#ClaimNormalM").show();
-
-  $("#StakeAllSpecialM").hide();
-  $("#StakeAllnormalM").show();
-}
-function StakeSpecialM() {
-  $("#NoStakeM").removeClass("is-active");
-  $("#InStakeM").removeClass("is-active");
-
-  $("#nft-en-stake-specialsM").addClass("is-active");
-  $("#nft-no-stake-M").hide();
-  $("#nft-en-stake-M").hide();
-  $("#nftspecialsM").show();
-  $("#ClaimSpecialsM").show();
-  $("#ClaimNormalM").hide();
-
-  $("#StakeAllSpecialM").show();
-  $("#StakeAllnormalM").hide();
-}
 
 var coll = document.getElementsByClassName("collapsible");
 var i;

@@ -34,10 +34,10 @@ let Trait1
 let Trait2
 let Trait3
 let TokenCambio
-const NftsAddress = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
+const NftsAddress = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
 const NftsAddress2 = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
-const stakeAddress = "0xCC2C613c69bA90977AA4c15B9bA81077f602CA29";
-const tokenAddress = "0x410ce9E4B6B15Ec2d86443461ad372B4A381bA09"; // mainnet busd
+const stakeAddress = "0x2488293939299c10E099b3e20A196bdd74DEb0Ea";
+const tokenAddress = "0xA3B985d6f8f59ac5Ec30c01C2554a9A3B211c69C"; // mainnet busd
 
 const NftsABI = [
   {
@@ -1746,6 +1746,13 @@ async function loadDapp() {
              $("#connectWallet").hide();
              $("#ClaimM").show();
              $("#connectWalletM").hide();
+
+
+             $("#Wallet").show();
+             $("#Yourwallet").hide();
+             
+             $("#Your_Weirdos").show();
+             $("#Yourweirdosstaked").hide();
               loadAccount();
             }
           });

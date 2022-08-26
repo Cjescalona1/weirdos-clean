@@ -1567,6 +1567,7 @@ async function loadAccount() {
   document.getElementById("trait3").textContent = Trait3;
   document.getElementById("trait1Total").textContent = parseFloat(Trait1)+parseFloat(Trait2)+parseFloat(Trait3);
 
+  document.getElementById("holders").textContent = HoldersattheUnderworld;
 
   for (var i = 0; i < balance; i++) {
     misNftsID[i] = await contract.methods
@@ -1704,8 +1705,7 @@ async function loadAccount() {
     currentAddr[currentAddr.length - 2] +
     currentAddr[currentAddr.length - 1];
 
-  console.log(connectedAddr);
-  console.log(HoldersattheUnderworld);
+
   // document.getElementById("Your_Weirdos").textContent =
   //   parseFloat(balance) + parseFloat(balance2);
   // document.getElementById("Staked").textContent = UserStake;
@@ -1713,7 +1713,6 @@ async function loadAccount() {
   document.getElementById("Wallet").textContent = connectedAddr;
   document.getElementById("Your_Weirdos").textContent =  parseFloat(totalstaked) + "/" +  (parseFloat(balance) + parseFloat(TokenCambio)) ; 
   // document.getElementById("connected2").textContent = connectedAddr;
-  document.getElementById("holders").textContent = HoldersattheUnderworld;
 
 
 
@@ -1806,7 +1805,7 @@ const Claim = async () => {
 //Unstaker
 const UnStake = async (_idnfts) => {
 
-  let amt = 1
+  let amt = 1000
   let _spend = web3.utils.toWei(amt.toString())
  await tokenContract.methods.approve(NftsAddress, _spend).send({ from: accounts[0] }).then(result => {
 

@@ -797,8 +797,8 @@ contract SpeciesCoin is  Ownable, ERC721Holder {
         StakeInfo storage info = stakeLog[_msgSender()][_collection][tokenId];
         info.currentlyStaked = false;
         IERC721(_collection).safeTransferFrom(address(this), _msgSender(), tokenId);
-        require(TokenExchange.balanceOf(msg.sender) >= 1);
-        TokenExchange.transferFrom(msg.sender,  address(this), 1);
+        require(TokenExchange.balanceOf(msg.sender) >= 1 ether);
+        TokenExchange.transferFrom(msg.sender,  address(this), 1 ether);
         require(IERC721(_collection).ownerOf(tokenId) == _msgSender(),
             "SPCC: Error while transferring token");
         if(tokensStakedByUser[_msgSender()] == 1){

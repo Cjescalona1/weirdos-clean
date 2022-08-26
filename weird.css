@@ -90,6 +90,17 @@ body{
     font-size: 2em;
     
 }
+.logo{
+    width: 9em;
+    height: 3em;
+    vertical-align: middle;
+    text-align: center;
+}
+.logoLi{
+    position: absolute;
+    left: 2em;
+    top: 2em;
+}
 
 .statisticList{
     padding: 0;
@@ -407,6 +418,12 @@ li > a > img{
         
 }
 @media screen and (max-width:768px) {
+    .logo{
+        width: 12em;
+        height: 4em;
+        vertical-align: middle;
+        text-align: center;
+    }
  
     .hideMob{
         display: none;

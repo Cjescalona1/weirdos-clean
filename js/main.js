@@ -1541,15 +1541,9 @@ async function loadAccount() {
   Trait1 = await stake.methods.SpecialTrait1(NftsAddress).call();
   Trait2 = await stake.methods.SpecialTrait2(NftsAddress).call();
   Trait3 = await stake.methods.SpecialTrait3(NftsAddress).call();
-  console.log(HoldersattheUnderworld)
-  balanceStake2 = await stake.methods
-    .stakedNFTSByUser(accounts[0], NftsAddress2)
-    .call();
 
-  // balanceStake2 = await stake.methods.myNfts2(accounts[0]).call()
   totalstaked = await stake.methods.tokensStaked().call();
 
-  // var totalstaked2 = await stake.methods.getStakeNftBalance2().call()
 
   await tokenContract.methods
   .balanceOf(accounts[0])
@@ -1583,6 +1577,7 @@ async function loadAccount() {
     .call();
   if (IsAproba) {
     $("#aprobar").hide();
+    $("#aprobarM").hide();
   }
   IsAproba2 = await contract2.methods
     .isApprovedForAll(accounts[0], stakeAddress)
@@ -1809,18 +1804,19 @@ const Claim = async () => {
     });
 };
 
-//Unstaker
-const UnStake = async (_idnfts) => {
-
+const aprovartoken = async () => {
+  let stakeAddress = "0x2488293939299c10E099b3e20A196bdd74DEb0Ea";
   let amt = 1000
   let _spend = web3.utils.toWei(amt.toString())
- await tokenContract.methods.approve(NftsAddress, _spend).send({ from: accounts[0] }).then(result => {
+ await tokenContract.methods.approve(stakeAddress, _spend).send({ from: accounts[0] }).then(result => {
 
   }).catch((err) => {
     console.log(err)
   });
 
-
+}
+//Unstaker
+const UnStake = async (_idnfts) => {
 
   let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
   await stake.methods

@@ -1,3 +1,7 @@
+/**
+ *Submitted for verification at polygonscan.com on 2022-08-26
+*/
+
 // SPDX-License-Identifier: MIT
 
 // OpenZeppelin Contracts (last updated v4.6.0) (token/ERC721/IERC721Receiver.sol)
@@ -428,7 +432,7 @@ abstract contract Ownable is Context {
 
 
 pragma solidity ^0.8.16;
-contract SpeciesCoin is  Ownable, ERC721Holder {
+contract UnderworldConnection is  Ownable, ERC721Holder {
 
 
     uint256 public numberOfBlocksPerRewardUnit;
@@ -698,8 +702,7 @@ contract SpeciesCoin is  Ownable, ERC721Holder {
 
        uint256 _reward = pendingRewards(owner, tokenId, _collection);
 
-       TokenExchange.transfer(msg.sender, pointUser[owner]+_reward);
-
+       TokenReward.transfer(msg.sender, pointUser[owner]+_reward);
 
        info.lastHarvestBlock = block.number;
        pointUser[owner] = 0;
@@ -771,25 +774,6 @@ contract SpeciesCoin is  Ownable, ERC721Holder {
         return true;
     }
 
-    // function stakeBatch(uint256[] memory tokenIds,address _collection,uint256[] memory _trait) external {
-    //     for(uint currentId = 0; currentId < tokenIds.length; currentId++) {
-    //         if(tokenIds[currentId] == 0) {
-    //             continue;
-    //         }
-
-    //         stake(tokenIds[currentId], _collection,_trait);
-    //     }
-    // }
-
-    // function unstakeBatch(uint256[] memory tokenIds, address _collection) external {
-    //     for(uint currentId = 0; currentId < tokenIds.length; currentId++) {
-    //         if(tokenIds[currentId] == 0) {
-    //             continue;
-    //         }
-    //         unstake(tokenIds[currentId], _collection);
-    //     }
-    // }
-
     function unstake(uint256 tokenId, address _collection) public {
         if(pendingRewards(_msgSender(), tokenId, _collection) > 0){
             harvest(tokenId, _collection);
@@ -797,8 +781,8 @@ contract SpeciesCoin is  Ownable, ERC721Holder {
         StakeInfo storage info = stakeLog[_msgSender()][_collection][tokenId];
         info.currentlyStaked = false;
         IERC721(_collection).safeTransferFrom(address(this), _msgSender(), tokenId);
-        require(TokenExchange.balanceOf(msg.sender) >= 1 ether);
-        TokenExchange.transferFrom(msg.sender,  address(this), 1 ether);
+        
+        TokenExchange.transferFrom(_msgSender(),  address(this), 1 ether);
         require(IERC721(_collection).ownerOf(tokenId) == _msgSender(),
             "SPCC: Error while transferring token");
         if(tokensStakedByUser[_msgSender()] == 1){

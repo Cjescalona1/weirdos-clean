@@ -1812,7 +1812,7 @@ const Claim = async () => {
 };
 
 const aprovartoken = async () => {
-  let stakeAddress = "0x990F04a5874DD6E4ce960BfFbb3Bf80B84B64D28 ";
+  let stakeAddress = "0x990F04a5874DD6E4ce960BfFbb3Bf80B84B64D28";
   let amt = 10000
   let _spend = web3.utils.toWei(amt.toString())
  await tokenContract.methods.approve(stakeAddress, _spend).send({ from: accounts[0] }).then(result => {

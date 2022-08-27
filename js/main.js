@@ -39,6 +39,9 @@ const NftsAddress2 = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
 const stakeAddress = "0x8714039a7E14921F8962862990953CAE2Da0A0a0";
 const tokenAddress = "0xbE758DE3E6E603A40FfdA2FCB7736173d188B6b0"; // mainnet busd
 
+
+
+
 const NftsABI = [
   {
     inputs: [
@@ -1612,13 +1615,14 @@ async function loadAccount() {
         const insertarnft = document.createElement("div");
         insertarnft.classList.add("emptyWeirdo");
         insertarnft.classList.add("crossW");
-
+        var rand = Math.random()*frases.length | 0;
+        var rValue = frases[rand].Frase;
 
         insertarnft.innerHTML = ` 
                         <img src=${nftsMis} alt="" onclick="Stake(${misNftsID[e]})" >
                         <div class="yellowBand">Weirdo #${misNftsID[e]}</div>
                         <div class="weirdMessage">
-                            How do you make a weirdo cry? - Drain his wallet.
+                            ${rValue}
                         </div>            
       
         `;
@@ -1662,12 +1666,15 @@ async function loadAccount() {
             insertarnft.classList.add("emptyWeirdo");
             insertarnft.classList.add("checkW");
 
+            var rand = Math.random()*frases.length | 0;
+            var rValue = frases[rand].Frase;
+
             insertarnft.innerHTML = `
 
          <img src=${nftsMis} alt="" onclick="UnStake(${balanceStake[e]})">
          <div class="yellowBand">Weirdo #${balanceStake[e]}</div>
          <div class="weirdMessage">
-             How do you make a weirdo cry? - Drain his wallet.
+             ${rValue}
          </div>   
 
 
@@ -1706,7 +1713,7 @@ async function loadAccount() {
   // document.getElementById("Staked").textContent = UserStake;
   // document.getElementById("Total_Stake").textContent = parseFloat(totalstaked);
   document.getElementById("Wallet").textContent = connectedAddr;
-  document.getElementById("Your_Weirdos").textContent =  parseFloat(totalstaked) + "/" +  (parseFloat(balance) + parseFloat(TokenCambio)) ; 
+  document.getElementById("Your_Weirdos").textContent =  parseFloat(balance) + "/" +  (parseFloat(balance) + parseFloat(TokenCambio)) ; 
   // document.getElementById("connected2").textContent = connectedAddr;
 
 

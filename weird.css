@@ -817,7 +817,7 @@ li > a > img{
     background-color: #92c972;
     margin: 0em 0em 0em 0em;
     padding: 1.5em;
-    width: 99.1%; 
+    width: 96%; 
     
     
 }
@@ -1023,7 +1023,7 @@ li > a > img{
         background-color: #92c972;
         margin: 0em 0em 0em 0em;
         padding: 1.5em;
-        width: 100%; 
+        width: 94%; 
         
         
     }
@@ -1207,8 +1207,8 @@ li > a > img{
         color: antiquewhite !important;
         background-color: #92c972;
         margin: 0em 0em 0em 0em;
-        padding: 1.5em;
-        width: 100%; 
+        padding: 1.5em 1.5em 1.5em 1.5em;
+        width: 96%; 
         
         
     }

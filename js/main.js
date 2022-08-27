@@ -34,10 +34,10 @@ let Trait1
 let Trait2
 let Trait3
 let TokenCambio
-const NftsAddress = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
+const NftsAddress = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
 const NftsAddress2 = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
-const stakeAddress = "0x2488293939299c10E099b3e20A196bdd74DEb0Ea";
-const tokenAddress = "0xA3B985d6f8f59ac5Ec30c01C2554a9A3B211c69C"; // mainnet busd
+const stakeAddress = "0x8714039a7E14921F8962862990953CAE2Da0A0a0";
+const tokenAddress = "0xbE758DE3E6E603A40FfdA2FCB7736173d188B6b0"; // mainnet busd
 
 const NftsABI = [
   {
@@ -1664,7 +1664,7 @@ async function loadAccount() {
 
             insertarnft.innerHTML = `
 
-         <img src=${nftsMis} alt="" onclick="UnStake(${misNftsID[e]})">
+         <img src=${nftsMis} alt="" onclick="UnStake(${balanceStake[e]})">
          <div class="yellowBand">Weirdo #${balanceStake[e]}</div>
          <div class="weirdMessage">
              How do you make a weirdo cry? - Drain his wallet.
@@ -1776,7 +1776,7 @@ const NftApro = async () => {
 
 
 const Stake = async (_idnfts) => {
-  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
+  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
   let traitID = await Idtraits(_idnfts);
   console.log(add);
   stake.methods
@@ -1791,7 +1791,7 @@ const Stake = async (_idnfts) => {
 
 
 const Claim = async () => {
-  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
+  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
 
   stake.methods
     .harvestBatch(accounts[0], add)
@@ -1805,8 +1805,8 @@ const Claim = async () => {
 };
 
 const aprovartoken = async () => {
-  let stakeAddress = "0x2488293939299c10E099b3e20A196bdd74DEb0Ea";
-  let amt = 1000
+  let stakeAddress = "0x8714039a7E14921F8962862990953CAE2Da0A0a0";
+  let amt = 10000
   let _spend = web3.utils.toWei(amt.toString())
  await tokenContract.methods.approve(stakeAddress, _spend).send({ from: accounts[0] }).then(result => {
 
@@ -1818,7 +1818,7 @@ const aprovartoken = async () => {
 //Unstaker
 const UnStake = async (_idnfts) => {
 
-  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
+  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
   await stake.methods
     .unstake(_idnfts, add)
     .send({ from: accounts[0] })

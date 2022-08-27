@@ -428,7 +428,9 @@ li > a > img{
         .hamburger{
             display: none;
         }
-        
+        .logoMov{
+            display: none;
+        }
 }
 @media screen and (max-width:768px) {
     .logo{

@@ -563,9 +563,17 @@ contract UnderworldConnection is  Ownable, ERC721Holder {
             if( info.Trait[i] == _trait.trait1  ){
                     coin += 1;
             }
+            if(info.Trait[i] == _trait.trait2){
+                    coin += 1;
+
+            }
+            if( info.Trait[i] == _trait.trait3){
+                    coin += 1;
+                
+            }
     
         }
-        if(coin == 1){
+        if(coin >= 1){
             trait = 1;
         }else{
             trait = 0;
@@ -609,14 +617,17 @@ contract UnderworldConnection is  Ownable, ERC721Holder {
                     coin += 1;
 
             }
-      
+            if( info.Trait[i] == _trait.trait3){
+                    coin += 1;
+                
+            }
+    
         }
-        if(coin == 2){
+        if(coin >= 2){
             trait = 1;
         }else{
             trait = 0;
         }
-          
         
 
         return trait;
@@ -658,13 +669,13 @@ contract UnderworldConnection is  Ownable, ERC721Holder {
                     coin += 1;
                 
             }
+    
         }
-        if(coin == 3){
+        if(coin >= 3){
             trait = 1;
         }else{
             trait = 0;
         }
-
 
         return trait;
 

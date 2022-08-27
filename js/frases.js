@@ -100,7 +100,7 @@ let frases = [
     {"ID":"100","Frase":"NFTs: the next level of when wealth and ignorance collide"},
     {"ID":"101","Frase":"I've got 99 problems but Crypto for sure is one"},
     {"ID":"102","Frase":"I've got 99 problems but NFT's for sure is one"},
-    {"ID":"103","Frase":"I've got 99 problems but Matic ain�t one"},
+    {"ID":"103","Frase":"I've got 99 problems but Matic ain't one"},
     {"ID":"104","Frase":"Collecting digital art is the best hobby ever"},
     {"ID":"105","Frase":"Be very, very quiet... I'm hunting weirdos"},
     {"ID":"106","Frase":"Thats too much honey? said no one ever."},

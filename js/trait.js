@@ -1,6 +1,6 @@
 
   let attributes = [
-{"ID":"2","TRAIT":"TRAIT"},
+{"ID":"1","TRAIT":"Regular"},
 {"ID":"2","TRAIT":"Hehe"},
 {"ID":"3","TRAIT":"Tongue_Out"},
 {"ID":"4","TRAIT":"After_Fight"},

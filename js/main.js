@@ -34,10 +34,10 @@ let Trait1
 let Trait2
 let Trait3
 let TokenCambio
-const NftsAddress = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
+const NftsAddress = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
 const NftsAddress2 = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
-const stakeAddress = "0x8714039a7E14921F8962862990953CAE2Da0A0a0";
-const tokenAddress = "0xbE758DE3E6E603A40FfdA2FCB7736173d188B6b0"; // mainnet busd
+const stakeAddress = "0x990F04a5874DD6E4ce960BfFbb3Bf80B84B64D28";
+const tokenAddress = "0x6a3fb4e62Be02c663338488C42A5b07A1F2EF029"; // mainnet busd
 
 
 
@@ -1783,7 +1783,7 @@ const NftApro = async () => {
 
 
 const Stake = async (_idnfts) => {
-  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
+  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
   let traitID = await Idtraits(_idnfts);
   console.log(add);
   stake.methods
@@ -1798,7 +1798,7 @@ const Stake = async (_idnfts) => {
 
 
 const Claim = async () => {
-  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
+  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
 
   stake.methods
     .harvestBatch(accounts[0], add)
@@ -1812,7 +1812,7 @@ const Claim = async () => {
 };
 
 const aprovartoken = async () => {
-  let stakeAddress = "0x8714039a7E14921F8962862990953CAE2Da0A0a0";
+  let stakeAddress = "0x990F04a5874DD6E4ce960BfFbb3Bf80B84B64D28 ";
   let amt = 10000
   let _spend = web3.utils.toWei(amt.toString())
  await tokenContract.methods.approve(stakeAddress, _spend).send({ from: accounts[0] }).then(result => {
@@ -1825,7 +1825,7 @@ const aprovartoken = async () => {
 //Unstaker
 const UnStake = async (_idnfts) => {
 
-  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
+  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
   await stake.methods
     .unstake(_idnfts, add)
     .send({ from: accounts[0] })

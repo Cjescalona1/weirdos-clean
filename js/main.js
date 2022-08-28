@@ -1713,7 +1713,10 @@ async function loadAccount() {
   // document.getElementById("Staked").textContent = UserStake;
   // document.getElementById("Total_Stake").textContent = parseFloat(totalstaked);
   document.getElementById("Wallet").textContent = connectedAddr;
+  document.getElementById("WalletD").textContent = connectedAddr;
+
   document.getElementById("Your_Weirdos").textContent =  parseFloat(TokenCambio) + "/" +  (parseFloat(balance) + parseFloat(TokenCambio)) ; 
+  document.getElementById("Your_WeirdosD").textContent =  parseFloat(TokenCambio) + "/" +  (parseFloat(balance) + parseFloat(TokenCambio)) ; 
   // document.getElementById("connected2").textContent = connectedAddr;
 
 

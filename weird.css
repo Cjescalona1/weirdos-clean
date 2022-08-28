@@ -406,13 +406,13 @@ li > a > img{
   font-family:  galBold !important;
 } 
 
-#Yourwallet,#Yourweirdosstaked,#Wallet {
+#Yourwallet,#Yourweirdosstaked,#WalletD {
  
     margin-left: 19em;
     margin-top: -1em;
     text-shadow: #91f350 1px 1px;
 }
-#Your_Weirdos{    
+#Your_WeirdosD{    
     text-shadow: #91f350 1px 1px;
     font-size: 4em;
     margin-top: -2em;
@@ -431,8 +431,14 @@ li > a > img{
         .logoMov{
             display: none;
         }
+        .muteMobile{
+            display: none;
+        }
 }
 @media screen and (max-width:768px) {
+    #WalletD, #Your_WeirdosD{
+        display: none;
+    }
     .logo{
         width: 12em;
         height: 4em;
@@ -644,6 +650,29 @@ li > a > img{
         height: 1.5em;
         z-index: 1000;
 }
+#Wallet{
+    margin-left: 0em;
+    margin-top: 1em;
+    text-shadow: #91f350 1px 1px;
+    margin-bottom: 1em;
+}
+#Your_Weirdos{
+    margin-left: 0em;
+    margin-top: -0.5em;
+    text-shadow: #91f350 1px 1px;
+    margin-bottom: -1em;
+    font-size: 4em;
+}
+
+.walletTitle{
+    font-size: 1.5em;
+    color: #6ecddd !important;
+}
+.stakedTitle{
+    font-size: 1.5em;
+    color: #6ecddd !important;
+}
+
 }
 @media  screen and (min-width: 768px) and (max-width: 1350px) {
     
@@ -1256,20 +1285,20 @@ li > a > img{
     }
 
 
-#Yourwallet,#Yourweirdosstaked,#Wallet {
+#Yourwallet,#Yourweirdosstaked,#WalletD {
  
     margin-left: 35em;
     margin-top: 3em;
     text-shadow: #91f350 1px 1px;
 }
-#Your_Weirdos{    
+#Your_WeirdosD{    
     text-shadow: #91f350 1px 1px;
     font-size: 4em;
     margin-top: -2em;
     position: relative;
     left: 4.5em;
     top: 1.5em;
-}
+} 
 
 
 }

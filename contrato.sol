@@ -462,6 +462,12 @@ contract UnderworldConnection is  Ownable, ERC721Holder {
         uint256 trait2;
         uint256 trait3;
 
+    }   
+    struct Special {
+        uint256 trait1;
+        uint256 trait2;
+        uint256 trait3;
+
     }
 
     /// owner => tokenId => StakeInfo
@@ -484,6 +490,7 @@ contract UnderworldConnection is  Ownable, ERC721Holder {
     //
     mapping (address => CollectionInfo) public AddressCollection;
     mapping (address => _traitSpecial) public traitSpecial;
+    mapping (address => Special) public _Special;
 
     //mapping (address => nftUserInfo) public UserInfo;
 
@@ -492,12 +499,13 @@ contract UnderworldConnection is  Ownable, ERC721Holder {
     event NFTStaked (address owner, uint256 tokenId);
     event NFTUnstaked (address owner, uint256 tokenId);
 
-    constructor( IERC20 _TokenExchange, IERC20 _TokenReward ){
+    constructor( IERC20 _TokenExchange, IERC20 _TokenReward){
         TokenExchange = _TokenExchange;
         TokenReward = _TokenReward;
         contractCreationBlock = block.number;
         //coinAmountPerRewardUnit = 400 * 10 ** 18; // 10 ERC20 coins per rewardUnit, may be changed later on
         numberOfBlocksPerRewardUnit = 1; // 12 hours per reward unit , may be changed later on
+
      }
 
     function stakedNFTSByUser(address owner, address _collection) external view returns (uint256[] memory){
@@ -550,7 +558,7 @@ contract UnderworldConnection is  Ownable, ERC721Holder {
     }
 
 
-    function _SpecialTrait1(address owner, uint256 tokenId, address _collection) public view returns (uint256){
+    function _SpecialTrait(address owner, uint256 tokenId, address _collection) public view returns (uint256){
         StakeInfo memory info = stakeLog[owner][_collection][tokenId];
         
         _traitSpecial memory _trait = traitSpecial[_collection];
@@ -558,95 +566,8 @@ contract UnderworldConnection is  Ownable, ERC721Holder {
         uint256 coin = 0;
         uint256 trait = 0;
 
-        for(uint256 i = 0; i < info.Trait.length; i++){
-         
-            if( info.Trait[i] == _trait.trait1  ){
-                    coin += 1;
-            }
-    
-        }
-        if(coin == 1){
-            trait = 1;
-        }else{
-            trait = 0;
-        }
-
-
-
-        return trait;
-
-    }
-    function SpecialTrait1(address _collection) public view returns (uint256){
-       
-        uint256 trait;
-        CollectionInfo memory infoC = AddressCollection[_collection];
-
-        require(infoC.isActive == true, "Collection does not exist");
-        for(uint256 currentId = 0; currentId < infoC._id.length; currentId++){
-
-          trait += _SpecialTrait1(ownerId[_collection][infoC._id[currentId]], infoC._id[currentId], _collection);
-        }
-
-        return trait;
-
-    }
-
-
-
-    function _SpecialTrait2(address owner, uint256 tokenId, address _collection) public view returns (uint256){
-        StakeInfo memory info = stakeLog[owner][_collection][tokenId];
-        
-        _traitSpecial memory _trait = traitSpecial[_collection];
-        uint256 coin = 0;
-        uint256 trait = 0;
 
         for(uint256 i = 0; i < info.Trait.length; i++){
-         
-            if( info.Trait[i] == _trait.trait1  ){
-                    coin += 1;
-            }
-            if(info.Trait[i] == _trait.trait2){
-                    coin += 1;
-
-            }
-      
-        }
-        if(coin == 2){
-            trait = 1;
-        }else{
-            trait = 0;
-        }
-          
-        
-
-        return trait;
-
-    }
-    function SpecialTrait2(address _collection) public view returns (uint256){
-       
-        uint256 trait;
-        CollectionInfo memory infoC = AddressCollection[_collection];
-        
-        require(infoC.isActive == true, "Collection does not exist");
-        for(uint256 currentId = 0; currentId < infoC._id.length; currentId++){
-
-          trait += _SpecialTrait2(ownerId[_collection][infoC._id[currentId]], infoC._id[currentId], _collection);
-        }
-
-        return trait;
-
-    }
-
-    function _SpecialTrait3(address owner, uint256 tokenId, address _collection) public view returns (uint256){
-        StakeInfo memory info = stakeLog[owner][_collection][tokenId];
-        
-        _traitSpecial memory _trait = traitSpecial[_collection];
-
-        uint256 trait = 0;
-        uint256 coin = 0;
-
-        for(uint256 i = 0; i < info.Trait.length; i++){
-         
             if( info.Trait[i] == _trait.trait1  ){
                     coin += 1;
             }
@@ -659,30 +580,146 @@ contract UnderworldConnection is  Ownable, ERC721Holder {
                 
             }
         }
-        if(coin == 3){
+
+        if(coin == 1){
             trait = 1;
-        }else{
-            trait = 0;
+        }if(coin == 2){
+            trait = 2;
+        }if(coin == 3){
+            trait = 3; 
         }
 
 
         return trait;
 
     }
-    function SpecialTrait3(address _collection) public view returns (uint256){
+    
+
+    function SpecialTrait(address _collection) public view returns (Special memory traitSpee){
        
         uint256 trait;
+     
         CollectionInfo memory infoC = AddressCollection[_collection];
+        Special memory traitSpee = _Special[_collection];
+
 
         require(infoC.isActive == true, "Collection does not exist");
         for(uint256 currentId = 0; currentId < infoC._id.length; currentId++){
 
-          trait += _SpecialTrait3(ownerId[_collection][infoC._id[currentId]], infoC._id[currentId], _collection);
+          trait = _SpecialTrait (ownerId[_collection][infoC._id[currentId]], infoC._id[currentId], _collection);
+        
+        if(trait == 1){
+        traitSpee.trait1 +=1;
+        }
+        if(trait == 2){
+        traitSpee.trait2 +=1;
+        }
+        if(trait == 3){
+        traitSpee.trait3 +=1;
         }
 
-        return trait;
+        }
+
+        return traitSpee;
 
     }
+
+
+
+    // function _SpecialTrait2(address owner, uint256 tokenId, address _collection) public view returns (uint256){
+    //     StakeInfo memory info = stakeLog[owner][_collection][tokenId];
+        
+    //     _traitSpecial memory _trait = traitSpecial[_collection];
+    //     uint256 coin = 0;
+    //     uint256 trait = 0;
+
+    //     for(uint256 i = 0; i < info.Trait.length; i++){
+    //         if( info.Trait[i] == _trait.trait1  ){
+    //                 coin += 1;
+    //         }
+    //         if(info.Trait[i] == _trait.trait2){
+    //                 coin += 1;
+
+    //         }
+    //         if( info.Trait[i] == _trait.trait3){
+    //                 coin += 1;
+                
+    //         }
+    //     }
+
+    //     if(coin == 1){
+    //         trait = 0;
+    //     }if(coin == 2){
+    //          trait = 1;
+    //     }if(coin == 3){
+    //         trait = 0; 
+    //     }
+        
+
+    //     return trait;
+
+    // }
+    // function SpecialTrait2(address _collection) public view returns (uint256){
+       
+    //     uint256 trait;
+    //     CollectionInfo memory infoC = AddressCollection[_collection];
+        
+    //     require(infoC.isActive == true, "Collection does not exist");
+    //     for(uint256 currentId = 0; currentId < infoC._id.length; currentId++){
+
+    //       trait += _SpecialTrait2(ownerId[_collection][infoC._id[currentId]], infoC._id[currentId], _collection);
+    //     }
+
+    //     return trait;
+
+    // }
+
+    // function _SpecialTrait3(address owner, uint256 tokenId, address _collection) public view returns (uint256){
+    //     StakeInfo memory info = stakeLog[owner][_collection][tokenId];
+        
+    //     _traitSpecial memory _trait = traitSpecial[_collection];
+
+    //     uint256 trait = 0;
+    //     uint256 coin = 0;
+
+    //     for(uint256 i = 0; i < info.Trait.length; i++){
+         
+    //         if( info.Trait[i] == _trait.trait1  ){
+    //                 coin += 1;
+    //         }
+    //         if(info.Trait[i] == _trait.trait2){
+    //                 coin += 1;
+
+    //         }
+    //         if( info.Trait[i] == _trait.trait3){
+    //                 coin += 1;
+                
+    //         }
+    
+    //     }
+    //     if(coin >= 3){
+    //         trait = 1;
+    //     }else{
+    //         trait = 0;
+    //     }
+
+    //     return trait;
+
+    // }
+    // function SpecialTrait3(address _collection) public view returns (uint256){
+       
+    //     uint256 trait;
+    //     CollectionInfo memory infoC = AddressCollection[_collection];
+
+    //     require(infoC.isActive == true, "Collection does not exist");
+    //     for(uint256 currentId = 0; currentId < infoC._id.length; currentId++){
+
+    //       trait += _SpecialTrait3(ownerId[_collection][infoC._id[currentId]], infoC._id[currentId], _collection);
+    //     }
+
+    //     return trait;
+
+    // }
 
 
     function SaveRewards(address owner, uint256 tokenId, address _collection)public  returns (bool){
@@ -834,6 +871,15 @@ contract UnderworldConnection is  Ownable, ERC721Holder {
 
     function setTraitSpecial(address _collection ,uint256 _trait1, uint256 _trait2, uint256 _trait3)public onlyOwner{
         _traitSpecial storage traits = traitSpecial[_collection];
+        traits.trait1 = _trait1;
+        traits.trait2 = _trait2;
+        traits.trait3 = _trait3;
+    }
+
+
+    
+    function initSpecial(address _collection ,uint256 _trait1, uint256 _trait2, uint256 _trait3)public onlyOwner{
+        Special storage traits = _Special[_collection];
         traits.trait1 = _trait1;
         traits.trait2 = _trait2;
         traits.trait3 = _trait3;

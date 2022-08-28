@@ -34,10 +34,10 @@ let Trait1
 let Trait2
 let Trait3
 let TokenCambio
-const NftsAddress = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
+const NftsAddress = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
 const NftsAddress2 = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
-const stakeAddress = "0x990F04a5874DD6E4ce960BfFbb3Bf80B84B64D28";
-const tokenAddress = "0x6a3fb4e62Be02c663338488C42A5b07A1F2EF029"; // mainnet busd
+const stakeAddress = "0x6eEA9fB176fC4011220fdFDB7b5D887479c0e72A";
+const tokenAddress = "0x385968FACfA534B1B41fb9BFEC5A7DCEe4740bdb"; // mainnet busd
 
 
 
@@ -992,458 +992,8 @@ const tokenAbi = [
   },
 ];
 
-const stakeABI = [
-  {
-    inputs: [
-      {
-        internalType: "contract IERC20",
-        name: "_TokenExchange",
-        type: "address",
-      },
-      {
-        internalType: "contract IERC20",
-        name: "_TokenReward",
-        type: "address",
-      },
-    ],
-    stateMutability: "nonpayable",
-    type: "constructor",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "address",
-        name: "owner",
-        type: "address",
-      },
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "NFTStaked",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "address",
-        name: "owner",
-        type: "address",
-      },
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "NFTUnstaked",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: true,
-        internalType: "address",
-        name: "previousOwner",
-        type: "address",
-      },
-      {
-        indexed: true,
-        internalType: "address",
-        name: "newOwner",
-        type: "address",
-      },
-    ],
-    name: "OwnershipTransferred",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "address",
-        name: "owner",
-        type: "address",
-      },
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "amount",
-        type: "uint256",
-      },
-    ],
-    name: "RewardsHarvested",
-    type: "event",
-  },
-  {
-    inputs: [{ internalType: "address", name: "", type: "address" }],
-    name: "AddressCollection",
-    outputs: [
-      { internalType: "bool", name: "isActive", type: "bool" },
-      { internalType: "uint256", name: "reward", type: "uint256" },
-      { internalType: "address", name: "AddCollection", type: "address" },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "_collection", type: "address" }],
-    name: "AllSavePoint",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "add", type: "address" },
-      { internalType: "uint256", name: "_id", type: "uint256" },
-    ],
-    name: "Isdueno",
-    outputs: [{ internalType: "address", name: "", type: "address" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "owner", type: "address" },
-      { internalType: "uint256", name: "tokenId", type: "uint256" },
-      { internalType: "address", name: "_collection", type: "address" },
-    ],
-    name: "SaveRewards",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "_collection", type: "address" }],
-    name: "SpecialTrait1",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "_collection", type: "address" }],
-    name: "SpecialTrait2",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "_collection", type: "address" }],
-    name: "SpecialTrait3",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "TokenExchange",
-    outputs: [{ internalType: "contract IERC20", name: "", type: "address" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "TokenReward",
-    outputs: [{ internalType: "contract IERC20", name: "", type: "address" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "owner", type: "address" },
-      { internalType: "uint256", name: "tokenId", type: "uint256" },
-      { internalType: "address", name: "_collection", type: "address" },
-    ],
-    name: "_SpecialTrait1",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "owner", type: "address" },
-      { internalType: "uint256", name: "tokenId", type: "uint256" },
-      { internalType: "address", name: "_collection", type: "address" },
-    ],
-    name: "_SpecialTrait2",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "owner", type: "address" },
-      { internalType: "uint256", name: "tokenId", type: "uint256" },
-      { internalType: "address", name: "_collection", type: "address" },
-    ],
-    name: "_SpecialTrait3",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "amountOfStakers",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "contractCreationBlock",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "uint256", name: "tokenId", type: "uint256" },
-      { internalType: "address", name: "_collection", type: "address" },
-    ],
-    name: "harvest",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "user", type: "address" },
-      { internalType: "address", name: "_collection", type: "address" },
-    ],
-    name: "harvestBatch",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "", type: "address" },
-      { internalType: "uint256", name: "", type: "uint256" },
-    ],
-    name: "indexOfTokenIdInStakePortfolio",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "numberOfBlocksPerRewardUnit",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "", type: "address" },
-      { internalType: "address", name: "", type: "address" },
-      { internalType: "uint256", name: "", type: "uint256" },
-      { internalType: "bytes", name: "", type: "bytes" },
-    ],
-    name: "onERC721Received",
-    outputs: [{ internalType: "bytes4", name: "", type: "bytes4" }],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "owner",
-    outputs: [{ internalType: "address", name: "", type: "address" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "", type: "address" },
-      { internalType: "uint256", name: "", type: "uint256" },
-    ],
-    name: "ownerId",
-    outputs: [{ internalType: "address", name: "", type: "address" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "owner", type: "address" },
-      { internalType: "uint256", name: "tokenId", type: "uint256" },
-      { internalType: "address", name: "_collection", type: "address" },
-    ],
-    name: "pendingRewards",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "", type: "address" }],
-    name: "pointUser",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "renounceOwnership",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "_collection", type: "address" },
-      { internalType: "uint256", name: "reward", type: "uint256" },
-    ],
-    name: "setCollection",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "_collection", type: "address" }],
-    name: "setIdCollection",
-    outputs: [{ internalType: "uint256[]", name: "", type: "uint256[]" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "uint256", name: "numberOfBlocks", type: "uint256" },
-    ],
-    name: "setNumberOfBlocksPerRewardUnit",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "contract IERC20", name: "newAddress", type: "address" },
-    ],
-    name: "setTokenExchangeAddress",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "contract IERC20", name: "newAddress", type: "address" },
-    ],
-    name: "setTokenRewardAddress",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "_collection", type: "address" },
-      { internalType: "uint256", name: "_trait1", type: "uint256" },
-      { internalType: "uint256", name: "_trait2", type: "uint256" },
-      { internalType: "uint256", name: "_trait3", type: "uint256" },
-    ],
-    name: "setTraitSpecial",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "uint256", name: "tokenId", type: "uint256" },
-      { internalType: "address", name: "_collection", type: "address" },
-      { internalType: "uint256[]", name: "_trait", type: "uint256[]" },
-    ],
-    name: "stake",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "", type: "address" },
-      { internalType: "address", name: "", type: "address" },
-      { internalType: "uint256", name: "", type: "uint256" },
-    ],
-    name: "stakeLog",
-    outputs: [
-      { internalType: "uint256", name: "stakedAtBlock", type: "uint256" },
-      { internalType: "uint256", name: "lastHarvestBlock", type: "uint256" },
-      { internalType: "address", name: "AddColle", type: "address" },
-      { internalType: "bool", name: "currentlyStaked", type: "bool" },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "", type: "address" },
-      { internalType: "address", name: "", type: "address" },
-      { internalType: "uint256", name: "", type: "uint256" },
-    ],
-    name: "stakePortfolioByUser",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "address", name: "owner", type: "address" },
-      { internalType: "address", name: "_collection", type: "address" },
-    ],
-    name: "stakedNFTSByUser",
-    outputs: [{ internalType: "uint256[]", name: "", type: "uint256[]" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "tokensStaked",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "", type: "address" }],
-    name: "tokensStakedByUser",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "", type: "address" }],
-    name: "traitSpecial",
-    outputs: [
-      { internalType: "uint256", name: "trait1", type: "uint256" },
-      { internalType: "uint256", name: "trait2", type: "uint256" },
-      { internalType: "uint256", name: "trait3", type: "uint256" },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "newOwner", type: "address" }],
-    name: "transferOwnership",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "uint256", name: "tokenId", type: "uint256" },
-      { internalType: "address", name: "_collection", type: "address" },
-    ],
-    name: "unstake",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-];
+const stakeABI = [{"inputs":[{"internalType":"contract IERC20","name":"_TokenExchange","type":"address"},{"internalType":"contract IERC20","name":"_TokenReward","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"owner","type":"address"},{"indexed":false,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"NFTStaked","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"owner","type":"address"},{"indexed":false,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"NFTUnstaked","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"owner","type":"address"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"RewardsHarvested","type":"event"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"AddressCollection","outputs":[{"internalType":"bool","name":"isActive","type":"bool"},{"internalType":"uint256","name":"reward","type":"uint256"},{"internalType":"address","name":"AddCollection","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_collection","type":"address"}],"name":"AllSavePoint","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"add","type":"address"},{"internalType":"uint256","name":"_id","type":"uint256"}],"name":"Isdueno","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"address","name":"_collection","type":"address"}],"name":"SaveRewards","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_collection","type":"address"}],"name":"SpecialTrait","outputs":[{"components":[{"internalType":"uint256","name":"trait1","type":"uint256"},{"internalType":"uint256","name":"trait2","type":"uint256"},{"internalType":"uint256","name":"trait3","type":"uint256"}],"internalType":"struct UnderworldConnection.Special","name":"traitSpee","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"TokenExchange","outputs":[{"internalType":"contract IERC20","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"TokenReward","outputs":[{"internalType":"contract IERC20","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"_Special","outputs":[{"internalType":"uint256","name":"trait1","type":"uint256"},{"internalType":"uint256","name":"trait2","type":"uint256"},{"internalType":"uint256","name":"trait3","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"address","name":"_collection","type":"address"}],"name":"_SpecialTrait","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"amountOfStakers","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"contractCreationBlock","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"address","name":"_collection","type":"address"}],"name":"harvest","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"user","type":"address"},{"internalType":"address","name":"_collection","type":"address"}],"name":"harvestBatch","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"indexOfTokenIdInStakePortfolio","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_collection","type":"address"},{"internalType":"uint256","name":"_trait1","type":"uint256"},{"internalType":"uint256","name":"_trait2","type":"uint256"},{"internalType":"uint256","name":"_trait3","type":"uint256"}],"name":"initSpecial","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"numberOfBlocksPerRewardUnit","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"bytes","name":"","type":"bytes"}],"name":"onERC721Received","outputs":[{"internalType":"bytes4","name":"","type":"bytes4"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"ownerId","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"address","name":"_collection","type":"address"}],"name":"pendingRewards","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pointUser","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_collection","type":"address"},{"internalType":"uint256","name":"reward","type":"uint256"}],"name":"setCollection","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_collection","type":"address"}],"name":"setIdCollection","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"numberOfBlocks","type":"uint256"}],"name":"setNumberOfBlocksPerRewardUnit","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"contract IERC20","name":"newAddress","type":"address"}],"name":"setTokenExchangeAddress","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"contract IERC20","name":"newAddress","type":"address"}],"name":"setTokenRewardAddress","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_collection","type":"address"},{"internalType":"uint256","name":"_trait1","type":"uint256"},{"internalType":"uint256","name":"_trait2","type":"uint256"},{"internalType":"uint256","name":"_trait3","type":"uint256"}],"name":"setTraitSpecial","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"address","name":"_collection","type":"address"},{"internalType":"uint256[]","name":"_trait","type":"uint256[]"}],"name":"stake","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"stakeLog","outputs":[{"internalType":"uint256","name":"stakedAtBlock","type":"uint256"},{"internalType":"uint256","name":"lastHarvestBlock","type":"uint256"},{"internalType":"address","name":"AddColle","type":"address"},{"internalType":"bool","name":"currentlyStaked","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"stakePortfolioByUser","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"_collection","type":"address"}],"name":"stakedNFTSByUser","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"tokensStaked","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"tokensStakedByUser","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"traitSpecial","outputs":[{"internalType":"uint256","name":"trait1","type":"uint256"},{"internalType":"uint256","name":"trait2","type":"uint256"},{"internalType":"uint256","name":"trait3","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"address","name":"_collection","type":"address"}],"name":"unstake","outputs":[],"stateMutability":"nonpayable","type":"function"}]
+
 window.addEventListener("load", connectWallet);
 
 function metamaskReloadCallback() {
@@ -1541,9 +1091,8 @@ async function loadAccount() {
     .call();
   UserStake = await stake.methods.tokensStakedByUser(accounts[0]).call();
   HoldersattheUnderworld = await stake.methods.amountOfStakers().call();
-  Trait1 = await stake.methods.SpecialTrait1(NftsAddress).call();
-  Trait2 = await stake.methods.SpecialTrait2(NftsAddress).call();
-  Trait3 = await stake.methods.SpecialTrait3(NftsAddress).call();
+  Trait1 = await stake.methods.SpecialTrait(NftsAddress).call();
+  console.log(Trait1)
 
   totalstaked = await stake.methods.tokensStaked().call();
 
@@ -1559,10 +1108,10 @@ async function loadAccount() {
   });
 
   
-  document.getElementById("trait1").textContent = Trait1;
+   document.getElementById("trait1").textContent = Trait1;
   document.getElementById("trait2").textContent = Trait2;
-  document.getElementById("trait3").textContent = Trait3;
-  document.getElementById("trait1Total").textContent = parseFloat(Trait1)+parseFloat(Trait2)+parseFloat(Trait3);
+   document.getElementById("trait3").textContent = Trait3;
+  document.getElementById("trait1Total").textContent = parseFloat(totalstaked)-parseFloat(Trait1);
 
   document.getElementById("holders").textContent = HoldersattheUnderworld;
 
@@ -1574,6 +1123,21 @@ async function loadAccount() {
 
   //console.log(misNftsID)
 
+
+  tokenContract.methods
+    .allowance(accounts[0], stakeAddress)
+    .call()
+    .then((result) => {
+      spend = web3.utils.fromWei(result);
+      if (spend > 0) {
+        $("#token").hide();
+        $("#tokenM").hide();
+        
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
   IsAproba = await contract.methods
     .isApprovedForAll(accounts[0], stakeAddress)
@@ -1786,7 +1350,7 @@ const NftApro = async () => {
 
 
 const Stake = async (_idnfts) => {
-  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
+  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
   let traitID = await Idtraits(_idnfts);
   console.log(add);
   stake.methods
@@ -1801,7 +1365,7 @@ const Stake = async (_idnfts) => {
 
 
 const Claim = async () => {
-  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
+  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
 
   stake.methods
     .harvestBatch(accounts[0], add)
@@ -1815,7 +1379,7 @@ const Claim = async () => {
 };
 
 const aprovartoken = async () => {
-  let stakeAddress = "0x990F04a5874DD6E4ce960BfFbb3Bf80B84B64D28";
+  let stakeAddress = "0x778284379d752AB958886065cE3C438256dF7256";
   let amt = 10000
   let _spend = web3.utils.toWei(amt.toString())
  await tokenContract.methods.approve(stakeAddress, _spend).send({ from: accounts[0] }).then(result => {
@@ -1828,7 +1392,7 @@ const aprovartoken = async () => {
 //Unstaker
 const UnStake = async (_idnfts) => {
 
-  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
+  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
   await stake.methods
     .unstake(_idnfts, add)
     .send({ from: accounts[0] })

@@ -32,12 +32,12 @@ var totalstaked;
 let HoldersattheUnderworld
 let Trait
 let TokenCambio
-const NftsAddress = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
-//const NftsAddress = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
+const NftsAddress = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
+//const NftsAddress = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
 
 const NftsAddress2 = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
-const stakeAddress = "0xA7eaE58956758BB27f0d2C940a4DEC05aAea8Fa3";
-const tokenAddress = "0x410ce9E4B6B15Ec2d86443461ad372B4A381bA09"; // mainnet busd
+const stakeAddress = "0x2ed29748518e91A8dd7Af24cE44d19896eA26380";
+const tokenAddress = "0x27D26e2D6aEC6ccA78d14d9Cf9525EB5d592F317"; // mainnet busd
 
 
 
@@ -1350,7 +1350,7 @@ const NftApro = async () => {
 
 
 const Stake = async (_idnfts) => {
-  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
+  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
   let traitID = await Idtraits(_idnfts);
   console.log(add);
   stake.methods
@@ -1365,7 +1365,7 @@ const Stake = async (_idnfts) => {
 
 
 const Claim = async () => {
-  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
+  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
 
   stake.methods
     .harvestBatch(accounts[0], add)
@@ -1379,7 +1379,7 @@ const Claim = async () => {
 };
 
 const aprovartoken = async () => {
-  let stakeAddress = "0xA7eaE58956758BB27f0d2C940a4DEC05aAea8Fa3";
+  let stakeAddress = "0x2ed29748518e91A8dd7Af24cE44d19896eA26380";
   let amt = 10000
   let _spend = web3.utils.toWei(amt.toString())
  await tokenContract.methods.approve(stakeAddress, _spend).send({ from: accounts[0] }).then(result => {
@@ -1392,7 +1392,7 @@ const aprovartoken = async () => {
 //Unstaker
 const UnStake = async (_idnfts) => {
 
-  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
+  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
   await stake.methods
     .unstake(_idnfts, add)
     .send({ from: accounts[0] })

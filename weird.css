@@ -703,7 +703,7 @@ li > a > img{
     line-height: 12px;    
 }
 .weirdos{
-    margin-top: calc(2em + 5%);
+    margin-top: calc(4em + 5%);
     width: 97%;
     height: 15em;
     overflow-y: scroll;
@@ -854,6 +854,22 @@ li > a > img{
     width: 680px; 
     
 }
+#Yourwallet,#Yourweirdosstaked,#Wallet {
+ 
+    margin-left: 18em;
+    margin-top: -2.2em;
+    text-shadow: #91f350 1px 1px;
+}
+#Your_Weirdos{    
+    text-shadow: #91f350 1px 1px;
+    font-size: 4em;
+    margin-top: -1.8em;
+    position: relative;
+    left: 2.1em;
+    top: 1.3em;
+    font-size: 70px;
+    text-align: right;
+}
 }
 
 
@@ -915,9 +931,9 @@ li > a > img{
         line-height: 12px;    
     }
     .weirdos{
-        margin-top: calc(1em + 5%);
+        margin-top: calc(4em + 5%);
         width: 97%;
-        height: 24em;
+        height: 25em;
         overflow-y: scroll;
         overflow-x: hidden;
         display: grid;
@@ -1061,6 +1077,22 @@ li > a > img{
         
     }
     
+    #Yourwallet,#Yourweirdosstaked,#Wallet {
+ 
+        margin-left: 23em;
+        margin-top: -3em;
+        text-shadow: #91f350 1px 1px;
+    }
+    #Your_Weirdos{    
+        text-shadow: #91f350 1px 1px;
+        font-size: 4em;
+        margin-top: -1.7em;
+        position: relative;
+        left: 2.4em;
+        top: 1.5em;
+        font-size: 80px;
+        text-align: right;
+    }
 }
  
 
@@ -1249,17 +1281,19 @@ li > a > img{
 
 #Yourwallet,#Yourweirdosstaked,#Wallet {
  
-    margin-left: 35em;
-    margin-top: 3em;
+    margin-left: 30em;
+    margin-top: 0em;
     text-shadow: #91f350 1px 1px;
 }
 #Your_Weirdos{    
     text-shadow: #91f350 1px 1px;
     font-size: 4em;
-    margin-top: -2em;
+    margin-top: -1.8em;
     position: relative;
-    left: 4.5em;
+    left: 2.5em;
     top: 1.5em;
+    font-size: 90px;
+    text-align: right;
 }
 
 

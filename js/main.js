@@ -35,7 +35,7 @@ let TokenCambio
 const NftsAddress = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
 const NftsAddress2 = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
 const stakeAddress = "0x6B63623697656211f8a790ce5B89466a58B32e6C";
-const tokenAddress = "0x385968FACfA534B1B41fb9BFEC5A7DCEe4740bdb"; // mainnet busd
+const tokenAddress = "0x112b87b47503E8a83Ca267aE173A35B4cB04A03a"; // mainnet busd
 
 
 
@@ -1090,7 +1090,7 @@ async function loadAccount() {
   UserStake = await stake.methods.tokensStakedByUser(accounts[0]).call();
   HoldersattheUnderworld = await stake.methods.amountOfStakers().call();
   Trait = await stake.methods.SpecialTrait(NftsAddress).call();
-  console.log(Trait)
+  
 
   totalstaked = await stake.methods.tokensStaked().call();
 

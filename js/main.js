@@ -36,8 +36,8 @@ let Trait3
 let TokenCambio
 const NftsAddress = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
 const NftsAddress2 = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
-const stakeAddress = "0x990F04a5874DD6E4ce960BfFbb3Bf80B84B64D28";
-const tokenAddress = "0x6a3fb4e62Be02c663338488C42A5b07A1F2EF029"; // mainnet busd
+const stakeAddress = "0xdfCb523bb4211a14780Af860ce6629D271F7b482";
+const tokenAddress = "0x385968FACfA534B1B41fb9BFEC5A7DCEe4740bdb"; // mainnet busd
 
 
 
@@ -1575,6 +1575,21 @@ async function loadAccount() {
   //console.log(misNftsID)
 
 
+  tokenContract.methods
+    .allowance(accounts[0], NftsAddress)
+    .call()
+    .then((result) => {
+      spend = web3.utils.fromWei(result);
+      if (spend > 0) {
+        $("#token").hide();
+        $("#tokenM").hide();
+        
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
   IsAproba = await contract.methods
     .isApprovedForAll(accounts[0], stakeAddress)
     .call();
@@ -1812,7 +1827,7 @@ const Claim = async () => {
 };
 
 const aprovartoken = async () => {
-  let stakeAddress = "0x990F04a5874DD6E4ce960BfFbb3Bf80B84B64D28";
+  let stakeAddress = "0xdfCb523bb4211a14780Af860ce6629D271F7b482";
   let amt = 10000
   let _spend = web3.utils.toWei(amt.toString())
  await tokenContract.methods.approve(stakeAddress, _spend).send({ from: accounts[0] }).then(result => {

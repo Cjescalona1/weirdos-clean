@@ -825,6 +825,7 @@ contract UnderworldConnection is  Ownable, ERC721Holder {
         if(tokensStakedByUser[_msgSender()] == 1){
             amountOfStakers -= 1;
         }
+        delete info.Trait;
         tokensStakedByUser[_msgSender()] -= 1;
         tokensStaked -= 1;
         stakePortfolioByUser[_msgSender()][_collection][indexOfTokenIdInStakePortfolio[_collection][tokenId]] = 0;

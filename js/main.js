@@ -1562,7 +1562,7 @@ async function loadAccount() {
   document.getElementById("trait1").textContent = Trait1;
   document.getElementById("trait2").textContent = Trait2;
   document.getElementById("trait3").textContent = Trait3;
-  document.getElementById("trait1Total").textContent = parseFloat(Trait1)+parseFloat(Trait2)+parseFloat(Trait3);
+  document.getElementById("trait1Total").textContent = parseFloat(Trait1)-parseFloat(totalstaked);
 
   document.getElementById("holders").textContent = HoldersattheUnderworld;
 
@@ -1576,7 +1576,7 @@ async function loadAccount() {
 
 
   tokenContract.methods
-    .allowance(accounts[0], NftsAddress)
+    .allowance(accounts[0], stakeAddress)
     .call()
     .then((result) => {
       spend = web3.utils.fromWei(result);

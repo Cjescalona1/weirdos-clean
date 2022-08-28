@@ -30,13 +30,11 @@ let UserStake;
 let pointUSer;
 var totalstaked;
 let HoldersattheUnderworld
-let Trait1
-let Trait2
-let Trait3
+let Trait
 let TokenCambio
 const NftsAddress = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
 const NftsAddress2 = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
-const stakeAddress = "0x6eEA9fB176fC4011220fdFDB7b5D887479c0e72A";
+const stakeAddress = "0xf265a67baBb13EfBE63E83457A02E25c3a599f7F";
 const tokenAddress = "0x385968FACfA534B1B41fb9BFEC5A7DCEe4740bdb"; // mainnet busd
 
 
@@ -1091,8 +1089,8 @@ async function loadAccount() {
     .call();
   UserStake = await stake.methods.tokensStakedByUser(accounts[0]).call();
   HoldersattheUnderworld = await stake.methods.amountOfStakers().call();
-  Trait1 = await stake.methods.SpecialTrait(NftsAddress).call();
-  console.log(Trait1)
+  Trait = await stake.methods.SpecialTrait(NftsAddress).call();
+  console.log(Trait)
 
   totalstaked = await stake.methods.tokensStaked().call();
 
@@ -1108,10 +1106,10 @@ async function loadAccount() {
   });
 
   
-   document.getElementById("trait1").textContent = Trait1;
-  document.getElementById("trait2").textContent = Trait2;
-   document.getElementById("trait3").textContent = Trait3;
-  document.getElementById("trait1Total").textContent = parseFloat(totalstaked)-parseFloat(Trait1);
+   document.getElementById("trait1").textContent = Trait.trait1;
+  document.getElementById("trait2").textContent =  Trait.trait2;
+   document.getElementById("trait3").textContent =  Trait.trait3;
+  document.getElementById("trait1Total").textContent = parseFloat(totalstaked)-(parseFloat(Trait.trait1)+parseFloat( Trait.trait2)+parseFloat( Trait.trait3));
 
   document.getElementById("holders").textContent = HoldersattheUnderworld;
 

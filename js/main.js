@@ -1234,7 +1234,7 @@ async function loadAccount() {
             insertarnft.innerHTML = `
 
          <img src=${nftsMis} alt="" onclick="UnStake(${balanceStake[e]})">
-         <div class="yellowBand">Weirdo #${balanceStake[e]} ${TotalMinado}</div>
+         <div class="yellowBand">Weirdo #${balanceStake[e]} - ${TotalMinado}$UWU</div>
          <div class="weirdMessage">
              ${rValue}
          </div>   

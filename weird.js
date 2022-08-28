@@ -15,18 +15,25 @@ for (i = 0; i < coll.length; i++) {
 }
 
 function toggleMuted() {
+  
+
   var sound = document.getElementById('sound'); 
   var button = document.getElementById('toggleAudio');
+  var buttonmov = document.getElementById('toggleAudioMov');
   sound.muted = !sound.muted;
   if(sound.muted){
     button.classList.add("unmute")
     button.classList.remove("mute")
-  
+    buttonmov.classList.add("unmute")
+    buttonmov.classList.remove("mute")
+ 
   }
   else{
     button.classList.add("mute")
     button.classList.remove("unmute")
-   
+    buttonmov.classList.add("mute")
+    buttonmov.classList.remove("unmute")
+    
   } 
 }
 

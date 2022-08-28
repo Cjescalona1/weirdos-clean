@@ -406,7 +406,20 @@ li > a > img{
   font-family:  galBold !important;
 } 
 
-
+#Yourwallet,#Yourweirdosstaked,#Wallet {
+ 
+    margin-left: 19em;
+    margin-top: -1em;
+    text-shadow: #91f350 1px 1px;
+}
+#Your_Weirdos{    
+    text-shadow: #91f350 1px 1px;
+    font-size: 4em;
+    margin-top: -2em;
+    position: relative;
+    left: 3em;
+    top: 1.5em;
+}
 
 @media screen and (min-width:768px) {
         nav{
@@ -415,7 +428,9 @@ li > a > img{
         .hamburger{
             display: none;
         }
-        
+        .logoMov{
+            display: none;
+        }
 }
 @media screen and (max-width:768px) {
     .logo{
@@ -606,6 +621,18 @@ li > a > img{
 }
 .content{
     width: 99% !important;
+}
+.mute, .unmute{
+    top: 3.5em;
+    position: relative;
+}
+
+.logoMov{
+    width: 9em;
+    height: 3em;
+    position: relative;
+    left: -6em;
+    top: -0.5em;
 }
 
 }
@@ -1218,6 +1245,22 @@ li > a > img{
         width: 1000px; 
         
     }
+
+
+#Yourwallet,#Yourweirdosstaked,#Wallet {
+ 
+    margin-left: 35em;
+    margin-top: 3em;
+    text-shadow: #91f350 1px 1px;
+}
+#Your_Weirdos{    
+    text-shadow: #91f350 1px 1px;
+    font-size: 4em;
+    margin-top: -2em;
+    position: relative;
+    left: 4.5em;
+    top: 1.5em;
+}
 
 
 }

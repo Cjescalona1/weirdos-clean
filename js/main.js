@@ -32,9 +32,9 @@ var totalstaked;
 let HoldersattheUnderworld
 let Trait
 let TokenCambio
-const NftsAddress = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
+const NftsAddress = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
 const NftsAddress2 = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
-const stakeAddress = "0xf265a67baBb13EfBE63E83457A02E25c3a599f7F";
+const stakeAddress = "0x6B63623697656211f8a790ce5B89466a58B32e6C";
 const tokenAddress = "0x385968FACfA534B1B41fb9BFEC5A7DCEe4740bdb"; // mainnet busd
 
 
@@ -1234,7 +1234,7 @@ async function loadAccount() {
             insertarnft.innerHTML = `
 
          <img src=${nftsMis} alt="" onclick="UnStake(${balanceStake[e]})">
-         <div class="yellowBand">Weirdo #${balanceStake[e]}</div>
+         <div class="yellowBand">Weirdo #${balanceStake[e]} ${TotalMinado}</div>
          <div class="weirdMessage">
              ${rValue}
          </div>   
@@ -1348,7 +1348,7 @@ const NftApro = async () => {
 
 
 const Stake = async (_idnfts) => {
-  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
+  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
   let traitID = await Idtraits(_idnfts);
   console.log(add);
   stake.methods
@@ -1363,7 +1363,7 @@ const Stake = async (_idnfts) => {
 
 
 const Claim = async () => {
-  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
+  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
 
   stake.methods
     .harvestBatch(accounts[0], add)
@@ -1377,7 +1377,7 @@ const Claim = async () => {
 };
 
 const aprovartoken = async () => {
-  let stakeAddress = "0x778284379d752AB958886065cE3C438256dF7256";
+  let stakeAddress = "0x6B63623697656211f8a790ce5B89466a58B32e6C";
   let amt = 10000
   let _spend = web3.utils.toWei(amt.toString())
  await tokenContract.methods.approve(stakeAddress, _spend).send({ from: accounts[0] }).then(result => {
@@ -1390,7 +1390,7 @@ const aprovartoken = async () => {
 //Unstaker
 const UnStake = async (_idnfts) => {
 
-  let add = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
+  let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
   await stake.methods
     .unstake(_idnfts, add)
     .send({ from: accounts[0] })

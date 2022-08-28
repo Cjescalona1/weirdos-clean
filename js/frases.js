@@ -81,7 +81,7 @@ let frases = [
     {"ID":"81","Frase":"One tequila, two tequila, three tequila, floor"},
     {"ID":"82","Frase":"Behind every successful man is a surprised mother-in-law"},
     {"ID":"83","Frase":"If you find it hard to laugh at yourself, I would be happy to do it for you"},
-    {"ID":"84","Frase":"When we talk to God, we're praying. When God talks to us, we�re schizophrenic"},
+    {"ID":"84","Frase":"When we talk to God, we're praying. When God talks to us, we're schizophrenic"},
     {"ID":"85","Frase":"Laugh a lot. It burns a lot of calories"},
     {"ID":"86","Frase":"If you die in an elevator, be sure to push the up button"},
     {"ID":"87","Frase":"Once you give up integrity, the rest is a piece of cake"},

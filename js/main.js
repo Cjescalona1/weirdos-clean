@@ -1218,7 +1218,7 @@ async function loadAccount() {
             TotalMinado = web3.utils.fromWei(userBalance);
             TokenUser = parseFloat(TokenUser) + parseFloat(TotalMinado);
 
-            TotalMinado = parseFloat(TotalMinado).toFixed(3);
+            TotalMinado = parseFloat(TotalMinado).toFixed(2);
                   
             document.getElementById("Your_Reward").textContent =
               `${TokenUser.toFixed(2)} $UWU`
@@ -1236,7 +1236,7 @@ async function loadAccount() {
             insertarnft.innerHTML = `
 
          <img src=${nftsMis} alt="" onclick="UnStake(${balanceStake[e]})">
-         <div class="yellowBand">Weirdo #${balanceStake[e]} - ${TotalMinado}$UWU</div>
+         <div class="yellowBand">Weirdo #${balanceStake[e]} - ${TotalMinado} $UWU</div>
          <div class="weirdMessage">
              ${rValue}
          </div>   

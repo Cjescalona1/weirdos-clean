@@ -1359,6 +1359,7 @@ li > a > img{
     .statisticList{
         padding: 0px;
         font-size: 14px;
+        text-align: left;
     }
     .statistics{
         padding: -0px;
@@ -1367,6 +1368,7 @@ li > a > img{
         margin-top: 10px;
         margin-bottom: 0px;
         font-stretch: condensed;
+        text-align: left;
     }
     .quant{
         padding: 0;
@@ -1374,6 +1376,7 @@ li > a > img{
         font-weight: 300;
         margin-bottom: px;
         margin-top: -15px;
+        text-align: left;
 
     }
     .weirdTrio > img{
@@ -1386,10 +1389,11 @@ li > a > img{
         justify-content: center;
         text-align: left;
         padding: 0.5em;
-        line-height: 12px;    
+        line-height: 12px;   
+        margin-left: -3px; 
     }
     .weirdos{
-        margin-top: calc(9em + 5%);
+        margin-top: calc(5em + 5%);
         width: 96%;
         height: 31em;
         overflow-y: scroll;
@@ -1399,7 +1403,7 @@ li > a > img{
         grid-gap: 1em 0em;
     }
     .emptyWeirdo{
-        height: 14.5em;
+        height: 14.7em;
         width: 10.5em;
         position: relative; 
         background-color: rgb(61, 25, 83);
@@ -1419,8 +1423,8 @@ li > a > img{
     }
     .emptyWeirdo>img{
         position: relative;
-        top: 2%;
-        left: 3%;
+        top: 3%;
+        left: 0%;
         width: 94%;
         height: 68%;
     }
@@ -1449,8 +1453,88 @@ li > a > img{
         background-color: rgb(112, 255, 83);
         border-radius: 8px;
         width: 94%;
-        margin: 1% 3% -2% 3%;
+        margin: 3% 3% -2% 3%;
     }
+    .foot {
+        position: absolute;
+        background-color: #10011f;
+        width: 100vw;
+        padding: 0em;
+        display: block;
+    }
+    .foot2{
+        margin: 4em 0em 0em 0em;
+        display: -webkit-inline-box;
+    }
+    
+    .whitespace{
+        width: 35%;
+        width: 350px;
+        text-align: left;
+        margin-top: -1.3em;
+        color: #eee;
+        margin-right: 4em;
+        margin-left: 1em;
+        
+        
+    }
+    
+    .foot2>.colla>*, .collapsible{
+    
+        color: #473558 !important;
+        font-family: gloria !important;
+        text-align: left;
+        background-color: #f3fcd1;
+        border-style: inset;
+        border-color: #3eff68;
+        margin-top: -3px;
+        width: 100%; 
+    }
+     
+    
+    .devil{
+        background-color: #212121; 
+        width: 100vw;
+        height: 4em;
+        position: relative;
+        padding-top: 1em;
+        margin-top: 3em;
+    
+        
+    }
+    .content>p{
+        color: antiquewhite !important;
+        background-color: #92c972;
+        margin: 0em 0em 0em 0em;
+        padding: 1.5em 1.5em 1.5em 1.5em;
+        width: 96%; 
+        
+        
+    }
+     
+    .colla{
+        margin: 0em 0em 0em 0em;
+        width: 1000px; 
+        
+    }
+
+
+#Yourwallet,#Yourweirdosstaked,#WalletD {
+ 
+    margin-left: 30em;
+    margin-top: 0em;
+    text-shadow: #91f350 1px 1px;
+}
+#Your_WeirdosD{    
+    text-shadow: #91f350 1px 1px;
+    font-size: 4em;
+    margin-top: -1.8em;
+    position: relative;
+    left: 2.5em;
+    top: 1.5em; 
+    font-size: 90px;
+    text-align: right;
+} 
 }
  
 

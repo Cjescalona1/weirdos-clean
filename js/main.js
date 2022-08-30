@@ -1185,11 +1185,6 @@ async function loadAccount() {
         var rValue = frases[rand].Frase;
 /*modificate for cross   */
         insertarnft.innerHTML = ` 
-          <div class="rightC hideMob">
-          <h3>XXXXXXXXXX </h3>
-          <p>Dolor sit amet, consectetur adipiscing elit.</p>
-          <i></i>
-          </div>
           <img src=${nftsMis} alt="" class="weirdImg" onclick="Stake(${misNftsID[e]})" >
           <div class="yellowBand">Weirdo #${misNftsID[e]}</div>
           <div class="weirdMessage">

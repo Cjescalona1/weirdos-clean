@@ -1177,15 +1177,21 @@ async function loadAccount() {
         const insertarnft = document.createElement("div");
         insertarnft.classList.add("emptyWeirdo");
         insertarnft.classList.add("crossW");
+        insertarnft.classList.add("tooltip");
         var rand = Math.random()*frases.length | 0;
         var rValue = frases[rand].Frase;
-
+/*modificate for cross   */
         insertarnft.innerHTML = ` 
-                        <img src=${nftsMis} alt="" onclick="Stake(${misNftsID[e]})" >
-                        <div class="yellowBand">Weirdo #${misNftsID[e]}</div>
-                        <div class="weirdMessage">
-                            ${rValue}
-                        </div>            
+          <div class="rightC hideMob">
+          <h3>XXXXXXXXXX </h3>
+          <p>Dolor sit amet, consectetur adipiscing elit.</p>
+          <i></i>
+          </div>
+          <img src=${nftsMis} alt="" class="weirdImg" onclick="Stake(${misNftsID[e]})" >
+          <div class="yellowBand">Weirdo #${misNftsID[e]}</div>
+          <div class="weirdMessage">
+              ${rValue}
+          </div>            
       
         `;
 
@@ -1227,20 +1233,22 @@ async function loadAccount() {
             const insertarnft = document.createElement("div");
             insertarnft.classList.add("emptyWeirdo");
             insertarnft.classList.add("checkW");
+            insertarnft.classList.add("tooltip");
 
             var rand = Math.random()*frases.length | 0;
             var rValue = frases[rand].Frase;
-
+            /* tooltip for check element  */
             insertarnft.innerHTML = `
-
-         <img src=${nftsMis} alt="" onclick="UnStake(${balanceStake[e]})">
-         <div class="yellowBand">Weirdo #${balanceStake[e]} - ${TotalMinado} $UWU</div>
-         <div class="weirdMessage">
-             ${rValue}
-         </div>   
-
-
-
+            <div class="rightC hideMob">
+            <h3>CHECK CHECKCHECKCHECK</h3>
+            <p>Dolor sit amet, consectetur adipiscing elit.</p>
+            <i></i>
+            </div>
+            <img src=${nftsMis} alt="" onclick="UnStake(${balanceStake[e]})">
+            <div class="yellowBand">Weirdo #${balanceStake[e]} - ${TotalMinado} $UWU</div>
+            <div class="weirdMessage">
+                ${rValue}
+            </div>    
        `;
             nftdiv.appendChild(insertarnft);
           })
@@ -1278,11 +1286,22 @@ async function loadAccount() {
   document.getElementById("WalletD").textContent = connectedAddr;
 
   document.getElementById("Your_Weirdos").textContent =  parseFloat(TokenCambio) + "/" +  (parseFloat(balance) + parseFloat(TokenCambio)) ; 
-  document.getElementById("Your_WeirdosD").textContent =  parseFloat(TokenCambio) + "/" +  (parseFloat(balance) + parseFloat(TokenCambio)) ; 
-  // document.getElementById("connected2").textContent = connectedAddr;
+   var  Your_WeirdosD=document.getElementById("Your_WeirdosD");
+   var aux =  parseFloat(TokenCambio) + "/" +  (parseFloat(balance) + parseFloat(TokenCambio));
+   Your_WeirdosD.classList.add("tooltip");
+   //change this elements to modificate your weirdos tooltip 
+    Your_WeirdosD.innerHTML=
+    ` ${aux}
+      <div class="right hideMob">
+      <h3>NUMBER OF WEIRDOS  AND STAKED</h3>
+      <p>Dolor sit amet, consectetur adipiscing elit.</p>
+      <i></i>
+      </div>
+    `
+ 
 
-
-
+  document.getElementById("Your_WeirdosD").appendChild( innerDiv )
+  // document.getElementById("connected2").textContent = connectedAddr; 
   // document.getElementById("Your_Weirdos_M").textContent =
   //   parseFloat(balance) + parseFloat(balance2);
   // document.getElementById("Staked_M").textContent = UserStake;

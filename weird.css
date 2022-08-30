@@ -175,6 +175,9 @@ body{
     background-size: 100% 100%;
     background-position: center;
     opacity: 1;
+}  
+
+.weirdImg:hover{  
 }
  
 
@@ -440,11 +443,11 @@ li > a > img{
         .tooltip {
             display:block;
             position:relative;
-            text-align:left;
+             
         }
         
         .tooltip .right {
-            min-width:200px; 
+            min-width:300px; 
             top:50%;
             left:100%;
             margin-left:20px;
@@ -462,11 +465,33 @@ li > a > img{
             visibility:hidden; opacity:0; transition:opacity 0.8s;
         }
         
-        .tooltip:hover .right {
+        .tooltip .rightC {
+        min-width: 280px;
+        top: 25%;
+        left: 100%;
+        margin-left: 1px;
+        transform: translate(0, -50%);
+        padding: 0px;
+        color: #444444;
+        background-color: #EEEEEE;
+        font-weight: normal;
+        font-size: 13px;
+        border-radius: 8px;
+        position: absolute;
+        z-index: 99999999;
+        box-sizing: border-box;
+        box-shadow: 0 1px 8px rgb(0 0 0 / 50%);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.8s;
+        }
+
+        .tooltip:hover .right, .tooltip:hover .rightC {
             visibility:visible; opacity:1;
         }
+
         
-        .tooltip .right i {
+        .tooltip .right i{
             position:absolute;
             top:50%;
             right:100%;
@@ -475,8 +500,17 @@ li > a > img{
             height:24px;
             overflow:hidden;
         }
+        .tooltip .rightC i {
+            position:absolute;
+            top:10%;
+            right:100%;
+            margin-top:-10px;
+            width:12px;
+            height:24px;
+            overflow:hidden;
+        }
         
-        .tooltip .right i::after {
+        .tooltip .right i::after, .tooltip .rightC i::after  {
             content:'';
             position:absolute;
             width:12px;
@@ -486,7 +520,8 @@ li > a > img{
             transform:translate(50%,-50%) rotate(-45deg);
             background-color:#EEEEEE;
             box-shadow:0 1px 8px rgba(0,0,0,0.5);
-        }
+        }  
+     
 }
 @media screen and (max-width:768px) {
     
@@ -1180,7 +1215,7 @@ li > a > img{
         font-size: 5em;
         margin-top: -2em;
         position: relative;
-        left: 2em;
+        left: 2.5em;
         top: 1.6em;
     }
 }

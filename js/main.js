@@ -33,6 +33,7 @@ let HoldersattheUnderworld
 let Trait
 let TokenCambio
 let balance2
+
 const NftsAddress = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
 //const NftsAddress = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
 
@@ -1082,9 +1083,10 @@ async function connectWallet() {
 
 async function loadAccount() {
   accounts = await web3.eth.getAccounts();
-  //pointUSer = await stake.methods.pointUSer().call();
+  pointUSer = await stake.methods.pointUser(accounts[0]).call();
   balance = await contract.methods.balanceOf(accounts[0]).call();
   balance2 = await contract2.methods.balanceOf(accounts[0]).call();
+
  
   balanceStake = await stake.methods
     .stakedNFTSByUser(accounts[0], NftsAddress)
@@ -1222,10 +1224,10 @@ async function loadAccount() {
 
             TotalMinado = parseFloat(TotalMinado).toFixed(2);
                   
-            document.getElementById("Your_Reward").textContent =
-              `${TokenUser.toFixed(2)} $UWU`
-              document.getElementById("Your_RewardM").textContent =
-              `${TokenUser.toFixed(2)} $UWU`
+            // document.getElementById("Your_Reward").textContent =
+            //   `${TokenUser.toFixed(2)} $UWU`
+            //   document.getElementById("Your_RewardM").textContent =
+            //   `${TokenUser.toFixed(2)} $UWU`
 
             const nftdiv = document.getElementById("weirdosAll");
             const insertarnft = document.createElement("div");
@@ -1277,11 +1279,11 @@ async function loadAccount() {
         var rValue = frases[rand].Frase;
 
         insertarnft.innerHTML = ` 
-                        <img src=${nftsMis} alt="" onclick="Stake2(${misNftsID2[e]})" >
-                        <div class="yellowBand">Weirdo #${misNftsID2[e]}</div>
-                        <div class="weirdMessage">
-                            ${rValue}
-                        </div>            
+            <img src=${nftsMis} alt="" onclick="Stake2(${misNftsID2[e]})" >
+            <div class="yellowBand">Weirdo #${misNftsID2[e]}</div>
+            <div class="weirdMessage">
+                ${rValue}
+            </div>            
       
         `;
 
@@ -1291,6 +1293,66 @@ async function loadAccount() {
         // función para capturar el error
         console.log(error);
       });
+  }
+
+  for (let e = 0; e < balanceStake2.length; e++) {
+
+    imgURL =
+    "https://safe-nft-metadata-provider-3nbhr.ondigitalocean.app/metadata/" +
+    balanceStake2[e] +
+    ".json";
+
+    axios
+      .get(imgURL)
+      .then((response) => {
+        // console.log(imgURL)
+
+        // función que se ejecutará al recibir una respuesta
+        var nftsMis = response.data.image;
+
+        stake.methods
+          .pendingRewards(accounts[0], balanceStake[e], NftsAddress2)
+          .call()
+          .then((userBalance2) => {
+            TotalMinado2 = web3.utils.fromWei(userBalance2);
+            TokenUser = parseFloat(TokenUser) + parseFloat(TotalMinado2);
+
+            TotalMinado = parseFloat(TotalMinado2).toFixed(2);
+                  
+
+
+            const nftdiv = document.getElementById("weirdosAll");
+            const insertarnft = document.createElement("div");
+            insertarnft.classList.add("emptyWeirdo");
+            insertarnft.classList.add("checkW");
+            insertarnft.classList.add("tooltip");
+
+            var rand = Math.random()*frases.length | 0;
+            var rValue = frases[rand].Frase;
+            /* tooltip for check element  */
+            insertarnft.innerHTML = `
+            <img src=${nftsMis} alt="" onclick="UnStake2(${balanceStake2[e]})">
+            <div class="yellowBand">Weirdo #${balanceStake2[e]} - ${TotalMinado2} $UWU</div>
+            <div class="weirdMessage">
+                ${rValue}
+            </div>    
+       `;
+            nftdiv.appendChild(insertarnft);
+          })
+          .catch(function (error) {
+            // función para capturar el error
+            console.log(error);
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+      let reawar = parseFloat(pointUSer) + parseFloat(TokenUser)
+      document.getElementById("Your_Reward").textContent =
+      `${reawar.toFixed(2)} $UWU`
+      document.getElementById("Your_RewardM").textContent =
+      `${reawar.toFixed(2)} $UWU`
   }
 
 
@@ -1313,9 +1375,9 @@ async function loadAccount() {
 
   document.getElementById("Wallet").textContent = connectedAddr;
   document.getElementById("WalletD").textContent = connectedAddr;
-   document.getElementById("Your_Weirdos").textContent =  parseFloat(TokenCambio) + "/" +  (parseFloat(balance) + parseFloat(TokenCambio)) ; 
+   document.getElementById("Your_Weirdos").textContent =  parseFloat(TokenCambio) + "/" +  (parseFloat(balance) + parseFloat(balance2) +  parseFloat(TokenCambio)) ; 
    var  Your_WeirdosD=document.getElementById("Your_WeirdosD");
-   var aux =  parseFloat(TokenCambio) + "/" +  (parseFloat(balance) + parseFloat(TokenCambio));
+   var aux =  parseFloat(TokenCambio) + "/" +  (parseFloat(balance) + parseFloat(balance2) + parseFloat(TokenCambio));
    Your_WeirdosD.classList.add("tooltip");
    //change this elements to modificate your weirdos tooltip 
     Your_WeirdosD.innerHTML=
@@ -1440,6 +1502,21 @@ const Claim = async () => {
       console.log(err);
     });
 };
+
+const Claim2 = async () => {
+  let add = "0x208c6cce6f63f0bE1FF32c630240779eC9bba54c";
+
+  stake.methods
+    .harvestBatch(accounts[0], add)
+    .send({ from: accounts[0] })
+    .then((result) => {
+ 
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 
 const aprovartoken = async () => {
   let stakeAddress = "0x2ed29748518e91A8dd7Af24cE44d19896eA26380";

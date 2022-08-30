@@ -362,10 +362,11 @@ li > a > img{
     
 }
 .content>p{
-    color: antiquewhite !important;
-    background-color: #447778;
+ 
     margin: 0em 0em 0em 0em;
     padding: 1.5em;
+    color: antiquewhite !important;
+    background-color: #92c972;
 }
  
 .colla{
@@ -392,7 +393,8 @@ li > a > img{
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .collapsible:hover {
-  background-color: #ccc;
+    background-color: #fefddf;
+
 }
 
 /* Style the collapsible content. Note: hidden by default */
@@ -401,7 +403,7 @@ li > a > img{
   display: none;
   overflow: hidden;
   font-weight: lighter;
-  width: 99.4% !important;
+  width: 99.2% !important;
 }
 .collapseButt{ 
   width: 100%;
@@ -593,10 +595,11 @@ li > a > img{
         width: 80vw;
     }
     .collapsible:active{
-        background-color: transparent;
+    background-color: #fefddf;
     }
     .active, .collapsible:hover {
-        background-color: transparent;
+    background-color: #fefddf;
+     
       }
     .devil>img{
         width: 75%;
@@ -766,7 +769,7 @@ li > a > img{
 
 }
 .content{
-    width: 99% !important;
+    width: 98.2% !important;
 }
 .mute, .unmute{
     top: 3.5em;

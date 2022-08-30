@@ -1400,7 +1400,7 @@ const Stake = async (_idnfts) => {
 
 const Stake2 = async (_idnfts) => {
   let add = "0x208c6cce6f63f0bE1FF32c630240779eC9bba54c";
-  let traitID = await Idtraits(_idnfts);
+  let traitID = [1];
   stake.methods
     .stake(_idnfts, add, traitID)
     .send({ from: accounts[0] })

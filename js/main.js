@@ -1242,11 +1242,6 @@ async function loadAccount() {
             var rValue = frases[rand].Frase;
             /* tooltip for check element  */
             insertarnft.innerHTML = `
-            <div class="rightC hideMob">
-            <h3>CHECK CHECKCHECKCHECK</h3>
-            <p>Dolor sit amet, consectetur adipiscing elit.</p>
-            <i></i>
-            </div>
             <img src=${nftsMis} alt="" onclick="UnStake(${balanceStake[e]})">
             <div class="yellowBand">Weirdo #${balanceStake[e]} - ${TotalMinado} $UWU</div>
             <div class="weirdMessage">

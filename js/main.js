@@ -1326,8 +1326,7 @@ async function loadAccount() {
     Your_WeirdosD.innerHTML=
     ` ${aux}
       <div class="right hideMob">
-      <h3>NUMBER OF WEIRDOS  AND STAKED</h3>
-      <p>Dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Amount of weirdos you have staked and total weirdos you own</p>
       <i></i>
       </div>
     `

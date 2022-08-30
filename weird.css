@@ -460,8 +460,7 @@ li > a > img{
             border-radius:10px;
             position:absolute;
             z-index:99999999;
-            box-sizing:border-box;
-            
+            box-sizing:border-box;            
             visibility:hidden; opacity:0; 
         }
         

@@ -1311,7 +1311,7 @@ async function loadAccount() {
         var nftsMis = response.data.image;
 
         stake.methods
-          .pendingRewards(accounts[0], balanceStake[e], NftsAddress2)
+          .pendingRewards(accounts[0], balanceStake2[e], NftsAddress2)
           .call()
           .then((userBalance2) => {
             TotalMinado2 = web3.utils.fromWei(userBalance2);

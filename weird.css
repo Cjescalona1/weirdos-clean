@@ -5,9 +5,10 @@
   * {
     font-family: "gloria" !important;
     color: #273e45 !important;
+    cursor: url("res/cursor.png"), auto;
     transition: all ease;
     }
-    
+        
 body{ 
     background-image: url(res/01.jpg);
     background-repeat: no-repeat;

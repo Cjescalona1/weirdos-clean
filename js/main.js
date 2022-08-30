@@ -32,10 +32,11 @@ var totalstaked;
 let HoldersattheUnderworld
 let Trait
 let TokenCambio
+let balance2
 const NftsAddress = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
 //const NftsAddress = "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5";
 
-const NftsAddress2 = "0x6b01FEF520818A439d281cf7b03EE2e1e0A32c4A";
+const NftsAddress2 = "0x208c6cce6f63f0bE1FF32c630240779eC9bba54c";
 const stakeAddress = "0x2ed29748518e91A8dd7Af24cE44d19896eA26380";
 const tokenAddress = "0x27D26e2D6aEC6ccA78d14d9Cf9525EB5d592F317"; // mainnet busd
 
@@ -1085,10 +1086,14 @@ async function loadAccount() {
   accounts = await web3.eth.getAccounts();
   //pointUSer = await stake.methods.pointUSer().call();
   balance = await contract.methods.balanceOf(accounts[0]).call();
+  balance2 = await contract2.methods.balanceOf(accounts[0]).call();
  
   balanceStake = await stake.methods
     .stakedNFTSByUser(accounts[0], NftsAddress)
     .call();
+  balanceStake2 = await stake.methods
+  .stakedNFTSByUser(accounts[0], NftsAddress2)
+  .call();
   UserStake = await stake.methods.tokensStakedByUser(accounts[0]).call();
   HoldersattheUnderworld = await stake.methods.amountOfStakers().call();
   Trait = await stake.methods.SpecialTrait(NftsAddress).call();
@@ -1096,7 +1101,11 @@ async function loadAccount() {
 
   totalstaked = await stake.methods.tokensStaked().call();
 
+  if (balance2 <= 0 && balanceStake2.length <= 0) {
+    $("#special").hide();
+    $("#specialM").hide();
 
+  }
   await tokenContract.methods
   .balanceOf(accounts[0])
   .call()
@@ -1121,7 +1130,11 @@ async function loadAccount() {
       .call();
   }
 
-  //console.log(misNftsID)
+  for (var i = 0; i < balance2; i++) {
+    misNftsID2[i] = await contract2.methods
+      .tokenOfOwnerByIndex(accounts[0], i)
+      .call();
+  }
 
 
   tokenContract.methods
@@ -1150,22 +1163,12 @@ async function loadAccount() {
     .isApprovedForAll(accounts[0], stakeAddress)
     .call();
   if (IsAproba2) {
-    $("#aprobar2").hide();
-  }
-  IsAproba = await contract.methods
-    .isApprovedForAll(accounts[0], stakeAddress)
-    .call();
-  if (IsAproba) {
-    $("#aprobarM").hide();
-  }
-  IsAproba2 = await contract2.methods
-    .isApprovedForAll(accounts[0], stakeAddress)
-    .call();
-  if (IsAproba2) {
-    $("#aprobarMN").hide();
+    $("#special").hide();
+    $("#specialM").hide();
   }
 
 
+//nft normales
   for (let e = 0; e < misNftsID.length; e++) {
     imgURL = "https://weirdometada.com/" + misNftsID[e];
     let traitnum = [];
@@ -1256,6 +1259,45 @@ async function loadAccount() {
       });
   }
 
+  //nft especiales
+
+  for (let e = 0; e < misNftsID2.length; e++) {
+    imgURL =
+    "https://safe-nft-metadata-provider-3nbhr.ondigitalocean.app/metadata/" +
+    misNftsID2[e] +
+    ".json";
+    let traitnum = [];
+    await axios
+      .get(imgURL)
+      .then((response) => {
+        // función que se ejecutará al recibir una respuesta
+        var nftsMis = response.data.image;
+
+        const nftdiv = document.getElementById("weirdosAll");
+        const insertarnft = document.createElement("div");
+        insertarnft.classList.add("emptyWeirdo");
+        insertarnft.classList.add("crossW");
+        var rand = Math.random()*frases.length | 0;
+        var rValue = frases[rand].Frase;
+
+        insertarnft.innerHTML = ` 
+                        <img src=${nftsMis} alt="" onclick="Stake2(${misNftsID2[e]})" >
+                        <div class="yellowBand">Weirdo #${misNftsID2[e]}</div>
+                        <div class="weirdMessage">
+                            ${rValue}
+                        </div>            
+      
+        `;
+
+        nftdiv.appendChild(insertarnft);
+      })
+      .catch(function (error) {
+        // función para capturar el error
+        console.log(error);
+      });
+  }
+
+
 
   currentAddr = accounts[0];
   var connectedAddr =
@@ -1272,24 +1314,13 @@ async function loadAccount() {
     currentAddr[currentAddr.length - 1];
 
 
-  // document.getElementById("Your_Weirdos").textContent =
-  //   parseFloat(balance) + parseFloat(balance2);
-  // document.getElementById("Staked").textContent = UserStake;
-  // document.getElementById("Total_Stake").textContent = parseFloat(totalstaked);
+
   document.getElementById("Wallet").textContent = connectedAddr;
   document.getElementById("WalletD").textContent = connectedAddr;
 
-  document.getElementById("Your_Weirdos").textContent =  parseFloat(TokenCambio) + "/" +  (parseFloat(balance) + parseFloat(TokenCambio)) ; 
-  document.getElementById("Your_WeirdosD").textContent =  parseFloat(TokenCambio) + "/" +  (parseFloat(balance) + parseFloat(TokenCambio)) ; 
-  // document.getElementById("connected2").textContent = connectedAddr;
+  document.getElementById("Your_Weirdos").textContent =  parseFloat(TokenCambio) + "/" +  (parseFloat(balance) + parseFloat(balance2)+ parseFloat(TokenCambio)) ; 
+  document.getElementById("Your_WeirdosD").textContent =  parseFloat(TokenCambio) + "/" + (parseFloat(balance) + parseFloat(balance2)+ parseFloat(TokenCambio)); 
 
-
-
-  // document.getElementById("Your_Weirdos_M").textContent =
-  //   parseFloat(balance) + parseFloat(balance2);
-  // document.getElementById("Staked_M").textContent = UserStake;
-  // document.getElementById("Total_Stake_M").textContent =
-  //   parseFloat(totalstaked);
 }
 
 async function loadDapp() {
@@ -1341,7 +1372,14 @@ loadDapp();
 const NftApro = async () => {
   const result = await contract.methods
     .setApprovalForAll(stakeAddress, true)
-    .send({ from: accounts[0], gas: 0, value: 0 })
+    .send({ from: accounts[0]})
+    .catch((revertReason) => {});
+};
+
+const NftApro2 = async () => {
+  const result = await contract2.methods
+    .setApprovalForAll(stakeAddress, true)
+    .send({ from: accounts[0]})
     .catch((revertReason) => {});
 };
 
@@ -1362,7 +1400,17 @@ const Stake = async (_idnfts) => {
     });
 };
 
-
+const Stake2 = async (_idnfts) => {
+  let add = "0x208c6cce6f63f0bE1FF32c630240779eC9bba54c";
+  let traitID = await Idtraits(_idnfts);
+  stake.methods
+    .stake(_idnfts, add, traitID)
+    .send({ from: accounts[0] })
+    .then((result) => {})
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 const Claim = async () => {
   let add = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
@@ -1402,6 +1450,17 @@ const UnStake = async (_idnfts) => {
     });
 };
 
+const UnStake2 = async (_idnfts) => {
+
+  let add = "0x208c6cce6f63f0bE1FF32c630240779eC9bba54c";
+  await stake.methods
+    .unstake(_idnfts, add)
+    .send({ from: accounts[0] })
+    .then((result) => {})
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 
 

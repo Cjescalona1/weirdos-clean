@@ -1321,7 +1321,7 @@ async function loadAccount() {
     Your_WeirdosD.innerHTML=
     ` ${aux} 
       <div class="right hideMob stakedTooltip">
-      <p>Amount of weirdos you have staked and total weirdos you own</p>
+      <p>This is the amount of weirdos you have staked versus the total weirdos you own</p>
  
       <i></i>
       </div>

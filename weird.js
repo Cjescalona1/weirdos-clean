@@ -14,10 +14,8 @@ for (i = 0; i < coll.length; i++) {
 }
 }
 
-function toggleMuted() {
-  
-
-  var sound = document.getElementById('sound'); 
+function toggleMuted() {   
+  var sound = document.getElementById('sound');
   var button = document.getElementById('toggleAudio');
   var buttonmov = document.getElementById('toggleAudioMov');
   sound.muted = !sound.muted;
@@ -36,4 +34,4 @@ function toggleMuted() {
     
   } 
 }
-
+ 

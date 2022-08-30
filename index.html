@@ -7,8 +7,12 @@
     <title>The Underworld Connection | Weirdos Stake</title>
     <link rel="stylesheet" href="weird.css">
     <link rel="shortcut icon" href="res/Fav.png" type="image/x-icon">
+
 </head>
 <body>
+    <audio id="sound" autoplay="autoplay" src="res/Terror2.wav" loop="loop">
+    </audio>
+    
     <header>
         <div class="headerBar">
             <ul class="navItems desktopClaim">
@@ -19,7 +23,7 @@
                 <li><a href="https://mint.underworldweirdos.com/">Mint</a></li>
                 <li><a href="https://opensea.io/collection/underworldweirdos-main">Collection</a></li>
                 <li><a href="https://quickswap.exchange/#/swap?inputCurrency=0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270&outputCurrency=0xc586a4a0db0bc1169d490b8fbf0633cc06d0f0d3">Token</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="#foot" id="goFoot" >FAQ</a></li>
                 <li><a href="#" id="aprobar" onclick="NftApro()">Approve Stake</a></li>
                 <li><a href="#" id="token" onclick="aprovartoken()">Approve Token</a></li>
 
@@ -41,9 +45,6 @@
                 </li>
                 <li > 
                     <div id="toggleAudio" class="mute" onclick="toggleMuted()"> </div>
-                    <audio id="sound" autoplay="autoplay" loop="loop">
-                        <source src="res/Dr Terror.wav" >
-                    </audio>
                 </li>
             </ul> 
  
@@ -194,7 +195,7 @@
 
     </div>     
          
-    <div class="foot"> 
+    <div class="foot" id="foot"> 
         <div class="foot2">
             <div class="whitespace  hideMob">
                 <p class="paragraph">We welcome you to the new version of the weirdo staking system! We named it "The Underworld Connection", why? you may ask. Talking with someone in the underworld is not an easy thing, that is why we developed this new styled connection system, combining the best of the OUIJA board, tarot cards, magic spells and nasty magical animals. Weirdos now can communicate with you, throwing funny and not so smart quotes to you anytime you stake them.</p>
@@ -240,13 +241,13 @@
                 <p>With it you can buy a new NFT, acquire loot boxes with prizes (MATIC, ETH, NFT's from many collections and more) or you can sell it on Quickswap.</p>
                 </div> 
             </div>
-        </div>
+        </div> 
 
           <div class="devil ">
             <img src="res/evildevils.png" alt="">
         </div>
     </div>
-     
+
 </body>
 
 <script src="weird.js"></script>

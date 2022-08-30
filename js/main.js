@@ -40,8 +40,6 @@ const stakeAddress = "0x2ed29748518e91A8dd7Af24cE44d19896eA26380";
 const tokenAddress = "0x27D26e2D6aEC6ccA78d14d9Cf9525EB5d592F317"; // mainnet busd
 
 
-
-
 const NftsABI = [
   {
     inputs: [
@@ -1454,3 +1452,12 @@ const Idtraits = async (_idnfts) => {
   console.log(traitnum);
   return traitnum;
 };
+
+$("#goFoot").on("click", function (e) {
+  // 1
+  e.preventDefault();
+  // 2
+  const href = $(this).attr("href");
+  // 3
+  $("html, body").animate({ scrollTop: $(href).offset().top }, 800);
+});

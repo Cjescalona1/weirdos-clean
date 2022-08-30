@@ -5,7 +5,9 @@
   * {
     font-family: "gloria" !important;
     color: #273e45 !important;
+    transition: all ease;
     }
+    
 body{ 
     background-image: url(res/01.jpg);
     background-repeat: no-repeat;
@@ -1332,7 +1334,6 @@ li > a > img{
     text-align: right;
 } 
 }
-
 
 @media  screen and (min-width: 2560px)  {
     .container{

@@ -1324,9 +1324,10 @@ async function loadAccount() {
    Your_WeirdosD.classList.add("tooltip");
    //change this elements to modificate your weirdos tooltip 
     Your_WeirdosD.innerHTML=
-    ` ${aux}
-      <div class="right hideMob">
+    ` ${aux} 
+      <div class="right hideMob stakedTooltip">
       <p>Amount of weirdos you have staked and total weirdos you own</p>
+ 
       <i></i>
       </div>
     `

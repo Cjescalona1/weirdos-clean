@@ -489,6 +489,7 @@ li > a > img{
         }
 }
 @media screen and (max-width:768px) {
+    
     #WalletD, #Your_WeirdosD{
         display: none;
     }

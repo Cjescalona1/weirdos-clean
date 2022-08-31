@@ -1203,7 +1203,7 @@ async function loadAccount() {
       });
   }
 
-  TokenUser = parseFloat(TokenUser) + parseFloat(pointUSer);
+ 
 
   for (let e = 0; e < balanceStake.length; e++) {
     imgURL = "https://weirdometada.com/" + balanceStake[e];
@@ -1338,7 +1338,7 @@ async function loadAccount() {
             /* tooltip for check element  */
             insertarnft.innerHTML = `
             <img src=${nftsMis} alt="" onclick="UnStake2(${balanceStake2[e]})">
-            <div class="yellowBand">Weirdo #${balanceStake2[e]} - ${TotalMinado} $UWU</div>
+            <div class="yellowBand">Weirdo #${balanceStake2[e]} - ${TotalMinado2} $UWU</div>
             <div class="weirdMessage">
                 ${rValue}
             </div>    

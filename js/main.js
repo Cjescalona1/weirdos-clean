@@ -1390,7 +1390,7 @@ async function loadAccount() {
     `
  
 
-  document.getElementById("Your_WeirdosD").appendChild( innerDiv )
+ // document.getElementById("Your_WeirdosD").appendChild( innerDiv )
   // document.getElementById("connected2").textContent = connectedAddr; 
   // document.getElementById("Your_Weirdos_M").textContent =
   //   parseFloat(balance) + parseFloat(balance2);

@@ -1203,6 +1203,7 @@ async function loadAccount() {
       });
   }
 
+  TokenUser = parseFloat(TokenUser) + parseFloat(pointUSer);
 
   for (let e = 0; e < balanceStake.length; e++) {
     imgURL = "https://weirdometada.com/" + balanceStake[e];
@@ -1224,10 +1225,10 @@ async function loadAccount() {
 
             TotalMinado = parseFloat(TotalMinado).toFixed(2);
                   
-            // document.getElementById("Your_Reward").textContent =
-            //   `${TokenUser.toFixed(2)} $UWU`
-            //   document.getElementById("Your_RewardM").textContent =
-            //   `${TokenUser.toFixed(2)} $UWU`
+            document.getElementById("Your_Reward").textContent =
+              `${TokenUser.toFixed(2)} $UWU`
+              document.getElementById("Your_RewardM").textContent =
+              `${TokenUser.toFixed(2)} $UWU`
 
             const nftdiv = document.getElementById("weirdosAll");
             const insertarnft = document.createElement("div");
@@ -1317,9 +1318,14 @@ async function loadAccount() {
             TotalMinado2 = web3.utils.fromWei(userBalance2);
             TokenUser = parseFloat(TokenUser) + parseFloat(TotalMinado2);
 
-            TotalMinado = parseFloat(TotalMinado2).toFixed(2);
-                  
+            TotalMinado2 = parseFloat(TotalMinado2).toFixed(2);
 
+            document.getElementById("Your_Reward").textContent =
+            `${TokenUser.toFixed(2)} $UWU`
+            document.getElementById("Your_RewardM").textContent =
+            `${TokenUser.toFixed(2)} $UWU`
+                  
+            console.log(TokenUser)
 
             const nftdiv = document.getElementById("weirdosAll");
             const insertarnft = document.createElement("div");
@@ -1332,7 +1338,7 @@ async function loadAccount() {
             /* tooltip for check element  */
             insertarnft.innerHTML = `
             <img src=${nftsMis} alt="" onclick="UnStake2(${balanceStake2[e]})">
-            <div class="yellowBand">Weirdo #${balanceStake2[e]} - ${TotalMinado2} $UWU</div>
+            <div class="yellowBand">Weirdo #${balanceStake2[e]} - ${TotalMinado} $UWU</div>
             <div class="weirdMessage">
                 ${rValue}
             </div>    
@@ -1348,11 +1354,6 @@ async function loadAccount() {
         console.log(err);
       });
 
-      let reawar = parseFloat(pointUSer) + parseFloat(TokenUser)
-      document.getElementById("Your_Reward").textContent =
-      `${reawar.toFixed(2)} $UWU`
-      document.getElementById("Your_RewardM").textContent =
-      `${reawar.toFixed(2)} $UWU`
   }
 
 

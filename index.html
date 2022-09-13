@@ -7,6 +7,7 @@
     <title>The Underworld Connection | Weirdos Stake</title>
     <link rel="stylesheet" href="weird.css">
     <link rel="shortcut icon" href="res/Fav.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 </head>
 <body>
@@ -129,106 +130,62 @@
             <div class="claimButton" onclick="connectWallet()" id="connectWalletM" >Connect</div>    
             <div class="claimButton" onclick="Claim()" style="display: none;" id="ClaimM" >Claim Rewards</div>    
         </a></div>
-        <div class="leftBox">
-            <div class="leftBoxContent">
-                <div class="statistics">Statistics:</div>
-                <div class="statisticList ">
-                    <div class="statBox tooltip">
-                        <div class="right hideMob">
-                            <p>Amount of holder that have their weirdos staked at the Underworld!</p>
-                            <i></i>
-                        </div>
-                        <div class="quant" id="holders">
-                            0
-                        </div>
-                       
-                        <div>
-                            Holders at the Underworld
-                        </div>
-                    </div>
-
-                    <div class="statBox tooltip">
-                        <div class="right hideMob">
-                            <p>All the weirdos without bonus traits earn base $UWU rewards (1 every 24h)</p>
-                            <i></i>
-                        </div>
-                        <div class="quant" id="trait1Total">
-                            0
-                        
-                        </div>
-                        
-                        <div>
-                        Weirdos without Bonus
-                        </div>
-                    </div>
-                    <div class="statBox tooltip">
-                        <div class="right hideMob">
-                            <p>Weirdos with one bonus trait get +50% extra rewards (1.5 $UWU every 24h)</p>
-                            <i></i>
-                        </div>
-                        <div class="quant" id="trait1">
-                            0
-                        </div>
-                    
-                        <div>
-                        Weirdos with x1.5 Bonus
-                        </div>
-                    </div>
-                    <div class="statBox tooltip">
-                        <div class="right hideMob">
-                            <p>Non-common weirdos with two bonus traits get +200% extra rewards (3 $UWU every 24h)</p>
-                            <i></i>
-                        </div>
-                        <div class="quant" id="trait2">
-                            0 
-                        </div>
-                     
-                        <div>
-                        Weirdos with x3 Bonus
-                        </div>
-                    </div>
-                    <div class="statBox SBLast tooltip">
-                        <div class="right hideMob">
-                            <p>Rarest weirdos with three bonus traits get +900% extra rewards (10 $UWU every 24h)</p>
-                            <i></i>
-                        </div>
-                        <div class="quant" id="trait3">
-                            0
-                            </div>
-                       
-                        
-                        <div>
-                        Weirdos with x10 Bonus
-                        </div> 
-                    </div>
-                </div> 
-                <div class="weirdTrio tooltip">
-                    <img src="res/weirdos-05.png" alt="">
-                    <div class="bottom"> 
-                        <p>Bonus traits of the week: <b>Stumble with Lolipop</b> face, <b>Pink Bathrobe</b> clothing (devils and skellys) and <b>Green Octopus </b>head. You can see the bonuses for having one or more of this traits at our <b>FAQ section</b>.</p>
-                        <i></i>
-                    </div>                
-                </div>             
-            </div>    
-        </div>
+        
         <div class="separator"> </div>
         <div class="rightBox">
-            <div class="rightBoxContent" id="rightBoxContent">
-                <div id="Yourwallet">Your wallet</div>
-                <div id="WalletD" ></div>
-                <div id="Yourweirdosstaked" >Your weirdos staked</div>
-                <div id="Your_WeirdosD"> 
-                </div>
-                <div class="weirdos" id="weirdosAll">
-
-                </div>
+            <div class="row row-bg blank">
+                <div class="col-md-12 col-sm-12 cartel ">
+                    <div class="row row-top">
+                        <div class="col-6">
+                            <h1 class="tit-opt mb-4">Option A</h1>
+                            <div class="col-12 center"> <h2 class="prizes" id="priceMATIC">0 Matic</h2></div>
+                            <div class="col-12 center">+ gas fees</div>
+                            <div class="col-12 center num-group">
+                                <div class="col-3 " id="sus1"><a onclick="dis1()"><img class="a-s"  src="./res/sus.png" alt=""></a></div>
+                                <div class="col-3 quant" ><input id="val1" class="col-12 inp-reset" type="number" disabled placeholder="00"></div>    
+                                <div class="col-3 " id="add1"><a onclick="aum1()"><img class="a-s" src="./res/add.png" alt=""></a></div>  
+                            </div>
+                            <div class="col-12 center">
+                                <button class="mint-button col-5" onclick="mint1()">Mint</button>
+                            </div>
+                        </div>
+                        <div class="col-5 ">
+                            <h1 class="tit-opt mb-4">Option B</h1>
+                            <div class="col-12 center"><h2 class="prizes" id="priceUWU">0 $UWU</h2></div>
+                            <div class="col-12 center">+ gas fees</div>
+                            <div class="col-12 center num-group"> 
+                                <div class="col-3 " id="sus2">  <a onclick="dis2()"><img class="a-s" src="./res/sus.png" alt=""></a>  </div>
+                                <div class="col-3 quant" ><input class="col-12 inp-reset" type="number" disabled placeholder="00" id="val2"></div>    
+                                <div class="col-3 " id="add2"> <a onclick="aum2()"><img class="a-s" src="./res/add.png" alt=""></a></div>  
+                            </div>
+                            <div class="col-12 center"> 
+                                
+                                <button class="mint-button col-5" id="mintBox2" style="display: none;" onclick="mint2()">Mint</button>
+                                <button class="mint-button col-5" id="approve2" onclick="approveMint2()">Approve</button>
+                            </div>
+                        </div> 
+                        <div class="col-8 col-md-10 disclaimer center">
+                            Please make sure you are connected to the right network (Polygon Mainnet) and the correct address. Note, once you make the purchase you cannot undo this action. 
+                        </div>
+                      
+                     
+                      
+                        </div>
+    
+                            <div class="col-12 fin ">
+                            </div>
+                      
+                            
+                    </div>
+                    <div class="col-12 info-class-mobile">
+                    </div>
             </div>
         </div>
 
 
     </div>     
          
-    <div class="foot" id="foot"> 
+    <div class="foot " id="foot"> 
         <div class="foot2">
             <div class="whitespace  hideMob">
                 <p class="paragraph">We welcome you to the new version of the weirdo staking system! We named it "The Underworld Connection", why? you may ask. Talking with someone in the underworld is not an easy thing, that is why we developed this new styled connection system, combining the best of the OUIJA board, tarot cards, magic spells and nasty magical animals. Weirdos now can communicate with you, throwing funny and not so smart quotes to you anytime you stake them.</p>
@@ -276,7 +233,7 @@
             </div>
         </div> 
 
-          <div class="devil ">
+          <div class="devil">
             <img src="res/evildevils.png" alt="">
         </div>
     </div>

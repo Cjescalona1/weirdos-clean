@@ -10,7 +10,7 @@
     }
         
 body{ 
-    background-image: url(res/01.jpg);
+    background-image: url("res/MAQUETA-WEB-01.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -57,14 +57,12 @@ body{
     opacity: 1;
  
 }
-.rightBox{
-    width: 60%;
-    background-image: url('res/ouija.png');
+.rightBox{ 
+    margin: 3em;
+    width: 60%; 
     background-repeat: no-repeat;
     background-size: 0% 0%;
     opacity: 1;
- 
-
 }
 .separator{
     width: 2em;
@@ -177,11 +175,7 @@ body{
     background-position: center;
     opacity: 1;
 }  
-
-.weirdImg:hover{  
-}
  
-
 .weirdMessage{
     font-size: 9px;
     justify-content: center;
@@ -228,7 +222,7 @@ body{
     background-color: #24063f;
     padding: 2em 0em;
     border-bottom: #fecd19 2px solid;
-    height: 2.4em;
+    height: 6em;
 }
 .navItems{
     display: flex;
@@ -324,8 +318,11 @@ li > a > img{
     display: block;
 }
 .foot2{
-    margin: 4em 0em 0em 0em;
-    display: -webkit-inline-box;
+    margin: 5em 0em;
+    padding: 2em 0em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 .whitespace{
@@ -355,11 +352,11 @@ li > a > img{
 .devil{
     background-color: #212121; 
     width: 100vw;
-    height: 4em;
+    height: 5em;
     position: relative;
     padding-top: 1em;
-    margin-top: 3em;
-
+    margin-top: 3em; 
+    
     
 }
 .content>p{
@@ -404,7 +401,7 @@ li > a > img{
   display: none;
   overflow: hidden;
   font-weight: lighter;
-  width: 99.2% !important;
+  width: 100% !important;
 }
 .collapseButt{ 
   width: 100%;
@@ -428,6 +425,98 @@ li > a > img{
     left: 3em;
     top: 1.5em;
 }
+.devil>img{
+    left: 70%;
+    position: relative;
+}
+
+
+.mint-button{
+    background-color: #45ced4;
+    color: antiquewhite;
+    font-size: 1.5em;
+    width: 6em;
+   margin-top: 1em;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-color: transparent;
+   
+}
+.number {
+    font-size: 1.6em;
+    top: 43.5vw;
+    position: absolute;
+    left: 63.5vw;
+    overflow: hidden;
+}
+
+.disclaimer{
+    text-align: center;
+    color: #e1f971;
+    margin-top: -3em;
+    line-height: 15px; 
+    padding: 0 1.5em;
+} 
+.info-class{
+    color: #43ccd2;
+    text-align: center; 
+    top: 55vw;
+    position: absolute;
+    left: calc (50vw - 1.5em);
+    
+}
+
+.num-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+}
+.quant{
+    font-size:3em;
+}
+.tit-opt{
+    font-size: calc(1.5em + 1.5vw);
+    text-align: center;
+
+}
+.center{
+    text-align: center;
+}
+.fee{
+    text-align: center;
+    margin-top: 0;
+}
+.info-class{
+    color: #43ccd2;
+    text-align: center; 
+    top: 55vw;
+    position: absolute;
+    left: calc (50vw - 1.5em);
+    
+}
+
+.inp-reset{
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    vertical-align: center;
+    justify-content: center;
+    caret-color: transparent;
+    color: antiquewhite !important; 
+}
+
+.disclaimer{
+    text-align: center;
+    color: #e1f971;
+    font-size:  1vw; 
+    margin-top: 2em !important;
+    margin-left: 8%;
+    line-height: 2;
+}
+
 
 @media screen and (min-width:768px) {
         nav{
@@ -617,7 +706,7 @@ li > a > img{
      
       }
     .devil>img{
-        width: 75%;
+    width: 75%;
     padding: 0.5em;
     }
     body{ 
@@ -842,7 +931,7 @@ li > a > img{
     justify-content: center;
     }
     body{ 
-        background-image: url(res/01-2.jpg);
+        background-image: url("res/MAQUETA-WEB-01.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -983,7 +1072,7 @@ li > a > img{
     width: 680px;
 }
 .content{
-    width: 99.1% !important;
+    width: 100% !important;
 }
 .foot {
     position: absolute;
@@ -993,8 +1082,11 @@ li > a > img{
     display: block;
 }
 .foot2{
-    margin: 4em 0em 0em 0em;
-    display: -webkit-inline-box;
+    margin: 5em 0em;
+    padding: 2em 0em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 .whitespace{
@@ -1027,7 +1119,7 @@ li > a > img{
 .devil{
     background-color: #212121; 
     width: 100vw;
-    height: 4em;
+    height: 5em;
     position: relative;
     padding-top: 1em;
     margin-top: 3em;
@@ -1039,7 +1131,7 @@ li > a > img{
     background-color: #92c972;
     margin: 0em 0em 0em 0em;
     padding: 1.5em;
-    width: 96%; 
+    width: 100%; 
     
     
 }
@@ -1085,8 +1177,7 @@ li > a > img{
         width: 60%; 
         min-width: 800px;
         max-width: 800px;
-        max-height: 900px;
-        rotate: 5%;
+        max-height: 900px; 
  
     }
     .statisticList{
@@ -1215,8 +1306,11 @@ li > a > img{
         display: block;
     }
     .foot2{
-        margin: 4em 0em 0em 0em;
-        display: -webkit-inline-box;
+        margin: 5em 0em;
+        padding: 2em 0em;
+        display: flex;
+        align-content: center;
+        justify-content: center;
     }
     
     .whitespace{
@@ -1248,7 +1342,7 @@ li > a > img{
     .devil{
         background-color: #212121; 
         width: 100vw;
-        height: 4em;
+        height: 5em;
         position: relative;
         padding-top: 1em;
         margin-top: 3em;
@@ -1260,7 +1354,7 @@ li > a > img{
         background-color: #92c972;
         margin: 0em 0em 0em 0em;
         padding: 1.5em;
-        width: 94%; 
+        width: 100%; 
         
         
     }
@@ -1306,7 +1400,7 @@ li > a > img{
         width: 60%; 
         width: 1000px;
         max-height: 900px;
-        rotate: 5%;
+    
  
     }
     .statisticList{
@@ -1416,8 +1510,11 @@ li > a > img{
         display: block;
     }
     .foot2{
-        margin: 4em 0em 0em 0em;
-        display: -webkit-inline-box;
+        margin: 5em 0em;
+        padding: 2em 0em;
+        display: flex;
+        align-content: center;
+        justify-content: center;
     }
     
     .whitespace{
@@ -1448,7 +1545,7 @@ li > a > img{
     .devil{
         background-color: #212121; 
         width: 100vw;
-        height: 4em;
+        height: 5em;
         position: relative;
         padding-top: 1em;
         margin-top: 3em;
@@ -1460,7 +1557,7 @@ li > a > img{
         background-color: #92c972;
         margin: 0em 0em 0em 0em;
         padding: 1.5em 1.5em 1.5em 1.5em;
-        width: 96%; 
+        width: 100%; 
         
         
     }
@@ -1507,7 +1604,7 @@ li > a > img{
         width: 60%; 
         width: 1000px;
         max-height: 900px;
-        rotate: 5%;
+     
  
     }
     .statisticList{
@@ -1617,8 +1714,11 @@ li > a > img{
         display: block;
     }
     .foot2{
-        margin: 4em 0em 0em 0em;
-        display: -webkit-inline-box;
+        margin: 5em 0em;
+        padding: 2em 0em;
+        display: flex;
+        align-content: center;
+        justify-content: center;
     }
     
     .whitespace{
@@ -1649,7 +1749,7 @@ li > a > img{
     .devil{
         background-color: #212121; 
         width: 100vw;
-        height: 4em;
+        height: 5em;
         position: relative;
         padding-top: 1em;
         margin-top: 3em;
@@ -1661,7 +1761,7 @@ li > a > img{
         background-color: #92c972;
         margin: 0em 0em 0em 0em;
         padding: 1.5em 1.5em 1.5em 1.5em;
-        width: 96%; 
+        width: 100%; 
         
         
     }
